@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs for page search.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="file-name">/search.php</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-functions">Functions</a>
+			</div>
+	<div class="info-box-body">	
+		<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">filesource:</span> <a href="..//__filesource/fsource_brwcms__search.php.html">Source Code for this file</a></li>
+			</ul>
+		
+			</div>
+</div>
+		
+
+	
+	
+	
+	<a name="sec-functions"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Functions</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<span class="disabled">Functions</span>
+		</div>
+		<div class="info-box-body">	
+			<a name="functioncombine_ids" id="functioncombine_ids"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">combine_ids</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__search.php.html#a114">114</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			combine_ids
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$aArgs</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functioncon" id="functioncon"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">con</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__search.php.html#a2">2</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			con
+		</span>
+				()
+			</div>
+
+		
+	
+</div>
+<a name="functiondumpArray" id="functiondumpArray"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">dumpArray</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__search.php.html#a124">124</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			dumpArray
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$aArgs</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functionsearch_db_escape_terms" id="functionsearch_db_escape_terms"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">search_db_escape_terms</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__search.php.html#a37">37</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			search_db_escape_terms
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$terms</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functionsearch_escape_rlike" id="functionsearch_escape_rlike"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">search_escape_rlike</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__search.php.html#a33">33</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			search_escape_rlike
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$string</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functionsearch_item" id="functionsearch_item"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">search_item</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__search.php.html#a91">91</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			search_item
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$arrayIDs</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functionsearch_keyword" id="functionsearch_keyword"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">search_keyword</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__search.php.html#a58">58</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			search_keyword
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$terms</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functionsearch_rx_escape_terms" id="functionsearch_rx_escape_terms"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">search_rx_escape_terms</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__search.php.html#a47">47</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			search_rx_escape_terms
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$terms</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functionsearch_split_terms" id="functionsearch_split_terms"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">search_split_terms</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__search.php.html#a14">14</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			search_split_terms
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$terms</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functionsearch_transform_term" id="functionsearch_transform_term"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">search_transform_term</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__search.php.html#a27">27</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			search_transform_term
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$term</span>)
+			</div>
+
+		
+	
+</div>
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Wed,  5 Apr 2006 20:09:57 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC4</a>
+	</p>
+	</div></body>
+</html>

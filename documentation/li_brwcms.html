@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title></title>
+			<link rel="stylesheet" href="media/stylesheet.css" />
+						<script src="media/lib/classTree.js"></script>
+									<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+									<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "media/images/plus.png";
+				imgMinus.src = "media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+						<h3 class="package-title">brwcms</h3>
+<div class="tree">
+<script language="Javascript">
+if (document.getElementById) {
+			var tree = new WebFXTree('<span class="package">brwcms</span>');
+		tree.setBehavior('classic');
+	
+		
+		var class_trees = new WebFXTreeItem('Class trees', 'classtrees_brwcms.html');
+		tree.add(class_trees);
+
+		var elements = new WebFXTreeItem('Index of elements', 'elementindex_brwcms.html');		
+		tree.add(elements);
+
+		var parent_node;
+
+			
+					var tree_classe = new WebFXTreeItem('Class(es)', '');
+			
+							var classe = new WebFXTreeItem('activity', 'brwcms/activity.html');
+				tree_classe.add(classe);
+							var classe = new WebFXTreeItem('database', 'brwcms/database.html');
+				tree_classe.add(classe);
+							var classe = new WebFXTreeItem('dbsettings', 'brwcms/dbsettings.html');
+				tree_classe.add(classe);
+							var classe = new WebFXTreeItem('document_generator', 'brwcms/document_generator.html');
+				tree_classe.add(classe);
+							var classe = new WebFXTreeItem('feedbacks', 'brwcms/feedbacks.html');
+				tree_classe.add(classe);
+							var classe = new WebFXTreeItem('gerger_timer', 'brwcms/gerger_timer.html');
+				tree_classe.add(classe);
+							var classe = new WebFXTreeItem('messages', 'brwcms/messages.html');
+				tree_classe.add(classe);
+							var classe = new WebFXTreeItem('online_tracker', 'brwcms/online_tracker.html');
+				tree_classe.add(classe);
+							var classe = new WebFXTreeItem('paging', 'brwcms/paging.html');
+				tree_classe.add(classe);
+							var classe = new WebFXTreeItem('quote_of_the_day', 'brwcms/quote_of_the_day.html');
+				tree_classe.add(classe);
+							var classe = new WebFXTreeItem('rotate_banner', 'brwcms/rotate_banner.html');
+				tree_classe.add(classe);
+							var classe = new WebFXTreeItem('rotating_images', 'brwcms/rotating_images.html');
+				tree_classe.add(classe);
+							var classe = new WebFXTreeItem('search', 'brwcms/search.html');
+				tree_classe.add(classe);
+							var classe = new WebFXTreeItem('stockphoto', 'brwcms/stockphoto.html');
+				tree_classe.add(classe);
+							var classe = new WebFXTreeItem('template_parser', 'brwcms/template_parser.html');
+				tree_classe.add(classe);
+							var classe = new WebFXTreeItem('thumbnail', 'brwcms/thumbnail.html');
+				tree_classe.add(classe);
+							var classe = new WebFXTreeItem('upload_image', 'brwcms/upload_image.html');
+				tree_classe.add(classe);
+							var classe = new WebFXTreeItem('user_authentication', 'brwcms/user_authentication.html');
+				tree_classe.add(classe);
+							var classe = new WebFXTreeItem('Validator', 'brwcms/Validator.html');
+				tree_classe.add(classe);
+				
+			tree.add(tree_classe);
+		
+					var tree_function = new WebFXTreeItem('Function(s)', '');
+			
+							var fic = new WebFXTreeItem('allow_Stage_to_set', 'brwcms/_code_corefunctions_php.html#functionallow_Stage_to_set');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('checkhttptext', 'brwcms/_code_corefunctions_php.html#functioncheckhttptext');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('checkIfCategoryContainsArticle', 'brwcms/_code_corefunctions_php.html#functioncheckIfCategoryContainsArticle');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('checkIfWriterIsAvailableToAssignedTheTask', 'brwcms/_code_corefunctions_php.html#functioncheckIfWriterIsAvailableToAssignedTheTask');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('checkRevisionLists', 'brwcms/_code_corefunctions_php.html#functioncheckRevisionLists');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('checkUserAccessRights', 'brwcms/_code_corefunctions_php.html#functioncheckUserAccessRights');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('combine_ids', 'brwcms/_code_search_php.html#functioncombine_ids');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('con', 'brwcms/_code_search_php.html#functioncon');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('convertdate', 'brwcms/_code_corefunctions_php.html#functionconvertdate');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('countArticle_versions_stage', 'brwcms/_code_corefunctions_php.html#functioncountArticle_versions_stage');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('create_activity_report_graph', 'brwcms/_code_create_graphs_php.html#functioncreate_activity_report_graph');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('create_common_menu', 'brwcms/_code_query_fns_php.html#functioncreate_common_menu');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('create_poll_graph', 'brwcms/_code_create_graphs_php.html#functioncreate_poll_graph');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('create_usage_graph', 'brwcms/_code_create_graphs_php.html#functioncreate_usage_graph');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('dumpArray', 'brwcms/_code_search_php.html#functiondumpArray');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('friendlyDate', 'brwcms/_code_corefunctions_php.html#functionfriendlyDate');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('friendlyDate2', 'brwcms/_code_corefunctions_php.html#functionfriendlyDate2');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('friendlyDate3', 'brwcms/_code_corefunctions_php.html#functionfriendlyDate3');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('friendlyDate4', 'brwcms/_code_corefunctions_php.html#functionfriendlyDate4');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('friendlyDate5', 'brwcms/_code_corefunctions_php.html#functionfriendlyDate5');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getActiveQuota', 'brwcms/_code_corefunctions_php.html#functiongetActiveQuota');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getArticleTitle', 'brwcms/_code_corefunctions_php.html#functiongetArticleTitle');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getArticle_authors', 'brwcms/_code_corefunctions_php.html#functiongetArticle_authors');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getArticle_authors_info', 'brwcms/_code_corefunctions_php.html#functiongetArticle_authors_info');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getArticle_category', 'brwcms/_code_corefunctions_php.html#functiongetArticle_category');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getArticle_category_info', 'brwcms/_code_corefunctions_php.html#functiongetArticle_category_info');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getArticle_imageSets', 'brwcms/_code_corefunctions_php.html#functiongetArticle_imageSets');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getArticle_info', 'brwcms/_code_corefunctions_php.html#functiongetArticle_info');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getArticle_keywords', 'brwcms/_code_corefunctions_php.html#functiongetArticle_keywords');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getArticle_version_info', 'brwcms/_code_corefunctions_php.html#functiongetArticle_version_info');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getBannerclient_info', 'brwcms/_code_corefunctions_php.html#functiongetBannerclient_info');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getCategory_info', 'brwcms/_code_corefunctions_php.html#functiongetCategory_info');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getCategory_name', 'brwcms/_code_corefunctions_php.html#functiongetCategory_name');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getClientActiveBanners', 'brwcms/_code_corefunctions_php.html#functiongetClientActiveBanners');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getDir', 'brwcms/_htdocs_phpdoc_docbuilder_includes_utilities_php.html#functiongetDir');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getFrontpage_type', 'brwcms/_code_corefunctions_php.html#functiongetFrontpage_type');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getGroup_name', 'brwcms/_code_corefunctions_php.html#functiongetGroup_name');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getImages_info', 'brwcms/_code_corefunctions_php.html#functiongetImages_info');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getLiveArticleOnCategory', 'brwcms/_code_corefunctions_php.html#functiongetLiveArticleOnCategory');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getStage_name', 'brwcms/_code_corefunctions_php.html#functiongetStage_name');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getUserWorkload', 'brwcms/_code_corefunctions_php.html#functiongetUserWorkload');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getUser_assigned_category', 'brwcms/_code_corefunctions_php.html#functiongetUser_assigned_category');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getUser_fullname', 'brwcms/_code_corefunctions_php.html#functiongetUser_fullname');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getUser_info', 'brwcms/_code_corefunctions_php.html#functiongetUser_info');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('getWriterTaskStatus', 'brwcms/_code_corefunctions_php.html#functiongetWriterTaskStatus');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('get_all_articles', 'brwcms/_code_query_fns_php.html#functionget_all_articles');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('get_article_details', 'brwcms/_code_query_fns_php.html#functionget_article_details');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('get_user_data', 'brwcms/_code_query_fns_php.html#functionget_user_data');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('get_user_stage', 'brwcms/_code_query_fns_php.html#functionget_user_stage');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('get_writer_articles', 'brwcms/_code_query_fns_php.html#functionget_writer_articles');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('htmlArraySelect', 'brwcms/_htdocs_phpdoc_docbuilder_includes_utilities_php.html#functionhtmlArraySelect');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('makeAShortIntro', 'brwcms/_code_corefunctions_php.html#functionmakeAShortIntro');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('makeRelativePath', 'brwcms/_code_corefunctions_php.html#functionmakeRelativePath');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('niceDate', 'brwcms/_code_corefunctions_php.html#functionniceDate');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('niceTime', 'brwcms/_code_corefunctions_php.html#functionniceTime');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('query_data', 'brwcms/_code_functions_query_data_php.html#functionquery_data');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('recurseDir', 'brwcms/_htdocs_phpdoc_docbuilder_includes_utilities_php.html#functionrecurseDir');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('search_db_escape_terms', 'brwcms/_code_search_php.html#functionsearch_db_escape_terms');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('search_escape_rlike', 'brwcms/_code_search_php.html#functionsearch_escape_rlike');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('search_item', 'brwcms/_code_search_php.html#functionsearch_item');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('search_keyword', 'brwcms/_code_search_php.html#functionsearch_keyword');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('search_rx_escape_terms', 'brwcms/_code_search_php.html#functionsearch_rx_escape_terms');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('search_split_terms', 'brwcms/_code_search_php.html#functionsearch_split_terms');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('search_transform_term', 'brwcms/_code_search_php.html#functionsearch_transform_term');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('sendmail', 'brwcms/_code_corefunctions_php.html#functionsendmail');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('showImage', 'brwcms/_htdocs_phpdoc_docbuilder_includes_utilities_php.html#functionshowImage');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('simpleDate', 'brwcms/_code_corefunctions_php.html#functionsimpleDate');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('splithttptext', 'brwcms/_code_corefunctions_php.html#functionsplithttptext');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('strDate', 'brwcms/_code_corefunctions_php.html#functionstrDate');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('switchDirTree', 'brwcms/_htdocs_phpdoc_docbuilder_includes_utilities_php.html#functionswitchDirTree');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('update', 'brwcms/_code_db_fns_php.html#functionupdate');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('user_log', 'brwcms/_code_corefunctions_php.html#functionuser_log');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('user_specific_menu', 'brwcms/_code_query_fns_php.html#functionuser_specific_menu');
+				tree_function.add(fic);
+							var fic = new WebFXTreeItem('vdump_par', 'brwcms/_htdocs_phpdoc_docbuilder_includes_utilities_php.html#functionvdump_par');
+				tree_function.add(fic);
+					
+			tree.add(tree_function);
+			
+					var tree_file = new WebFXTreeItem('File(s)', '');
+	
+							var file = new WebFXTreeItem('aboutus.php', 'brwcms/_code_aboutus_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('actions.php', 'brwcms/_htdocs_phpdoc_docbuilder_actions_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('add_article.php', 'brwcms/_code_add_article_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('add_banner.php', 'brwcms/_code_client_add_banner_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('add_new_banner_clients.php', 'brwcms/_code_add_new_banner_clients_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('add_new_category.php', 'brwcms/_code_add_new_category_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('add_new_clients.php', 'brwcms/_code_add_new_clients_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('add_new_poll.php', 'brwcms/_code_add_new_poll_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('add_new_quota.php', 'brwcms/_code_add_new_quota_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('add_new_quotes.php', 'brwcms/_code_add_new_quotes_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('add_new_site_content.php', 'brwcms/_code_add_new_site_content_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('add_new_task.php', 'brwcms/_code_add_new_task_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('add_segments.php', 'brwcms/_code_add_segments_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('add_user_profile.php', 'brwcms/_code_add_user_profile_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('add_writer_article.php', 'brwcms/_code_add_writer_article_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('ads.php', 'brwcms/_code_ads_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('advertise.php', 'brwcms/_code_advertise_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('all_live_articles.php', 'brwcms/_code_all_live_articles_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('all_site_themes.php', 'brwcms/_code_all_site_themes_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('archive.php', 'brwcms/_code_archive_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('archive_manager.php', 'brwcms/_code_archive_manager_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('article_reports.php', 'brwcms/_code_article_reports_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('audit_trail.php', 'brwcms/_code_audit_trail_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('backuprestore.php', 'brwcms/_code_backuprestore_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('backup_restore_database.php', 'brwcms/_code_backup_restore_database_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('banner_ads_manager.php', 'brwcms/_code_banner_ads_manager_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('bug.php', 'brwcms/_code_bug_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('category.php', 'brwcms/_code_category_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('category_manager.php', 'brwcms/_code_category_manager_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('check.php', 'brwcms/_code_check_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('check_login.php', 'brwcms/_code_check_login_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('class_activity.php', 'brwcms/_code_classes_class_activity_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('class_authenticate_user.php', 'brwcms/_code_classes_class_authenticate_user_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('class_database.php', 'brwcms/_code_classes_class_database_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('class_dbsettings.php', 'brwcms/_code_classes_class_dbsettings_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('class_document_generator.php', 'brwcms/_code_classes_class_document_generator_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('class_feedbacks.php', 'brwcms/_code_classes_class_feedbacks_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('class_gerger_timer.php', 'brwcms/_code_classes_class_gerger_timer_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('class_message.php', 'brwcms/_code_classes_class_message_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('class_online_tracker.php', 'brwcms/_code_classes_class_online_tracker_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('class_paging.php', 'brwcms/_code_classes_class_paging_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('class_quote_of_the_day.php', 'brwcms/_code_classes_class_quote_of_the_day_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('class_rotate_ads.php', 'brwcms/_code_classes_class_rotate_ads_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('class_search.php', 'brwcms/_code_classes_class_search_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('class_stockphoto.php', 'brwcms/_code_classes_class_stockphoto_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('class_template_parser.php', 'brwcms/_code_classes_class_template_parser_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('class_upload_image.php', 'brwcms/_code_classes_class_upload_image_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('class_validator.php', 'brwcms/_code_classes_class_validator_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('clients_manager.php', 'brwcms/_code_clients_manager_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('client_profile.php', 'brwcms/_code_client_profile_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('client_profile.php', 'brwcms/_code_client_client_profile_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('client_top_menu.php', 'brwcms/_code_client_client_top_menu_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('client_window.php', 'brwcms/_code_client_client_window_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('config.php', 'brwcms/_code_config_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('configuration.php', 'brwcms/_code_configuration_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('coreclass.php', 'brwcms/_code_coreclass_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('corefunctions.php', 'brwcms/_code_corefunctions_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('createnewfolder.php', 'brwcms/_code_popups_createnewfolder_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('create_graphs.php', 'brwcms/_code_create_graphs_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('create_poll.php', 'brwcms/_code_create_poll_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('create_poll_graph.php', 'brwcms/_code_create_poll_graph_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('create_reports.php', 'brwcms/_code_create_reports_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('credits.php', 'brwcms/_code_credits_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('date.php', 'brwcms/_code_date_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('db_fns.php', 'brwcms/_code_db_fns_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('delete_backup.php', 'brwcms/_code_delete_backup_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('delete_banner.php', 'brwcms/_code_delete_banner_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('delete_banner.php', 'brwcms/_code_client_delete_banner_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('delete_category.php', 'brwcms/_code_delete_category_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('delete_feedback.php', 'brwcms/_code_delete_feedback_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('delete_image.php', 'brwcms/_code_delete_image_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('delete_message.php', 'brwcms/_code_delete_message_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('delete_poll.php', 'brwcms/_code_delete_poll_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('delete_task.php', 'brwcms/_code_delete_task_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('display_poll.php', 'brwcms/_code_display_poll_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('display_report.php', 'brwcms/_code_display_report_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('download_doc.php', 'brwcms/_code_download_doc_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('edit_article.php', 'brwcms/_code_edit_article_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('edit_article_version.php', 'brwcms/_code_edit_article_version_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('edit_category.php', 'brwcms/_code_edit_category_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('edit_client_profile.php', 'brwcms/_code_client_edit_client_profile_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('edit_client_profile.php', 'brwcms/_code_edit_client_profile_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('edit_imageinfo.php', 'brwcms/_code_popups_edit_imageinfo_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('edit_my_banners.php', 'brwcms/_code_client_edit_my_banners_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('edit_other_content.php', 'brwcms/_code_edit_other_content_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('edit_poll.php', 'brwcms/_code_edit_poll_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('edit_quota.php', 'brwcms/_code_edit_quota_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('edit_quote.php', 'brwcms/_code_edit_quote_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('edit_task.php', 'brwcms/_code_edit_task_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('edit_user_profile.php', 'brwcms/_code_edit_user_profile_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('edit_user_profile_manager.php', 'brwcms/_code_edit_user_profile_manager_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('edit_writer_article.php', 'brwcms/_code_edit_writer_article_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('external_source.php', 'brwcms/_code_external_source_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('external_source_int.php', 'brwcms/_code_external_source_int_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('failed.php', 'brwcms/_code_failed_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('feedback.php', 'brwcms/_code_feedback_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('feedback_form.php', 'brwcms/_code_feedback_form_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('feedback_manager.php', 'brwcms/_code_feedback_manager_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('footer.php', 'brwcms/_code_footer_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('functions_query_data.php', 'brwcms/_code_functions_query_data_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('globals.php', 'brwcms/_code_globals_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('global_configuration.php', 'brwcms/_code_global_configuration_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('global_configuration2.php', 'brwcms/_code_global_configuration2_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('help.php', 'brwcms/_code_help_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('help2.php', 'brwcms/_code_help2_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('image_manager.php', 'brwcms/_code_image_manager_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('index.php', 'brwcms/_code_index_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('list_poll_survey.php', 'brwcms/_code_list_poll_survey_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('list_poll_topics.php', 'brwcms/_code_list_poll_topics_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('login.php', 'brwcms/_code_login_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('login.php', 'brwcms/_code_client_login_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('logout.php', 'brwcms/_code_client_logout_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('logout2.php', 'brwcms/_code_logout2_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('lostpassword.php', 'brwcms/_code_lostpassword_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('main_content2.php', 'brwcms/_code_main_content2_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('md5.php', 'brwcms/_code_md5_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('message_archive_manager.php', 'brwcms/_code_message_archive_manager_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('my_articles2.php', 'brwcms/_code_my_articles2_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('my_banners.php', 'brwcms/_code_client_my_banners_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('my_tasks.php', 'brwcms/_code_my_tasks_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('new_article_evaluation.php', 'brwcms/_code_new_article_evaluation_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('new_banner_clients.php', 'brwcms/_code_new_banner_clients_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('new_private_message.php', 'brwcms/_code_client_new_private_message_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('new_private_message.php', 'brwcms/_code_new_private_message_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('other_site_content.php', 'brwcms/_code_other_site_content_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('other_sources.php', 'brwcms/_code_other_sources_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('preview_article.php', 'brwcms/_code_preview_article_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('preview_article_versions.php', 'brwcms/_code_preview_article_versions_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('preview_audit_trail.php', 'brwcms/_code_preview_audit_trail_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('preview_editor_reports.php', 'brwcms/_code_preview_editor_reports_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('preview_image_details.php', 'brwcms/_code_preview_image_details_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('preview_listofmembers.php', 'brwcms/_code_preview_listofmembers_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('preview_newscontents.php', 'brwcms/_code_preview_newscontents_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('preview_newsdirector_reports.php', 'brwcms/_code_preview_newsdirector_reports_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('preview_publisher_reports.php', 'brwcms/_code_preview_publisher_reports_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('preview_sitecontent.php', 'brwcms/_code_preview_sitecontent_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('preview_writer_reports.php', 'brwcms/_code_preview_writer_reports_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('proofread_article.php', 'brwcms/_code_proofread_article_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('publish_article.php', 'brwcms/_code_publish_article_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('query_fns.php', 'brwcms/_code_query_fns_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('quota.php', 'brwcms/_code_quota_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('quote_manager.php', 'brwcms/_code_quote_manager_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('redirect.php', 'brwcms/_code_redirect_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('remove_image.php', 'brwcms/_code_client_remove_image_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('report_admin.php', 'brwcms/_code_report_admin_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('report_editor_articles.php', 'brwcms/_code_report_editor_articles_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('report_listofmembers.php', 'brwcms/_code_report_listofmembers_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('report_newscontents.php', 'brwcms/_code_report_newscontents_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('report_publisher_articles.php', 'brwcms/_code_report_publisher_articles_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('report_usage.php', 'brwcms/_code_report_usage_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('report_writer_articles.php', 'brwcms/_code_report_writer_articles_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('resizer.php', 'brwcms/_code_resizer_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('rotating_images.php', 'brwcms/_code_rotating_images_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('save.php', 'brwcms/_code_save_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('save_ader_site_content.php', 'brwcms/_code_save_ader_site_content_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('save_banner.php', 'brwcms/_code_client_save_banner_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('save_banner.php', 'brwcms/_code_save_banner_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('save_banner2.php', 'brwcms/_code_save_banner2_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('save_bannerxx.php', 'brwcms/_code_client_save_bannerxx_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('save_category.php', 'brwcms/_code_save_category_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('save_client_profile.php', 'brwcms/_code_save_client_profile_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('save_client_profile.php', 'brwcms/_code_client_save_client_profile_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('save_news_draft.php', 'brwcms/_code_save_news_draft_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('save_poll.php', 'brwcms/_code_save_poll_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('save_poll_response.php', 'brwcms/_code_save_poll_response_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('save_poll_response2.php', 'brwcms/_code_save_poll_response2_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('save_quota.php', 'brwcms/_code_save_quota_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('save_quote.php', 'brwcms/_code_save_quote_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('save_segment.php', 'brwcms/_code_save_segment_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('save_task.php', 'brwcms/_code_save_task_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('save_user_manager.php', 'brwcms/_code_save_user_manager_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('save_user_profile.php', 'brwcms/_code_save_user_profile_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('save_user_sperms.php', 'brwcms/_code_save_user_sperms_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('save_writer_article.php', 'brwcms/_code_save_writer_article_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('search.php', 'brwcms/_code_search_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('search_results.php', 'brwcms/_code_search_results_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('segments.php', 'brwcms/_code_segments_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('sendmessage.php', 'brwcms/_code_sendmessage_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('sendpassword.php', 'brwcms/_code_sendpassword_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('send_article_evaluation.php', 'brwcms/_code_send_article_evaluation_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('sitemap.php', 'brwcms/_code_sitemap_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('submit_feedback.php', 'brwcms/_code_submit_feedback_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('submit_to_editor.php', 'brwcms/_code_submit_to_editor_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('submit_to_newsdirector.php', 'brwcms/_code_submit_to_newsdirector_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('task_manager.php', 'brwcms/_code_task_manager_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('template.configuration.php', 'brwcms/_code_template_configuration_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('template_manager2.php', 'brwcms/_code_template_manager2_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('temp_view_article-detail.php', 'brwcms/_code_temp_view_article-detail_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('test3.php', 'brwcms/_code_test3_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('top_menu.php', 'brwcms/_code_top_menu_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('unpublish_article.php', 'brwcms/_code_unpublish_article_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('untitled.php', 'brwcms/_code_untitled_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('update_template.php', 'brwcms/_code_update_template_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('uploadimage.php', 'brwcms/_code_popups_uploadimage_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('uploadimage2.php', 'brwcms/_code_popups_uploadimage2_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('uploadimage3.php', 'brwcms/_code_popups_uploadimage3_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('uploadimage4.php', 'brwcms/_code_popups_uploadimage4_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('user_access_permissions.php', 'brwcms/_code_user_access_permissions_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('user_log_manager.php', 'brwcms/_code_user_log_manager_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('user_manager.php', 'brwcms/_code_user_manager_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('user_manager2.php', 'brwcms/_code_user_manager2_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('user_menu.php', 'brwcms/_code_user_menu_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('user_menu2.php', 'brwcms/_code_user_menu2_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('user_profile.php', 'brwcms/_code_user_profile_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('user_profile_manager.php', 'brwcms/_code_user_profile_manager_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('user_stage_manager.php', 'brwcms/_code_user_stage_manager_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('utilities.php', 'brwcms/_htdocs_phpdoc_docbuilder_includes_utilities_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('view_access_perm.php', 'brwcms/_code_view_access_perm_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('view_ader_content.php', 'brwcms/_code_view_ader_content_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('view_article.php', 'brwcms/_code_view_article_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('view_article_detail.php', 'brwcms/_code_view_article_detail_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('view_article_detailxx.php', 'brwcms/_code_view_article_detailxx_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('view_article_versions.php', 'brwcms/_code_view_article_versions_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('view_article_versions_detail.php', 'brwcms/_code_view_article_versions_detail_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('view_banner.php', 'brwcms/_code_client_view_banner_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('view_banner.php', 'brwcms/_code_view_banner_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('view_bannerxx.php', 'brwcms/_code_client_view_bannerxx_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('view_category_detail.php', 'brwcms/_code_view_category_detail_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('view_feedback_detail.php', 'brwcms/_code_view_feedback_detail_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('view_messages.php', 'brwcms/_code_client_view_messages_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('view_messages.php', 'brwcms/_code_view_messages_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('view_message_detail.php', 'brwcms/_code_client_view_message_detail_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('view_message_detail.php', 'brwcms/_code_view_message_detail_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('view_message_detail2.php', 'brwcms/_code_view_message_detail2_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('view_more_poll.php', 'brwcms/_code_view_more_poll_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('view_poll_detail.php', 'brwcms/_code_view_poll_detail_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('view_quote_detail.php', 'brwcms/_code_view_quote_detail_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('view_segment_detail.php', 'brwcms/_code_view_segment_detail_php.html');
+				tree_file.add(file);
+							var file = new WebFXTreeItem('view_task_detail.php', 'brwcms/_code_view_task_detail_php.html');
+				tree_file.add(file);
+				
+			tree.add(tree_file);
+		
+	
+document.write(tree);
+}
+</script>
+</div>
+<p class="notes">
+	Generated by 
+	<a href="http://www.phpdoc.org" target="_blank">phpDocumentor <span class="field">1.3.0RC4</span></a>
+</p>
+</body>
+</html>

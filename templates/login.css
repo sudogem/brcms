@@ -1,0 +1,103 @@
+body {
+	background-color:#738094;
+	background-color:#FFFFFF;
+}
+a{
+	text-decoration:none;
+	color:#FF0000;
+}
+a:hover{
+	text-decoration:underline;
+	color:#FF0000;
+}
+#login_header {
+	float:left;
+	width:100%;
+	height: 90px;
+	border:0px solid red;
+	margin: 0 0 0 0;
+	background:url(../admin/images/admin-h10.png) repeat;
+	border-bottom:4px solid #FFB10D;
+
+}
+#login_container{
+	margin-left:300px;
+}
+#login{
+	xwidth:450px;
+	padding:5px;
+	margin-top:150px;
+	background-color: #F1F3F5;
+	border: 1px solid #ccc;
+	text-align:left;
+}
+.imageleft{
+	float:left;
+	margin:2px;
+	text-align:center;
+}
+.icon {
+	background-color:#F1F3F5;
+	border:1px solid #ccc;
+}
+#login-label{
+	font:normal 12px Verdana, Arial, Helvetica, sans-serif;
+}
+.login_desc{
+	font:normal 12px 	 Arial, Helvetica, sans-serif;
+	padding:4px;
+	float: left;
+	margin:0px;
+}
+.tcaptions {
+	color:#FF9A1E;
+	color:#DE2001;
+	font:bold 12px  Arial, Helvetica, sans-serif;
+	margin:0px;
+	text-align:center;
+}
+.login-header{
+	background-color:#CB2001;
+	color:#fff;
+	font:normal 20px Verdana, Arial, Helvetica, sans-serif;
+	border-top:3px solid #FFB10D;
+}
+#login_txtbox{
+	float: left;	
+	padding:10px;	
+	width:300px;
+	border: 1px solid #ccc;
+	background-color:#E9ECEF;
+	padding-bottom:10px;	
+}
+.login_btn{
+	background-color:#E9ECEF;
+	width:90px;
+	border:1px solid #333;
+	font-weight:bold;
+	color: #ff6600;
+	font-family: Arial, Hevlvetica, sans-serif;
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold;
+	width: auto;
+	background: url(../admin/images/button_bg.png) repeat-x;
+	padding: 0px 5px;
+	line-height: 18px !important;
+	line-height: 16px;
+	height: 26px !important;
+	height: 24px;
+	margin: 1px;	
+}
+.tlogin {
+	margin: 100px auto;
+	background-color: #F1F3F5;
+	border: 1px solid #ccc;
+	font:normal 12px Verdana, Arial, Helvetica, sans-serif;
+}
+.clear{
+	clear: both;
+}
+.inputbox{
+	border:1px solid #ccc;
+}

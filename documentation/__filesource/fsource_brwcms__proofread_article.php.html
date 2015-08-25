@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>File Source for proofread_article.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+											</head>
+		<body>
+						<h1>Source for file proofread_article.php</h1>
+<p>Documentation is available at <a href="../brwcms/_code_proofread_article_php.html">proofread_article.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a><span class="src-inc">include</span><span class="src-sym">( </span><span class="src-str">'configuration.php' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a3"></a>require <span class="src-sym">( </span><span class="src-str">'coreclass.php' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a4"></a><span class="src-doc">/** ensure dis file is being included by a parent file -- {mh}*/</span></li>
+<li><a name="a5"></a><span class="src-sym">(</span><span class="src-str">'{mh}'</span><span class="src-sym">) </span><span class="src-key">or </span><span class="src-key">die</span><span class="src-sym">(</span><span class="src-str">&quot;Direct access to this location is not allowed :-)&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a6"></a>&nbsp;</li>
+<li><a name="a7"></a><a href="http://www.php.net/session_start">session_start</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a8"></a><span class="src-comm">// if user is not login..redirect him to login page </span></li>
+<li><a name="a9"></a><span class="src-key">if </span><span class="src-sym">( </span><span class="src-sym">!</span>isset<span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'login'</span><span class="src-sym">]</span><span class="src-sym">)) </span><span class="src-sym">{ </span></li>
+<li><a name="a10"></a>    <a href="http://www.php.net/header">header</a><span class="src-sym">(</span><span class="src-str">'Location: login.php'</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a11"></a><span class="src-sym">}</span></li>
+<li><a name="a12"></a>&nbsp;</li>
+<li><a name="a13"></a><span class="src-key">if </span><span class="src-sym">(</span>isset<span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'login'</span><span class="src-sym">]</span><span class="src-sym">)) </span><span class="src-sym">{</span></li>
+<li><a name="a14"></a>    <span class="src-var">$userID </span>= <span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'userID'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a15"></a>    <span class="src-var">$usertype </span>= <span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'usertype'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a16"></a><span class="src-sym">}</span></li>
+<li><a name="a17"></a>&nbsp;</li>
+<li><a name="a18"></a><span class="src-var">$db </span>= <span class="src-key">new </span><span class="src-id"><a href="../brwcms/database.html">database</a></span><span class="src-sym">;</span></li>
+<li><a name="a19"></a>&nbsp;</li>
+<li><a name="a20"></a>&nbsp;</li>
+<li><a name="a21"></a>&nbsp;</li>
+<li><a name="a22"></a>&nbsp;</li>
+<li><a name="a23"></a><span class="src-var">$result_data </span>= <span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a24"></a><span class="src-comm">//$result_data = query_data();</span></li>
+<li><a name="a25"></a>&nbsp;</li>
+<li><a name="a26"></a><span class="src-var">$sql </span>= <span class="src-str">&quot; select * from article_versions av &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a27"></a><span class="src-var">$sql </span>.= <span class="src-str">&quot; where av.stageID = 3 &quot;</span><span class="src-sym">; </span><span class="src-comm">//'3', 'editing', 'the story is written and is ready for review'</span></li>
+<li><a name="a28"></a><span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-sym">(</span><span class="src-var">$result </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">( </span><span class="src-var">$sql </span><span class="src-sym">))) </span><span class="src-sym">{</span></li>
+<li><a name="a29"></a>    <span class="src-key">die</span><span class="src-sym">(</span><span class="src-str">'Error:'</span>. <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">error</span><span class="src-sym">(</span><span class="src-sym">))</span><span class="src-sym">;</span></li>
+<li><a name="a30"></a><span class="src-sym">}</span></li>
+<li><a name="a31"></a>print <span class="src-var">$sql</span><span class="src-sym">;</span></li>
+<li><a name="a32"></a><span class="src-var">$proofread_article </span>= <span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a33"></a><span class="src-key">while </span><span class="src-sym">( </span><span class="src-var">$row </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">fetcharray</span><span class="src-sym">(</span><span class="src-sym">) ) </span><span class="src-sym">{</span></li>
+<li><a name="a34"></a>    <span class="src-var">$proofread_article</span><span class="src-sym">[</span><span class="src-sym">] </span>= <span class="src-var">$row</span><span class="src-sym">;</span></li>
+<li><a name="a35"></a><span class="src-sym">}</span></li>
+<li><a name="a36"></a><span class="src-var">$n </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">getnumrows</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a37"></a><span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">freeresult</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a38"></a>&nbsp;</li>
+<li><a name="a39"></a><span class="src-comm">//print_r($proofread_article);</span></li>
+<li><a name="a40"></a>&nbsp;</li>
+<li><a name="a41"></a><span class="src-comm">// start compiling the page..</span></li>
+<li><a name="a42"></a><span class="src-var">$tpl </span>= <span class="src-key">new </span><span class="src-id"><a href="../brwcms/template_parser.html">template_parser</a></span><span class="src-sym">( </span><span class="src-str">'../templates/display_article.tpl.php' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a43"></a><span class="src-var">$tags </span>= <span class="src-key">array</span><span class="src-sym">(</span></li>
+<li><a name="a44"></a>        <span class="src-str">'{ARTICLE_TITLE}'     </span>=&gt; <span class="src-str">'Article Title'</span><span class="src-sym">,</span></li>
+<li><a name="a45"></a>        <span class="src-str">'{CATEGORY}'         </span>=&gt; <span class="src-str">'Category'</span><span class="src-sym">,</span></li>
+<li><a name="a46"></a>        <span class="src-str">'{AUTHOR}'             </span>=&gt; <span class="src-str">'Author'</span><span class="src-sym">,</span></li>
+<li><a name="a47"></a>        <span class="src-str">'{DATE}'             </span>=&gt; <span class="src-str">'Date'</span><span class="src-sym">,</span></li>
+<li><a name="a48"></a>        <span class="src-str">'{TABLE_DATA}' </span>=&gt; <span class="src-var">$row_data</span></li>
+<li><a name="a49"></a>        <span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a50"></a><span class="src-var">$tpl</span><span class="src-sym">-&gt;</span><span class="src-id">parse_template</span><span class="src-sym">( </span><span class="src-var">$tags </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a51"></a>print <span class="src-var">$tpl</span><span class="src-sym">-&gt;</span><span class="src-id">display</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a52"></a>&nbsp;</li>
+<li><a name="a53"></a>print <span class="src-str">'&lt;h1&gt;You have ' </span>. <span class="src-var">$n  </span>. <span class="src-str">' article(s) to be reviewed.&lt;/h1&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a54"></a><a href="http://www.php.net/print_r">print_r</a><span class="src-sym">(</span><span class="src-var">$proofread_article</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a55"></a>&nbsp;</li>
+<li><a name="a56"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Wed,  5 Apr 2006 20:09:42 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC4</a>
+	</p>
+	</body>
+</html>

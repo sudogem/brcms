@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs for page globals.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="file-name">/globals.php</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+											<a href="#sec-constants">Constants</a>
+										</div>
+	<div class="info-box-body">	
+		<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">filesource:</span> <a href="..//__filesource/fsource_brwcms__globals.php.html">Source Code for this file</a></li>
+			</ul>
+		
+			</div>
+</div>
+		
+
+	
+	<a name="sec-constants"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+									<span class="disabled">Constants</span>
+											</div>
+		<div class="info-box-body">	
+			<a name="defineVIEW_ACCESS_PERM_URL"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">VIEW_ACCESS_PERM_URL</span> = 'view_access_perm.php?userID='
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__globals.php.html#a14">14</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+		
+</div>
+<a name="defineVIEW_ADER_CONTENT_URL"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">VIEW_ADER_CONTENT_URL</span> = 'view_ader_content.php?id='
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__globals.php.html#a19">19</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+		
+</div>
+<a name="defineVIEW_ARTICLE_URL"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">VIEW_ARTICLE_URL</span> = 'view_article_detail.php?articleID='
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__globals.php.html#a3">3</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+		
+</div>
+<a name="defineVIEW_ARTICLE_URL2"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">VIEW_ARTICLE_URL2</span> = 'view_article.php?articleID='
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__globals.php.html#a13">13</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+		
+</div>
+<a name="defineVIEW_BANNER_URL"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">VIEW_BANNER_URL</span> = 'view_banner.php?bannerID='
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__globals.php.html#a9">9</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+		
+</div>
+<a name="defineVIEW_CATEGORY_DETAIL_URL"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">VIEW_CATEGORY_DETAIL_URL</span> = 'view_category_detail.php?categoryID='
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__globals.php.html#a12">12</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+		
+</div>
+<a name="defineVIEW_CATEGORY_URL"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">VIEW_CATEGORY_URL</span> = 'category.php?categoryID='
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__globals.php.html#a10">10</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+		
+</div>
+<a name="defineVIEW_CLIENT_PROFILE_URL"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">VIEW_CLIENT_PROFILE_URL</span> = 'client_profile.php?clientID='
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__globals.php.html#a8">8</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+		
+</div>
+<a name="defineVIEW_FEEDBACK_DETAIL"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">VIEW_FEEDBACK_DETAIL</span> = 'view_feedback_detail.php?feedbackID='
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__globals.php.html#a16">16</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+		
+</div>
+<a name="defineVIEW_MESSAGE_URL"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">VIEW_MESSAGE_URL</span> = 'view_message_detail.php?messageID='
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__globals.php.html#a4">4</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+		
+</div>
+<a name="defineVIEW_MESSAGE_URL2"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">VIEW_MESSAGE_URL2</span> = 'view_message_detail2.php?messageID='
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__globals.php.html#a5">5</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+		
+</div>
+<a name="defineVIEW_POLL_DETAIL"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">VIEW_POLL_DETAIL</span> = 'view_poll_detail.php?topic_id='
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__globals.php.html#a15">15</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+		
+</div>
+<a name="defineVIEW_PROFILE_URL"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">VIEW_PROFILE_URL</span> = 'user_profile.php?userID='
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__globals.php.html#a6">6</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+		
+</div>
+<a name="defineVIEW_PROFILE_URL_MANAGER"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">VIEW_PROFILE_URL_MANAGER</span> = 'user_profile_manager.php?userID='
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__globals.php.html#a7">7</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+		
+</div>
+<a name="defineVIEW_QUOTA"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">VIEW_QUOTA</span> = 'edit_quota.php?quotaID='
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__globals.php.html#a18">18</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+		
+</div>
+<a name="defineVIEW_QUOTE_DETAIL_URL"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">VIEW_QUOTE_DETAIL_URL</span> = 'view_quote_detail.php?quoteID='
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__globals.php.html#a11">11</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+		
+</div>
+<a name="defineVIEW_TASK_URL"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="const-title">
+			<span class="const-name">VIEW_TASK_URL</span> = 'view_task_detail.php?taskID='
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__globals.php.html#a17">17</a></span>)
+		</span>
+	</div>
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+		
+</div>
+		</div>
+	</div>
+	
+	
+	
+	<p class="notes" id="credit">
+		Documentation generated on Wed,  5 Apr 2006 20:09:31 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC4</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>File Source for globals.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+											</head>
+		<body>
+						<h1>Source for file globals.php</h1>
+<p>Documentation is available at <a href="../brwcms/_code_globals_php.html">globals.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a><span class="src-comm">// URL CONSTANTS</span></li>
+<li><a name="a3"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'VIEW_ARTICLE_URL'</span><span class="src-sym">, </span><span class="src-str">'view_article_detail.php?articleID='</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a4"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'VIEW_MESSAGE_URL'</span><span class="src-sym">, </span><span class="src-str">'view_message_detail.php?messageID='</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a5"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'VIEW_MESSAGE_URL2'</span><span class="src-sym">, </span><span class="src-str">'view_message_detail2.php?messageID='</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a6"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'VIEW_PROFILE_URL'</span><span class="src-sym">, </span><span class="src-str">'user_profile.php?userID=' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a7"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'VIEW_PROFILE_URL_MANAGER'</span><span class="src-sym">, </span><span class="src-str">'user_profile_manager.php?userID=' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a8"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'VIEW_CLIENT_PROFILE_URL'</span><span class="src-sym">, </span><span class="src-str">'client_profile.php?clientID=' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a9"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'VIEW_BANNER_URL'</span><span class="src-sym">, </span><span class="src-str">'view_banner.php?bannerID=' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a10"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'VIEW_CATEGORY_URL'</span><span class="src-sym">, </span><span class="src-str">'category.php?categoryID='</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a11"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'VIEW_QUOTE_DETAIL_URL'</span><span class="src-sym">, </span><span class="src-str">'view_quote_detail.php?quoteID='</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a12"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'VIEW_CATEGORY_DETAIL_URL'</span><span class="src-sym">, </span><span class="src-str">'view_category_detail.php?categoryID='</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a13"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'VIEW_ARTICLE_URL2'</span><span class="src-sym">, </span><span class="src-str">'view_article.php?articleID=' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a14"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'VIEW_ACCESS_PERM_URL'</span><span class="src-sym">, </span><span class="src-str">'view_access_perm.php?userID=' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a15"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'VIEW_POLL_DETAIL'</span><span class="src-sym">, </span><span class="src-str">'view_poll_detail.php?topic_id='</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a16"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'VIEW_FEEDBACK_DETAIL'</span><span class="src-sym">, </span><span class="src-str">'view_feedback_detail.php?feedbackID='</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a17"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'VIEW_TASK_URL'</span><span class="src-sym">, </span><span class="src-str">'view_task_detail.php?taskID='</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a18"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'VIEW_QUOTA'</span><span class="src-sym">, </span><span class="src-str">'edit_quota.php?quotaID=' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a19"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'VIEW_ADER_CONTENT_URL'</span><span class="src-sym">, </span><span class="src-str">'view_ader_content.php?id=' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a20"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Wed,  5 Apr 2006 20:09:31 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC4</a>
+	</p>
+	</body>
+</html>

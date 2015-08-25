@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>File Source for logout2.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+											</head>
+		<body>
+						<h1>Source for file logout2.php</h1>
+<p>Documentation is available at <a href="../brwcms/_code_logout2_php.html">logout2.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a><span class="src-inc">include</span><span class="src-sym">( </span><span class="src-str">'configuration.php' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a3"></a>require <span class="src-sym">( </span><span class="src-str">'coreclass.php' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a4"></a><a href="http://www.php.net/session_start">session_start</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a5"></a><span class="src-comm">// Log the activity</span></li>
+<li><a name="a6"></a><span class="src-var">$action </span>= <span class="src-key">new </span><span class="src-id"><a href="../brwcms/activity.html">activity</a></span><span class="src-sym">;</span></li>
+<li><a name="a7"></a><span class="src-var">$action</span><span class="src-sym">-&gt;</span><span class="src-id">track_activity</span><span class="src-sym">( </span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'userID'</span><span class="src-sym">]</span><span class="src-sym">, </span><span class="src-var">$action</span><span class="src-sym">-&gt;</span><span class="src-id">logout</span><span class="src-sym">, </span><span class="src-str">'--' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a8"></a><span class="src-comm">// log-out the user</span></li>
+<li><a name="a9"></a><span class="src-var">$auth </span>= <span class="src-key">new </span><span class="src-id"><a href="../brwcms/user_authentication.html">user_authentication</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a10"></a><span class="src-var">$auth</span><span class="src-sym">-&gt;</span><span class="src-id">set_User_logout</span><span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'userID'</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a11"></a><span class="src-var">$auth</span><span class="src-sym">-&gt;</span><span class="src-id">logout</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a12"></a><a href="http://www.php.net/header">header</a><span class="src-sym">( </span><span class="src-str">'Location: index.php' </span><span class="src-sym">)</span><span class="src-sym">; </span><span class="src-comm">// back to main page</span></li>
+<li><a name="a13"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Wed,  5 Apr 2006 20:09:33 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC4</a>
+	</p>
+	</body>
+</html>

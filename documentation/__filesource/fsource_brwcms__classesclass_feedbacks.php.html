@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>File Source for class_feedbacks.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+											</head>
+		<body>
+						<h1>Source for file class_feedbacks.php</h1>
+<p>Documentation is available at <a href="../brwcms/_code_classes_class_feedbacks_php.html">class_feedbacks.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a><span class="src-comm">/* @className   : feedbacks</span></li>
+<li><a name="a3"></a><span class="src-comm"> * @purpose     : All about feedbacks</span></li>
+<li><a name="a4"></a><span class="src-comm"> * @version     : 3.10 14-MARCH-2005 4:52 AM</span></li>
+<li><a name="a5"></a><span class="src-comm"> * @author         : mindh4c]k[</span></li>
+<li><a name="a6"></a><span class="src-comm"> * @todaysQuotes: what makes 1+1=2 ? </span></li>
+<li><a name="a7"></a><span class="src-comm"> */</span></li>
+<li><a name="a8"></a><span class="src-key">class </span><a href="../brwcms/feedbacks.html">feedbacks</a> <span class="src-key">extends </span><a href="../brwcms/database.html#methoddatabase">database</a> <span class="src-sym">{</span></li>
+<li><a name="a9"></a>    <span class="src-comm">/*</span></li>
+<li><a name="a10"></a><span class="src-comm">     * feedbacks constructor</span></li>
+<li><a name="a11"></a><span class="src-comm">     */</span></li>
+<li><a name="a12"></a>    <span class="src-key">function </span><a href="../brwcms/feedbacks.html#methodfeedbacks">feedbacks</a><span class="src-sym">(</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a13"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/database.html#methoddatabase">database</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a14"></a>    <span class="src-sym">}</span></li>
+<li><a name="a15"></a>&nbsp;</li>
+<li><a name="a16"></a>    <span class="src-key">function </span><a href="../brwcms/feedbacks.html#methodsend_feedbacks">send_feedbacks</a><span class="src-sym">( </span><span class="src-var">$author</span><span class="src-sym">, </span><span class="src-var">$email</span><span class="src-sym">, </span><span class="src-var">$feedbacks</span><span class="src-sym">, </span><span class="src-var">$category </span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a17"></a>        <span class="src-var">$date </span>= <a href="http://www.php.net/time">time</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a18"></a>        <span class="src-var">$sql </span>= <span class="src-str">&quot; insert into feedbacks &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a19"></a>        <span class="src-var">$sql </span>.= <span class="src-str">&quot;</span><span class="src-str"> <span class="src-id">values</span>( '', '<span class="src-var">$date</span>', '<span class="src-var">$author</span>', '<span class="src-var">$email</span>', '<span class="src-var">$feedbacks</span>', '<span class="src-id">Unread</span>', '<span class="src-var">$category</span>' )</span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a20"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/database.html#methodquery">query</a><span class="src-sym">(</span><span class="src-var">$sql</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a21"></a>    <span class="src-sym">}</span></li>
+<li><a name="a22"></a>    </li>
+<li><a name="a23"></a>    <span class="src-comm">/* View all unread feedback of the user</span></li>
+<li><a name="a24"></a><span class="src-comm">     * @param int userID</span></li>
+<li><a name="a25"></a><span class="src-comm">     */</span></li>
+<li><a name="a26"></a>    <span class="src-key">function </span><a href="../brwcms/feedbacks.html#methodview_unread_feedbacks">view_unread_feedbacks</a> <span class="src-sym">( </span><span class="src-var">$cat </span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a27"></a>        <span class="src-var">$sql </span>= <span class="src-str">&quot; select * from feedbacks fb &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a28"></a>        <span class="src-var">$sql </span>.= <span class="src-str">&quot;</span><span class="src-str"> <span class="src-id">where</span> <span class="src-id">fb</span>.<span class="src-id">state</span>='<span class="src-id">Unread</span>' <span class="src-id">and</span> <span class="src-id">category</span>='<span class="src-var">$cat</span>' </span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a29"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/database.html#methodquery">query</a><span class="src-sym">(</span><span class="src-var">$sql</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a30"></a>        <span class="src-var">$unread_feedbacks </span>= <span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a31"></a>        <span class="src-key">while </span><span class="src-sym">( </span><span class="src-var">$unread_feedbacks</span><span class="src-sym">[</span><span class="src-sym">] </span>= <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/database.html#methodfetcharray">fetcharray</a><span class="src-sym">(</span><span class="src-sym">) )</span><span class="src-sym">; </span></li>
+<li><a name="a32"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/database.html#methodfreeresult">freeresult</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a33"></a>        <span class="src-key">return </span><span class="src-var">$unread_feedbacks</span><span class="src-sym">;</span></li>
+<li><a name="a34"></a>    <span class="src-sym">}</span></li>
+<li><a name="a35"></a>    </li>
+<li><a name="a36"></a>    <span class="src-comm">/* View all feedbacks posted by the user</span></li>
+<li><a name="a37"></a><span class="src-comm">     * @param int userID</span></li>
+<li><a name="a38"></a><span class="src-comm">     */</span></li>
+<li><a name="a39"></a>    <span class="src-key">function </span><a href="../brwcms/feedbacks.html#methodview_all_feedbacks">view_all_feedbacks</a> <span class="src-sym">( </span><span class="src-var">$category </span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a40"></a>        <span class="src-var">$sql </span>= <span class="src-str">&quot;</span><span class="src-str"> <span class="src-id">select</span> * <span class="src-id">from</span> <span class="src-id">feedbacks</span> <span class="src-id">where</span> <span class="src-id">category</span>='<span class="src-var">$category</span>' </span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a41"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/database.html#methodquery">query</a><span class="src-sym">(</span><span class="src-var">$sql</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a42"></a>        <span class="src-var">$all_feedbacks </span>= <span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a43"></a>        <span class="src-key">while </span><span class="src-sym">( </span><span class="src-var">$all_feedbacks</span><span class="src-sym">[</span><span class="src-sym">] </span>= <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/database.html#methodfetcharray">fetcharray</a><span class="src-sym">(</span><span class="src-sym">) )</span><span class="src-sym">; </span></li>
+<li><a name="a44"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/database.html#methodfreeresult">freeresult</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a45"></a>        <span class="src-key">return </span><span class="src-var">$all_feedbacks</span><span class="src-sym">;</span></li>
+<li><a name="a46"></a>    <span class="src-sym">}</span></li>
+<li><a name="a47"></a>    </li>
+<li><a name="a48"></a>    <span class="src-comm">/* Set the flag of the feedbacks 'Read' when the user click the feedbacks</span></li>
+<li><a name="a49"></a><span class="src-comm">     * @param int feedbackid</span></li>
+<li><a name="a50"></a><span class="src-comm">     */</span></li>
+<li><a name="a51"></a>    <span class="src-key">function </span><a href="../brwcms/feedbacks.html#methodset_read_feedback">set_read_feedback</a><span class="src-sym">( </span><span class="src-var">$feedbackID </span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a52"></a>        <span class="src-var">$sql </span>= <span class="src-str">&quot; update feedbacks &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a53"></a>        <span class="src-var">$sql </span>.= <span class="src-str">&quot; set state='Read' &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a54"></a>        <span class="src-var">$sql </span>.= <span class="src-str">&quot; where autoNumber = &quot; </span>. <a href="http://www.php.net/intval">intval</a><span class="src-sym">( </span><span class="src-var">$feedbackID </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a55"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/database.html#methodquery">query</a><span class="src-sym">(</span><span class="src-var">$sql</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a56"></a>    <span class="src-sym">}</span></li>
+<li><a name="a57"></a>&nbsp;</li>
+<li><a name="a58"></a>    <span class="src-comm">/* Display the message of the user given the msgID</span></li>
+<li><a name="a59"></a><span class="src-comm">     * @param int userID, int msgID</span></li>
+<li><a name="a60"></a><span class="src-comm">     */</span></li>
+<li><a name="a61"></a>    <span class="src-key">function </span><a href="../brwcms/feedbacks.html#methodread_feedback">read_feedback</a><span class="src-sym">( </span><span class="src-var">$feedbackID </span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a62"></a>        <span class="src-var">$sql </span>= <span class="src-str">&quot; select * from  feedbacks fb &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a63"></a>        <span class="src-var">$sql </span>.= <span class="src-str">&quot; where fb.autoNumber=&quot; </span>. <a href="http://www.php.net/intval">intval</a><span class="src-sym">( </span><span class="src-var">$feedbackID </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a64"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/database.html#methodquery">query</a><span class="src-sym">(</span><span class="src-var">$sql</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a65"></a>        <span class="src-var">$read_message </span>= <span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a66"></a>        <span class="src-key">while </span><span class="src-sym">( </span><span class="src-var">$read_message</span><span class="src-sym">[</span><span class="src-sym">] </span>= <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/database.html#methodfetcharray">fetcharray</a><span class="src-sym">(</span><span class="src-sym">) )</span><span class="src-sym">; </span></li>
+<li><a name="a67"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/database.html#methodfreeresult">freeresult</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a68"></a>        <span class="src-key">return </span><span class="src-var">$read_message</span><span class="src-sym">;</span></li>
+<li><a name="a69"></a>    <span class="src-sym">}</span></li>
+<li><a name="a70"></a>&nbsp;</li>
+<li><a name="a71"></a>    <span class="src-comm">/* Delete the message of the user given the msgID</span></li>
+<li><a name="a72"></a><span class="src-comm">     * @param int userID, int msgID</span></li>
+<li><a name="a73"></a><span class="src-comm">     */</span></li>
+<li><a name="a74"></a>    <span class="src-key">function </span><a href="../brwcms/feedbacks.html#methoddelete_feedback">delete_feedback</a><span class="src-sym">( </span><span class="src-var">$feedbackID </span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a75"></a>        <span class="src-var">$sql </span>= <span class="src-str">&quot; delete from feedbacks &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a76"></a>        <span class="src-var">$sql </span>.= <span class="src-str">&quot; where autoNumber =&quot; </span>. <a href="http://www.php.net/intval">intval</a><span class="src-sym">( </span><span class="src-var">$feedbackID </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a77"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/database.html#methodquery">query</a><span class="src-sym">(</span><span class="src-var">$sql</span><span class="src-sym">))</span><span class="src-sym">{</span></li>
+<li><a name="a78"></a>            <span class="src-key">return </span><span class="src-id">true</span><span class="src-sym">;</span></li>
+<li><a name="a79"></a>        <span class="src-sym">}</span></li>
+<li><a name="a80"></a>        <span class="src-key">else</span><span class="src-sym">{</span></li>
+<li><a name="a81"></a>            <span class="src-key">return </span><span class="src-id">false</span><span class="src-sym">;            </span></li>
+<li><a name="a82"></a>        <span class="src-sym">}</span></li>
+<li><a name="a83"></a>    <span class="src-sym">}</span></li>
+<li><a name="a84"></a><span class="src-sym">}</span></li>
+<li><a name="a85"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Wed,  5 Apr 2006 20:09:14 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC4</a>
+	</p>
+	</body>
+</html>

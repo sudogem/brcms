@@ -1,0 +1,1147 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>phpDocumentor Parser Errors and Warnings</title>
+			<link rel="stylesheet" href="media/stylesheet.css" />
+											</head>
+		<body>
+						<a href="#Post-parsing">Post-parsing</a><br>
+<a href="#actions.php">actions.php</a><br>
+<a href="#add_article.php">add_article.php</a><br>
+<a href="#add_banner.php">add_banner.php</a><br>
+<a href="#add_new_banner_clients.php">add_new_banner_clients.php</a><br>
+<a href="#add_new_category.php">add_new_category.php</a><br>
+<a href="#add_new_clients.php">add_new_clients.php</a><br>
+<a href="#add_new_poll.php">add_new_poll.php</a><br>
+<a href="#add_new_quota.php">add_new_quota.php</a><br>
+<a href="#add_new_quotes.php">add_new_quotes.php</a><br>
+<a href="#add_new_site_content.php">add_new_site_content.php</a><br>
+<a href="#add_new_task.php">add_new_task.php</a><br>
+<a href="#add_segments.php">add_segments.php</a><br>
+<a href="#add_user_profile.php">add_user_profile.php</a><br>
+<a href="#add_writer_article.php">add_writer_article.php</a><br>
+<a href="#ads.php">ads.php</a><br>
+<a href="#advertise.php">advertise.php</a><br>
+<a href="#all_live_articles.php">all_live_articles.php</a><br>
+<a href="#all_site_themes.php">all_site_themes.php</a><br>
+<a href="#archive.php">archive.php</a><br>
+<a href="#archive_manager.php">archive_manager.php</a><br>
+<a href="#article_reports.php">article_reports.php</a><br>
+<a href="#audit_trail.php">audit_trail.php</a><br>
+<a href="#backuprestore.php">backuprestore.php</a><br>
+<a href="#backup_restore_database.php">backup_restore_database.php</a><br>
+<a href="#banner_ads_manager.php">banner_ads_manager.php</a><br>
+<a href="#bug.php">bug.php</a><br>
+<a href="#category.php">category.php</a><br>
+<a href="#category_manager.php">category_manager.php</a><br>
+<a href="#check.php">check.php</a><br>
+<a href="#check_login.php">check_login.php</a><br>
+<a href="#class_activity.php">class_activity.php</a><br>
+<a href="#class_authenticate_user.php">class_authenticate_user.php</a><br>
+<a href="#class_database.php">class_database.php</a><br>
+<a href="#class_dbsettings.php">class_dbsettings.php</a><br>
+<a href="#class_document_generator.php">class_document_generator.php</a><br>
+<a href="#class_feedbacks.php">class_feedbacks.php</a><br>
+<a href="#class_gerger_timer.php">class_gerger_timer.php</a><br>
+<a href="#class_message.php">class_message.php</a><br>
+<a href="#class_online_tracker.php">class_online_tracker.php</a><br>
+<a href="#class_paging.php">class_paging.php</a><br>
+<a href="#class_quote_of_the_day.php">class_quote_of_the_day.php</a><br>
+<a href="#class_rotate_ads.php">class_rotate_ads.php</a><br>
+<a href="#class_search.php">class_search.php</a><br>
+<a href="#class_stockphoto.php">class_stockphoto.php</a><br>
+<a href="#class_template_parser.php">class_template_parser.php</a><br>
+<a href="#class_upload_image.php">class_upload_image.php</a><br>
+<a href="#class_validator.php">class_validator.php</a><br>
+<a href="#clients_manager.php">clients_manager.php</a><br>
+<a href="#client_profile.php">client_profile.php</a><br>
+<a href="#client_top_menu.php">client_top_menu.php</a><br>
+<a href="#client_window.php">client_window.php</a><br>
+<a href="#config.php">config.php</a><br>
+<a href="#configuration.php">configuration.php</a><br>
+<a href="#coreclass.php">coreclass.php</a><br>
+<a href="#corefunctions.php">corefunctions.php</a><br>
+<a href="#createnewfolder.php">createnewfolder.php</a><br>
+<a href="#create_graphs.php">create_graphs.php</a><br>
+<a href="#create_poll.php">create_poll.php</a><br>
+<a href="#create_poll_graph.php">create_poll_graph.php</a><br>
+<a href="#create_reports.php">create_reports.php</a><br>
+<a href="#credits.php">credits.php</a><br>
+<a href="#date.php">date.php</a><br>
+<a href="#db_fns.php">db_fns.php</a><br>
+<a href="#delete_backup.php">delete_backup.php</a><br>
+<a href="#delete_banner.php">delete_banner.php</a><br>
+<a href="#delete_category.php">delete_category.php</a><br>
+<a href="#delete_feedback.php">delete_feedback.php</a><br>
+<a href="#delete_image.php">delete_image.php</a><br>
+<a href="#delete_message.php">delete_message.php</a><br>
+<a href="#delete_poll.php">delete_poll.php</a><br>
+<a href="#delete_task.php">delete_task.php</a><br>
+<a href="#display_poll.php">display_poll.php</a><br>
+<a href="#display_report.php">display_report.php</a><br>
+<a href="#download_doc.php">download_doc.php</a><br>
+<a href="#edit_article.php">edit_article.php</a><br>
+<a href="#edit_article_version.php">edit_article_version.php</a><br>
+<a href="#edit_category.php">edit_category.php</a><br>
+<a href="#edit_client_profile.php">edit_client_profile.php</a><br>
+<a href="#edit_imageinfo.php">edit_imageinfo.php</a><br>
+<a href="#edit_my_banners.php">edit_my_banners.php</a><br>
+<a href="#edit_other_content.php">edit_other_content.php</a><br>
+<a href="#edit_poll.php">edit_poll.php</a><br>
+<a href="#edit_quota.php">edit_quota.php</a><br>
+<a href="#edit_quote.php">edit_quote.php</a><br>
+<a href="#edit_task.php">edit_task.php</a><br>
+<a href="#edit_user_profile.php">edit_user_profile.php</a><br>
+<a href="#edit_user_profile_manager.php">edit_user_profile_manager.php</a><br>
+<a href="#edit_writer_article.php">edit_writer_article.php</a><br>
+<a href="#external_source.php">external_source.php</a><br>
+<a href="#external_source_int.php">external_source_int.php</a><br>
+<a href="#failed.php">failed.php</a><br>
+<a href="#feedback.php">feedback.php</a><br>
+<a href="#feedback_form.php">feedback_form.php</a><br>
+<a href="#feedback_manager.php">feedback_manager.php</a><br>
+<a href="#footer.php">footer.php</a><br>
+<a href="#functions_query_data.php">functions_query_data.php</a><br>
+<a href="#globals.php">globals.php</a><br>
+<a href="#global_configuration.php">global_configuration.php</a><br>
+<a href="#global_configuration2.php">global_configuration2.php</a><br>
+<a href="#help.php">help.php</a><br>
+<a href="#help2.php">help2.php</a><br>
+<a href="#image_manager.php">image_manager.php</a><br>
+<a href="#index.php">index.php</a><br>
+<a href="#list_poll_survey.php">list_poll_survey.php</a><br>
+<a href="#list_poll_topics.php">list_poll_topics.php</a><br>
+<a href="#login.php">login.php</a><br>
+<a href="#logout.php">logout.php</a><br>
+<a href="#logout2.php">logout2.php</a><br>
+<a href="#lostpassword.php">lostpassword.php</a><br>
+<a href="#main_content2.php">main_content2.php</a><br>
+<a href="#md5.php">md5.php</a><br>
+<a href="#message_archive_manager.php">message_archive_manager.php</a><br>
+<a href="#my_articles2.php">my_articles2.php</a><br>
+<a href="#my_banners.php">my_banners.php</a><br>
+<a href="#my_tasks.php">my_tasks.php</a><br>
+<a href="#new_article_evaluation.php">new_article_evaluation.php</a><br>
+<a href="#new_banner_clients.php">new_banner_clients.php</a><br>
+<a href="#new_private_message.php">new_private_message.php</a><br>
+<a href="#other_site_content.php">other_site_content.php</a><br>
+<a href="#other_sources.php">other_sources.php</a><br>
+<a href="#preview_article.php">preview_article.php</a><br>
+<a href="#preview_article_versions.php">preview_article_versions.php</a><br>
+<a href="#preview_audit_trail.php">preview_audit_trail.php</a><br>
+<a href="#preview_editor_reports.php">preview_editor_reports.php</a><br>
+<a href="#preview_image_details.php">preview_image_details.php</a><br>
+<a href="#preview_listofmembers.php">preview_listofmembers.php</a><br>
+<a href="#preview_newscontents.php">preview_newscontents.php</a><br>
+<a href="#preview_newsdirector_reports.php">preview_newsdirector_reports.php</a><br>
+<a href="#preview_publisher_reports.php">preview_publisher_reports.php</a><br>
+<a href="#preview_sitecontent.php">preview_sitecontent.php</a><br>
+<a href="#preview_writer_reports.php">preview_writer_reports.php</a><br>
+<a href="#proofread_article.php">proofread_article.php</a><br>
+<a href="#publish_article.php">publish_article.php</a><br>
+<a href="#query_fns.php">query_fns.php</a><br>
+<a href="#quota.php">quota.php</a><br>
+<a href="#quote_manager.php">quote_manager.php</a><br>
+<a href="#redirect.php">redirect.php</a><br>
+<a href="#remove_image.php">remove_image.php</a><br>
+<a href="#report_admin.php">report_admin.php</a><br>
+<a href="#report_editor_articles.php">report_editor_articles.php</a><br>
+<a href="#report_listofmembers.php">report_listofmembers.php</a><br>
+<a href="#report_newscontents.php">report_newscontents.php</a><br>
+<a href="#report_publisher_articles.php">report_publisher_articles.php</a><br>
+<a href="#report_usage.php">report_usage.php</a><br>
+<a href="#report_writer_articles.php">report_writer_articles.php</a><br>
+<a href="#resizer.php">resizer.php</a><br>
+<a href="#rotating_images.php">rotating_images.php</a><br>
+<a href="#save.php">save.php</a><br>
+<a href="#save_ader_site_content.php">save_ader_site_content.php</a><br>
+<a href="#save_banner.php">save_banner.php</a><br>
+<a href="#save_banner2.php">save_banner2.php</a><br>
+<a href="#save_bannerxx.php">save_bannerxx.php</a><br>
+<a href="#save_category.php">save_category.php</a><br>
+<a href="#save_client_profile.php">save_client_profile.php</a><br>
+<a href="#save_news_draft.php">save_news_draft.php</a><br>
+<a href="#save_poll.php">save_poll.php</a><br>
+<a href="#save_poll_response.php">save_poll_response.php</a><br>
+<a href="#save_poll_response2.php">save_poll_response2.php</a><br>
+<a href="#save_quota.php">save_quota.php</a><br>
+<a href="#save_quote.php">save_quote.php</a><br>
+<a href="#save_segment.php">save_segment.php</a><br>
+<a href="#save_task.php">save_task.php</a><br>
+<a href="#save_user_manager.php">save_user_manager.php</a><br>
+<a href="#save_user_profile.php">save_user_profile.php</a><br>
+<a href="#save_user_sperms.php">save_user_sperms.php</a><br>
+<a href="#save_writer_article.php">save_writer_article.php</a><br>
+<a href="#search.php">search.php</a><br>
+<a href="#search_results.php">search_results.php</a><br>
+<a href="#segments.php">segments.php</a><br>
+<a href="#sendmessage.php">sendmessage.php</a><br>
+<a href="#sendpassword.php">sendpassword.php</a><br>
+<a href="#send_article_evaluation.php">send_article_evaluation.php</a><br>
+<a href="#sitemap.php">sitemap.php</a><br>
+<a href="#submit_feedback.php">submit_feedback.php</a><br>
+<a href="#submit_to_editor.php">submit_to_editor.php</a><br>
+<a href="#submit_to_newsdirector.php">submit_to_newsdirector.php</a><br>
+<a href="#task_manager.php">task_manager.php</a><br>
+<a href="#template.configuration.php">template.configuration.php</a><br>
+<a href="#template_manager2.php">template_manager2.php</a><br>
+<a href="#temp_view_article-detail.php">temp_view_article-detail.php</a><br>
+<a href="#test3.php">test3.php</a><br>
+<a href="#top.php">top.php</a><br>
+<a href="#top_menu.php">top_menu.php</a><br>
+<a href="#unpublish_article.php">unpublish_article.php</a><br>
+<a href="#untitled.php">untitled.php</a><br>
+<a href="#update_template.php">update_template.php</a><br>
+<a href="#uploadimage.php">uploadimage.php</a><br>
+<a href="#uploadimage2.php">uploadimage2.php</a><br>
+<a href="#uploadimage3.php">uploadimage3.php</a><br>
+<a href="#uploadimage4.php">uploadimage4.php</a><br>
+<a href="#user_access_permissions.php">user_access_permissions.php</a><br>
+<a href="#user_log_manager.php">user_log_manager.php</a><br>
+<a href="#user_manager.php">user_manager.php</a><br>
+<a href="#user_manager2.php">user_manager2.php</a><br>
+<a href="#user_menu.php">user_menu.php</a><br>
+<a href="#user_menu2.php">user_menu2.php</a><br>
+<a href="#user_profile.php">user_profile.php</a><br>
+<a href="#user_profile_manager.php">user_profile_manager.php</a><br>
+<a href="#user_stage_manager.php">user_stage_manager.php</a><br>
+<a href="#utilities.php">utilities.php</a><br>
+<a href="#view_access_perm.php">view_access_perm.php</a><br>
+<a href="#view_ader_content.php">view_ader_content.php</a><br>
+<a href="#view_article.php">view_article.php</a><br>
+<a href="#view_article_detail.php">view_article_detail.php</a><br>
+<a href="#view_article_detailxx.php">view_article_detailxx.php</a><br>
+<a href="#view_article_versions.php">view_article_versions.php</a><br>
+<a href="#view_article_versions_detail.php">view_article_versions_detail.php</a><br>
+<a href="#view_banner.php">view_banner.php</a><br>
+<a href="#view_bannerxx.php">view_bannerxx.php</a><br>
+<a href="#view_category_detail.php">view_category_detail.php</a><br>
+<a href="#view_feedback_detail.php">view_feedback_detail.php</a><br>
+<a href="#view_messages.php">view_messages.php</a><br>
+<a href="#view_message_detail.php">view_message_detail.php</a><br>
+<a href="#view_message_detail2.php">view_message_detail2.php</a><br>
+<a href="#view_more_poll.php">view_more_poll.php</a><br>
+<a href="#view_poll_detail.php">view_poll_detail.php</a><br>
+<a href="#view_quote_detail.php">view_quote_detail.php</a><br>
+<a href="#view_segment_detail.php">view_segment_detail.php</a><br>
+<a href="#view_task_detail.php">view_task_detail.php</a><br>
+<a name="Post-parsing"></a>
+<h1>Post-parsing</h1>
+<h2>Warnings:</h2><br>
+<b>Warning</b> - Class DirNode parent HTML_TreeNode not found<br>
+<a name="aboutus.php"></a>
+<h1>aboutus.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 42</b> - File "D:\_basurahan\final\code\aboutus.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="actions.php"></a>
+<h1>actions.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 81</b> - File "C:\Program Files\Apache Group\Apache2\htdocs\phpdoc\docbuilder\actions.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="add_article.php"></a>
+<h1>add_article.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 143</b> - File "D:\_basurahan\final\code\add_article.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="add_banner.php"></a>
+<h1>add_banner.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 85</b> - File "D:\_basurahan\final\code\client\add_banner.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="add_new_banner_clients.php"></a>
+<h1>add_new_banner_clients.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 66</b> - File "D:\_basurahan\final\code\add_new_banner_clients.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="add_new_category.php"></a>
+<h1>add_new_category.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 34</b> - File "D:\_basurahan\final\code\add_new_category.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="add_new_clients.php"></a>
+<h1>add_new_clients.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 55</b> - File "D:\_basurahan\final\code\add_new_clients.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="add_new_poll.php"></a>
+<h1>add_new_poll.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 47</b> - File "D:\_basurahan\final\code\add_new_poll.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="add_new_quota.php"></a>
+<h1>add_new_quota.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 31</b> - File "D:\_basurahan\final\code\add_new_quota.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="add_new_quotes.php"></a>
+<h1>add_new_quotes.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - File "D:\_basurahan\final\code\add_new_quotes.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="add_new_site_content.php"></a>
+<h1>add_new_site_content.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - File "D:\_basurahan\final\code\add_new_site_content.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="add_new_task.php"></a>
+<h1>add_new_task.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 143</b> - File "D:\_basurahan\final\code\add_new_task.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="add_segments.php"></a>
+<h1>add_segments.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 74</b> - File "D:\_basurahan\final\code\add_segments.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="add_user_profile.php"></a>
+<h1>add_user_profile.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 90</b> - File "D:\_basurahan\final\code\add_user_profile.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="add_writer_article.php"></a>
+<h1>add_writer_article.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 122</b> - File "D:\_basurahan\final\code\add_writer_article.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="ads.php"></a>
+<h1>ads.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 124</b> - File "D:\_basurahan\final\code\ads.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="advertise.php"></a>
+<h1>advertise.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 113</b> - File "D:\_basurahan\final\code\advertise.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="all_live_articles.php"></a>
+<h1>all_live_articles.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 102</b> - File "D:\_basurahan\final\code\all_live_articles.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="all_site_themes.php"></a>
+<h1>all_site_themes.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 62</b> - File "D:\_basurahan\final\code\all_site_themes.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="archive.php"></a>
+<h1>archive.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 83</b> - File "D:\_basurahan\final\code\archive.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="archive_manager.php"></a>
+<h1>archive_manager.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 162</b> - File "D:\_basurahan\final\code\archive_manager.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="article_reports.php"></a>
+<h1>article_reports.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 156</b> - File "D:\_basurahan\final\code\article_reports.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="audit_trail.php"></a>
+<h1>audit_trail.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 248</b> - File "D:\_basurahan\final\code\audit_trail.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="backuprestore.php"></a>
+<h1>backuprestore.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 50</b> - File "D:\_basurahan\final\code\backuprestore.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="backup_restore_database.php"></a>
+<h1>backup_restore_database.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 117</b> - File "D:\_basurahan\final\code\backup_restore_database.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="banner_ads_manager.php"></a>
+<h1>banner_ads_manager.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 158</b> - File "D:\_basurahan\final\code\banner_ads_manager.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="bug.php"></a>
+<h1>bug.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 16</b> - File "D:\_basurahan\final\code\bug.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="category.php"></a>
+<h1>category.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 251</b> - File "D:\_basurahan\final\code\category.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="category_manager.php"></a>
+<h1>category_manager.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 110</b> - File "D:\_basurahan\final\code\category_manager.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="check.php"></a>
+<h1>check.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 210</b> - File "D:\_basurahan\final\code\check.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="check_login.php"></a>
+<h1>check_login.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 14</b> - File "D:\_basurahan\final\code\check_login.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="class_activity.php"></a>
+<h1>class_activity.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 1</b> - no @package tag was used in a DocBlock for class activity<br>
+<b>Warning on line 106</b> - File "D:\_basurahan\final\code\classes\class_activity.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="class_authenticate_user.php"></a>
+<h1>class_authenticate_user.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 9</b> - no @package tag was used in a DocBlock for class user_authentication<br>
+<b>Warning on line 108</b> - File "D:\_basurahan\final\code\classes\class_authenticate_user.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="class_database.php"></a>
+<h1>class_database.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 9</b> - no @package tag was used in a DocBlock for class database<br>
+<b>Warning on line 168</b> - File "D:\_basurahan\final\code\classes\class_database.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="class_dbsettings.php"></a>
+<h1>class_dbsettings.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 1</b> - no @package tag was used in a DocBlock for class dbsettings<br>
+<b>Warning on line 12</b> - File "D:\_basurahan\final\code\classes\class_dbsettings.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="class_document_generator.php"></a>
+<h1>class_document_generator.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 1</b> - no @package tag was used in a DocBlock for class document_generator<br>
+<b>Warning on line 15</b> - File "D:\_basurahan\final\code\classes\class_document_generator.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="class_feedbacks.php"></a>
+<h1>class_feedbacks.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 7</b> - no @package tag was used in a DocBlock for class feedbacks<br>
+<b>Warning on line 84</b> - File "D:\_basurahan\final\code\classes\class_feedbacks.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="class_gerger_timer.php"></a>
+<h1>class_gerger_timer.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class gerger_timer<br>
+<b>Warning on line 43</b> - File "D:\_basurahan\final\code\classes\class_gerger_timer.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="class_message.php"></a>
+<h1>class_message.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 9</b> - no @package tag was used in a DocBlock for class messages<br>
+<b>Warning on line 223</b> - File "D:\_basurahan\final\code\classes\class_message.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="class_online_tracker.php"></a>
+<h1>class_online_tracker.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 1</b> - no @package tag was used in a DocBlock for class online_tracker<br>
+<b>Warning on line 89</b> - File "D:\_basurahan\final\code\classes\class_online_tracker.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="class_paging.php"></a>
+<h1>class_paging.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class paging<br>
+<b>Warning on line 46</b> - File "D:\_basurahan\final\code\classes\class_paging.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="class_quote_of_the_day.php"></a>
+<h1>class_quote_of_the_day.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 6</b> - no @package tag was used in a DocBlock for class quote_of_the_day<br>
+<b>Warning on line 61</b> - File "D:\_basurahan\final\code\classes\class_quote_of_the_day.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="class_rotate_ads.php"></a>
+<h1>class_rotate_ads.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class rotate_banner<br>
+<b>Warning on line 81</b> - File "D:\_basurahan\final\code\classes\class_rotate_ads.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="class_search.php"></a>
+<h1>class_search.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 1</b> - no @package tag was used in a DocBlock for class search<br>
+<b>Warning on line 9</b> - File "D:\_basurahan\final\code\classes\class_search.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="class_stockphoto.php"></a>
+<h1>class_stockphoto.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - no @package tag was used in a DocBlock for class stockphoto<br>
+<b>Warning on line 122</b> - File "D:\_basurahan\final\code\classes\class_stockphoto.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="class_template_parser.php"></a>
+<h1>class_template_parser.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class template_parser<br>
+<b>Warning on line 38</b> - File "D:\_basurahan\final\code\classes\class_template_parser.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="class_upload_image.php"></a>
+<h1>class_upload_image.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 1</b> - no @package tag was used in a DocBlock for class upload_image<br>
+<b>Warning on line 132</b> - File "D:\_basurahan\final\code\classes\class_upload_image.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="class_validator.php"></a>
+<h1>class_validator.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 8</b> - no @package tag was used in a DocBlock for class Validator<br>
+<b>Warning on line 62</b> - File "D:\_basurahan\final\code\classes\class_validator.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="clients_manager.php"></a>
+<h1>clients_manager.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 141</b> - File "D:\_basurahan\final\code\clients_manager.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="client_profile.php"></a>
+<h1>client_profile.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 89</b> - File "D:\_basurahan\final\code\client\client_profile.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 96</b> - File "D:\_basurahan\final\code\client_profile.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="client_top_menu.php"></a>
+<h1>client_top_menu.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 18</b> - File "D:\_basurahan\final\code\client\client_top_menu.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="client_window.php"></a>
+<h1>client_window.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 27</b> - File "D:\_basurahan\final\code\client\client_window.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="config.php"></a>
+<h1>config.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 16</b> - File "D:\_basurahan\final\code\config.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="configuration.php"></a>
+<h1>configuration.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 15</b> - File "D:\_basurahan\final\code\configuration.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="coreclass.php"></a>
+<h1>coreclass.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 23</b> - File "D:\_basurahan\final\code\coreclass.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="corefunctions.php"></a>
+<h1>corefunctions.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 733</b> - File "D:\_basurahan\final\code\corefunctions.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="createnewfolder.php"></a>
+<h1>createnewfolder.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 51</b> - File "D:\_basurahan\final\code\popups\createnewfolder.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="create_graphs.php"></a>
+<h1>create_graphs.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 96</b> - File "D:\_basurahan\final\code\create_graphs.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="create_poll.php"></a>
+<h1>create_poll.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 35</b> - File "D:\_basurahan\final\code\create_poll.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="create_poll_graph.php"></a>
+<h1>create_poll_graph.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 4</b> - File "D:\_basurahan\final\code\create_poll_graph.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="create_reports.php"></a>
+<h1>create_reports.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 39</b> - File "D:\_basurahan\final\code\create_reports.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="credits.php"></a>
+<h1>credits.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 22</b> - File "D:\_basurahan\final\code\credits.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="date.php"></a>
+<h1>date.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 26</b> - File "D:\_basurahan\final\code\date.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="db_fns.php"></a>
+<h1>db_fns.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 18</b> - File "D:\_basurahan\final\code\db_fns.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="delete_backup.php"></a>
+<h1>delete_backup.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 6</b> - File "D:\_basurahan\final\code\delete_backup.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="delete_banner.php"></a>
+<h1>delete_banner.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 32</b> - File "D:\_basurahan\final\code\client\delete_banner.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 33</b> - File "D:\_basurahan\final\code\delete_banner.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="delete_category.php"></a>
+<h1>delete_category.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 38</b> - File "D:\_basurahan\final\code\delete_category.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="delete_feedback.php"></a>
+<h1>delete_feedback.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 30</b> - File "D:\_basurahan\final\code\delete_feedback.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="delete_image.php"></a>
+<h1>delete_image.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 40</b> - File "D:\_basurahan\final\code\delete_image.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="delete_message.php"></a>
+<h1>delete_message.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 57</b> - File "D:\_basurahan\final\code\delete_message.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="delete_poll.php"></a>
+<h1>delete_poll.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 65</b> - File "D:\_basurahan\final\code\delete_poll.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="delete_task.php"></a>
+<h1>delete_task.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 29</b> - File "D:\_basurahan\final\code\delete_task.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="display_poll.php"></a>
+<h1>display_poll.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 46</b> - File "D:\_basurahan\final\code\display_poll.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="display_report.php"></a>
+<h1>display_report.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 7</b> - File "D:\_basurahan\final\code\display_report.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="download_doc.php"></a>
+<h1>download_doc.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 28</b> - File "D:\_basurahan\final\code\download_doc.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="edit_article.php"></a>
+<h1>edit_article.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 286</b> - File "D:\_basurahan\final\code\edit_article.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="edit_article_version.php"></a>
+<h1>edit_article_version.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 106</b> - File "D:\_basurahan\final\code\edit_article_version.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="edit_category.php"></a>
+<h1>edit_category.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 36</b> - File "D:\_basurahan\final\code\edit_category.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="edit_client_profile.php"></a>
+<h1>edit_client_profile.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 50</b> - File "D:\_basurahan\final\code\client\edit_client_profile.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 85</b> - File "D:\_basurahan\final\code\edit_client_profile.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="edit_imageinfo.php"></a>
+<h1>edit_imageinfo.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 102</b> - File "D:\_basurahan\final\code\popups\edit_imageinfo.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="edit_my_banners.php"></a>
+<h1>edit_my_banners.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 10</b> - File "D:\_basurahan\final\code\client\edit_my_banners.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="edit_other_content.php"></a>
+<h1>edit_other_content.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 42</b> - File "D:\_basurahan\final\code\edit_other_content.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="edit_poll.php"></a>
+<h1>edit_poll.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 56</b> - File "D:\_basurahan\final\code\edit_poll.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="edit_quota.php"></a>
+<h1>edit_quota.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 52</b> - File "D:\_basurahan\final\code\edit_quota.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="edit_quote.php"></a>
+<h1>edit_quote.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 30</b> - File "D:\_basurahan\final\code\edit_quote.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="edit_task.php"></a>
+<h1>edit_task.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 161</b> - File "D:\_basurahan\final\code\edit_task.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="edit_user_profile.php"></a>
+<h1>edit_user_profile.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 159</b> - File "D:\_basurahan\final\code\edit_user_profile.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="edit_user_profile_manager.php"></a>
+<h1>edit_user_profile_manager.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 98</b> - File "D:\_basurahan\final\code\edit_user_profile_manager.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="edit_writer_article.php"></a>
+<h1>edit_writer_article.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 122</b> - File "D:\_basurahan\final\code\edit_writer_article.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="external_source.php"></a>
+<h1>external_source.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 132</b> - File "D:\_basurahan\final\code\external_source.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="external_source_int.php"></a>
+<h1>external_source_int.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 115</b> - File "D:\_basurahan\final\code\external_source_int.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="failed.php"></a>
+<h1>failed.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - File "D:\_basurahan\final\code\failed.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="feedback.php"></a>
+<h1>feedback.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 115</b> - File "D:\_basurahan\final\code\feedback.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="feedback_form.php"></a>
+<h1>feedback_form.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 42</b> - File "D:\_basurahan\final\code\feedback_form.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="feedback_manager.php"></a>
+<h1>feedback_manager.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 100</b> - File "D:\_basurahan\final\code\feedback_manager.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="footer.php"></a>
+<h1>footer.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 1</b> - File "D:\_basurahan\final\code\footer.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="functions_query_data.php"></a>
+<h1>functions_query_data.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 138</b> - File "D:\_basurahan\final\code\functions_query_data.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="globals.php"></a>
+<h1>globals.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 19</b> - File "D:\_basurahan\final\code\globals.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="global_configuration.php"></a>
+<h1>global_configuration.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 0</b> - File "D:\_basurahan\final\code\global_configuration.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="global_configuration2.php"></a>
+<h1>global_configuration2.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 10</b> - File "D:\_basurahan\final\code\global_configuration2.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="help.php"></a>
+<h1>help.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 0</b> - File "D:\_basurahan\final\code\help.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="help2.php"></a>
+<h1>help2.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 10</b> - File "D:\_basurahan\final\code\help2.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="image_manager.php"></a>
+<h1>image_manager.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 153</b> - File "D:\_basurahan\final\code\image_manager.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="index.php"></a>
+<h1>index.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 69</b> - File "D:\_basurahan\final\code\index.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="list_poll_survey.php"></a>
+<h1>list_poll_survey.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 138</b> - File "D:\_basurahan\final\code\list_poll_survey.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="list_poll_topics.php"></a>
+<h1>list_poll_topics.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 31</b> - File "D:\_basurahan\final\code\list_poll_topics.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="login.php"></a>
+<h1>login.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 17</b> - File "D:\_basurahan\final\code\login.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 40</b> - File "D:\_basurahan\final\code\client\login.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="logout.php"></a>
+<h1>logout.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 18</b> - File "D:\_basurahan\final\code\client\logout.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="logout2.php"></a>
+<h1>logout2.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 12</b> - File "D:\_basurahan\final\code\logout2.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="lostpassword.php"></a>
+<h1>lostpassword.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 11</b> - File "D:\_basurahan\final\code\lostpassword.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="main_content2.php"></a>
+<h1>main_content2.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 332</b> - File "D:\_basurahan\final\code\main_content2.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="md5.php"></a>
+<h1>md5.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 57</b> - File "D:\_basurahan\final\code\md5.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="message_archive_manager.php"></a>
+<h1>message_archive_manager.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 112</b> - File "D:\_basurahan\final\code\message_archive_manager.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="my_articles2.php"></a>
+<h1>my_articles2.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 266</b> - File "D:\_basurahan\final\code\my_articles2.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="my_banners.php"></a>
+<h1>my_banners.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 183</b> - File "D:\_basurahan\final\code\client\my_banners.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="my_tasks.php"></a>
+<h1>my_tasks.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 160</b> - File "D:\_basurahan\final\code\my_tasks.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="new_article_evaluation.php"></a>
+<h1>new_article_evaluation.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 73</b> - File "D:\_basurahan\final\code\new_article_evaluation.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="new_banner_clients.php"></a>
+<h1>new_banner_clients.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 9</b> - File "D:\_basurahan\final\code\new_banner_clients.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="new_private_message.php"></a>
+<h1>new_private_message.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 63</b> - File "D:\_basurahan\final\code\client\new_private_message.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 77</b> - File "D:\_basurahan\final\code\new_private_message.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="other_site_content.php"></a>
+<h1>other_site_content.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 121</b> - File "D:\_basurahan\final\code\other_site_content.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="other_sources.php"></a>
+<h1>other_sources.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 100</b> - File "D:\_basurahan\final\code\other_sources.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="preview_article.php"></a>
+<h1>preview_article.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 75</b> - File "D:\_basurahan\final\code\preview_article.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="preview_article_versions.php"></a>
+<h1>preview_article_versions.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 69</b> - File "D:\_basurahan\final\code\preview_article_versions.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="preview_audit_trail.php"></a>
+<h1>preview_audit_trail.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 85</b> - File "D:\_basurahan\final\code\preview_audit_trail.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="preview_editor_reports.php"></a>
+<h1>preview_editor_reports.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 98</b> - File "D:\_basurahan\final\code\preview_editor_reports.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="preview_image_details.php"></a>
+<h1>preview_image_details.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 60</b> - File "D:\_basurahan\final\code\preview_image_details.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="preview_listofmembers.php"></a>
+<h1>preview_listofmembers.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 101</b> - File "D:\_basurahan\final\code\preview_listofmembers.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="preview_newscontents.php"></a>
+<h1>preview_newscontents.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 94</b> - File "D:\_basurahan\final\code\preview_newscontents.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="preview_newsdirector_reports.php"></a>
+<h1>preview_newsdirector_reports.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 116</b> - File "D:\_basurahan\final\code\preview_newsdirector_reports.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="preview_publisher_reports.php"></a>
+<h1>preview_publisher_reports.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 94</b> - File "D:\_basurahan\final\code\preview_publisher_reports.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="preview_sitecontent.php"></a>
+<h1>preview_sitecontent.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 39</b> - File "D:\_basurahan\final\code\preview_sitecontent.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="preview_writer_reports.php"></a>
+<h1>preview_writer_reports.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 93</b> - File "D:\_basurahan\final\code\preview_writer_reports.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="proofread_article.php"></a>
+<h1>proofread_article.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 55</b> - File "D:\_basurahan\final\code\proofread_article.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="publish_article.php"></a>
+<h1>publish_article.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 99</b> - File "D:\_basurahan\final\code\publish_article.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="query_fns.php"></a>
+<h1>query_fns.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 103</b> - File "D:\_basurahan\final\code\query_fns.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="quota.php"></a>
+<h1>quota.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 94</b> - File "D:\_basurahan\final\code\quota.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="quote_manager.php"></a>
+<h1>quote_manager.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 92</b> - File "D:\_basurahan\final\code\quote_manager.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="redirect.php"></a>
+<h1>redirect.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 4</b> - File "D:\_basurahan\final\code\redirect.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="remove_image.php"></a>
+<h1>remove_image.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 12</b> - File "D:\_basurahan\final\code\client\remove_image.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="report_admin.php"></a>
+<h1>report_admin.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 88</b> - File "D:\_basurahan\final\code\report_admin.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="report_editor_articles.php"></a>
+<h1>report_editor_articles.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 145</b> - File "D:\_basurahan\final\code\report_editor_articles.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="report_listofmembers.php"></a>
+<h1>report_listofmembers.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 99</b> - File "D:\_basurahan\final\code\report_listofmembers.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="report_newscontents.php"></a>
+<h1>report_newscontents.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 101</b> - File "D:\_basurahan\final\code\report_newscontents.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="report_publisher_articles.php"></a>
+<h1>report_publisher_articles.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 144</b> - File "D:\_basurahan\final\code\report_publisher_articles.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="report_usage.php"></a>
+<h1>report_usage.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 36</b> - File "D:\_basurahan\final\code\report_usage.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="report_writer_articles.php"></a>
+<h1>report_writer_articles.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 142</b> - File "D:\_basurahan\final\code\report_writer_articles.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="resizer.php"></a>
+<h1>resizer.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 31</b> - no @package tag was used in a DocBlock for class thumbnail<br>
+<b>Warning on line 145</b> - File "D:\_basurahan\final\code\resizer.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="rotating_images.php"></a>
+<h1>rotating_images.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 1</b> - no @package tag was used in a DocBlock for class rotating_images<br>
+<b>Warning on line 27</b> - File "D:\_basurahan\final\code\rotating_images.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="save.php"></a>
+<h1>save.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 459</b> - File "D:\_basurahan\final\code\save.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="save_ader_site_content.php"></a>
+<h1>save_ader_site_content.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 66</b> - File "D:\_basurahan\final\code\save_ader_site_content.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="save_banner.php"></a>
+<h1>save_banner.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 44</b> - File "D:\_basurahan\final\code\save_banner.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 90</b> - File "D:\_basurahan\final\code\client\save_banner.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="save_banner2.php"></a>
+<h1>save_banner2.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 87</b> - File "D:\_basurahan\final\code\save_banner2.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="save_bannerxx.php"></a>
+<h1>save_bannerxx.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 72</b> - File "D:\_basurahan\final\code\client\save_bannerxx.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="save_category.php"></a>
+<h1>save_category.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 68</b> - File "D:\_basurahan\final\code\save_category.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="save_client_profile.php"></a>
+<h1>save_client_profile.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 96</b> - File "D:\_basurahan\final\code\client\save_client_profile.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 126</b> - File "D:\_basurahan\final\code\save_client_profile.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="save_news_draft.php"></a>
+<h1>save_news_draft.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 59</b> - File "D:\_basurahan\final\code\save_news_draft.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="save_poll.php"></a>
+<h1>save_poll.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 54</b> - File "D:\_basurahan\final\code\save_poll.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="save_poll_response.php"></a>
+<h1>save_poll_response.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 22</b> - File "D:\_basurahan\final\code\save_poll_response.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="save_poll_response2.php"></a>
+<h1>save_poll_response2.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 17</b> - File "D:\_basurahan\final\code\save_poll_response2.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="save_quota.php"></a>
+<h1>save_quota.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 70</b> - File "D:\_basurahan\final\code\save_quota.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="save_quote.php"></a>
+<h1>save_quote.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 54</b> - File "D:\_basurahan\final\code\save_quote.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="save_segment.php"></a>
+<h1>save_segment.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 22</b> - File "D:\_basurahan\final\code\save_segment.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="save_task.php"></a>
+<h1>save_task.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 75</b> - File "D:\_basurahan\final\code\save_task.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="save_user_manager.php"></a>
+<h1>save_user_manager.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 49</b> - File "D:\_basurahan\final\code\save_user_manager.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="save_user_profile.php"></a>
+<h1>save_user_profile.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 244</b> - File "D:\_basurahan\final\code\save_user_profile.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="save_user_sperms.php"></a>
+<h1>save_user_sperms.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 91</b> - File "D:\_basurahan\final\code\save_user_sperms.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="save_writer_article.php"></a>
+<h1>save_writer_article.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 55</b> - File "D:\_basurahan\final\code\save_writer_article.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="search.php"></a>
+<h1>search.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 128</b> - File "D:\_basurahan\final\code\search.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="search_results.php"></a>
+<h1>search_results.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 69</b> - File "D:\_basurahan\final\code\search_results.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="segments.php"></a>
+<h1>segments.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 306</b> - File "D:\_basurahan\final\code\segments.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="sendmessage.php"></a>
+<h1>sendmessage.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - File "D:\_basurahan\final\code\sendmessage.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="sendpassword.php"></a>
+<h1>sendpassword.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 46</b> - File "D:\_basurahan\final\code\sendpassword.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="send_article_evaluation.php"></a>
+<h1>send_article_evaluation.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 177</b> - File "D:\_basurahan\final\code\send_article_evaluation.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="sitemap.php"></a>
+<h1>sitemap.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 42</b> - File "D:\_basurahan\final\code\sitemap.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="submit_feedback.php"></a>
+<h1>submit_feedback.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 94</b> - File "D:\_basurahan\final\code\submit_feedback.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="submit_to_editor.php"></a>
+<h1>submit_to_editor.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 105</b> - File "D:\_basurahan\final\code\submit_to_editor.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="submit_to_newsdirector.php"></a>
+<h1>submit_to_newsdirector.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 131</b> - File "D:\_basurahan\final\code\submit_to_newsdirector.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="task_manager.php"></a>
+<h1>task_manager.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 146</b> - File "D:\_basurahan\final\code\task_manager.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="template.configuration.php"></a>
+<h1>template.configuration.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 6</b> - File "D:\_basurahan\final\code\template.configuration.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="template_manager2.php"></a>
+<h1>template_manager2.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 95</b> - File "D:\_basurahan\final\code\template_manager2.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="temp_view_article-detail.php"></a>
+<h1>temp_view_article-detail.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 79</b> - File "D:\_basurahan\final\code\temp_view_article-detail.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="test3.php"></a>
+<h1>test3.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 4</b> - File "D:\_basurahan\final\code\test3.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="top.php"></a>
+<h1>top.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 10</b> - Page-level DocBlock precedes "include_once top.php", use another DocBlock to document the source element<br>
+<a name="top_menu.php"></a>
+<h1>top_menu.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 346</b> - File "D:\_basurahan\final\code\top_menu.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="unpublish_article.php"></a>
+<h1>unpublish_article.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 98</b> - File "D:\_basurahan\final\code\unpublish_article.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="untitled.php"></a>
+<h1>untitled.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 14</b> - File "D:\_basurahan\final\code\untitled.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="update_template.php"></a>
+<h1>update_template.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 52</b> - File "D:\_basurahan\final\code\update_template.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="uploadimage.php"></a>
+<h1>uploadimage.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 73</b> - File "D:\_basurahan\final\code\popups\uploadimage.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="uploadimage2.php"></a>
+<h1>uploadimage2.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 60</b> - File "D:\_basurahan\final\code\popups\uploadimage2.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="uploadimage3.php"></a>
+<h1>uploadimage3.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 67</b> - File "D:\_basurahan\final\code\popups\uploadimage3.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="uploadimage4.php"></a>
+<h1>uploadimage4.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 71</b> - File "D:\_basurahan\final\code\popups\uploadimage4.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="user_access_permissions.php"></a>
+<h1>user_access_permissions.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 131</b> - File "D:\_basurahan\final\code\user_access_permissions.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="user_log_manager.php"></a>
+<h1>user_log_manager.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 104</b> - File "D:\_basurahan\final\code\user_log_manager.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="user_manager.php"></a>
+<h1>user_manager.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 92</b> - File "D:\_basurahan\final\code\user_manager.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="user_manager2.php"></a>
+<h1>user_manager2.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 128</b> - File "D:\_basurahan\final\code\user_manager2.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="user_menu.php"></a>
+<h1>user_menu.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 109</b> - File "D:\_basurahan\final\code\user_menu.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="user_menu2.php"></a>
+<h1>user_menu2.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 93</b> - File "D:\_basurahan\final\code\user_menu2.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="user_profile.php"></a>
+<h1>user_profile.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 74</b> - File "D:\_basurahan\final\code\user_profile.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="user_profile_manager.php"></a>
+<h1>user_profile_manager.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 69</b> - File "D:\_basurahan\final\code\user_profile_manager.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="user_stage_manager.php"></a>
+<h1>user_stage_manager.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 78</b> - File "D:\_basurahan\final\code\user_stage_manager.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="utilities.php"></a>
+<h1>utilities.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 197</b> - File "C:\Program Files\Apache Group\Apache2\htdocs\phpdoc\docbuilder\includes\utilities.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="view_access_perm.php"></a>
+<h1>view_access_perm.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 93</b> - File "D:\_basurahan\final\code\view_access_perm.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="view_ader_content.php"></a>
+<h1>view_ader_content.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 58</b> - File "D:\_basurahan\final\code\view_ader_content.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="view_article.php"></a>
+<h1>view_article.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 269</b> - File "D:\_basurahan\final\code\view_article.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="view_article_detail.php"></a>
+<h1>view_article_detail.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 327</b> - File "D:\_basurahan\final\code\view_article_detail.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="view_article_detailxx.php"></a>
+<h1>view_article_detailxx.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 292</b> - File "D:\_basurahan\final\code\view_article_detailxx.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="view_article_versions.php"></a>
+<h1>view_article_versions.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 366</b> - File "D:\_basurahan\final\code\view_article_versions.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="view_article_versions_detail.php"></a>
+<h1>view_article_versions_detail.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 79</b> - File "D:\_basurahan\final\code\view_article_versions_detail.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="view_banner.php"></a>
+<h1>view_banner.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 116</b> - File "D:\_basurahan\final\code\view_banner.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 125</b> - File "D:\_basurahan\final\code\client\view_banner.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="view_bannerxx.php"></a>
+<h1>view_bannerxx.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 95</b> - File "D:\_basurahan\final\code\client\view_bannerxx.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="view_category_detail.php"></a>
+<h1>view_category_detail.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 64</b> - File "D:\_basurahan\final\code\view_category_detail.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="view_feedback_detail.php"></a>
+<h1>view_feedback_detail.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 50</b> - File "D:\_basurahan\final\code\view_feedback_detail.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="view_messages.php"></a>
+<h1>view_messages.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 82</b> - File "D:\_basurahan\final\code\client\view_messages.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 103</b> - File "D:\_basurahan\final\code\view_messages.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="view_message_detail.php"></a>
+<h1>view_message_detail.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 43</b> - File "D:\_basurahan\final\code\client\view_message_detail.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 52</b> - File "D:\_basurahan\final\code\view_message_detail.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="view_message_detail2.php"></a>
+<h1>view_message_detail2.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 52</b> - File "D:\_basurahan\final\code\view_message_detail2.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="view_more_poll.php"></a>
+<h1>view_more_poll.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 103</b> - File "D:\_basurahan\final\code\view_more_poll.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="view_poll_detail.php"></a>
+<h1>view_poll_detail.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 50</b> - File "D:\_basurahan\final\code\view_poll_detail.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="view_quote_detail.php"></a>
+<h1>view_quote_detail.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 36</b> - File "D:\_basurahan\final\code\view_quote_detail.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="view_segment_detail.php"></a>
+<h1>view_segment_detail.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 291</b> - File "D:\_basurahan\final\code\view_segment_detail.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="view_task_detail.php"></a>
+<h1>view_task_detail.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 68</b> - File "D:\_basurahan\final\code\view_task_detail.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+	<p class="notes" id="credit">
+		Documentation generated on Wed,  5 Apr 2006 20:10:19 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC4</a>
+	</p>
+	</body>
+</html>

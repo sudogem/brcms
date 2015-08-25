@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>File Source for display_poll.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+											</head>
+		<body>
+						<h1>Source for file display_poll.php</h1>
+<p>Documentation is available at <a href="../brwcms/_code_display_poll_php.html">display_poll.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php </span></li>
+<li><a name="a2"></a>    <span class="src-var">$con </span>= <a href="http://www.php.net/mysql_connect">mysql_connect</a><span class="src-sym">( </span><span class="src-str">'localhost'</span><span class="src-sym">, </span><span class="src-str">'root'</span><span class="src-sym">, </span><span class="src-str">'' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a3"></a>        <span class="src-key">if</span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-var">$con</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a4"></a>            echo <span class="src-str">'Error Connecting Database Server: &lt;br&gt; Error: '</span>.<a href="http://www.php.net/mysql_error">mysql_error</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a5"></a>            <span class="src-key">exit</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a6"></a>        <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a7"></a>            <span class="src-var">$db </span>= <a href="http://www.php.net/mysql_select_db">mysql_select_db</a><span class="src-sym">(</span><span class="src-str">'brcms'</span><span class="src-sym">, </span><span class="src-var">$con</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a8"></a>            <span class="src-key">if</span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-var">$db</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a9"></a>                echo <span class="src-str">'Error Connecting Database. &lt;br&gt;Error: '</span>.<a href="http://www.php.net/mysql_error">mysql_error</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a10"></a>                <span class="src-key">exit</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a11"></a>            <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a12"></a>&nbsp;</li>
+<li><a name="a13"></a>                <span class="src-comm">//get the current date</span></li>
+<li><a name="a14"></a>                                <span class="src-var">$date </span>= <a href="http://www.php.net/date">date</a><span class="src-sym">(</span><span class="src-str">'Y-m-d'</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a15"></a>&nbsp;</li>
+<li><a name="a16"></a>                <span class="src-var">$query  </span>= <span class="src-str">&quot;SELECT poll_topic.* FROM poll_topic&quot;</span><span class="src-sym">; </span></li>
+<li><a name="a17"></a>                <span class="src-var">$query </span>.= <span class="src-str">&quot; </span><span class="src-id">WHERE  poll_topic</span>.<span class="src-id">topic_date</span> = '<span class="src-var">$date</span>' <span class="src-id">OR</span> '<span class="src-var">$date</span>' <span class="src-id">BETWEEN poll_topic</span>.<span class="src-id">topic_date AND poll_topic</span>.<span class="src-id">expiry_date </span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a18"></a>                            </li>
+<li><a name="a19"></a>                <span class="src-var">$rs </span>= <a href="http://www.php.net/mysql_query">mysql_query</a><span class="src-sym">(</span><span class="src-var">$query</span><span class="src-sym">) </span><span class="src-key">or </span><span class="src-key">die</span><span class="src-sym">(</span><span class="src-str">'Error On Query&gt; &lt;br&gt;Error: '</span>.<a href="http://www.php.net/mysql_error">mysql_error</a><span class="src-sym">(</span><span class="src-sym">))</span><span class="src-sym">;    </span><span class="src-comm">//perform query to the databas</span></li>
+<li><a name="a20"></a>                                <span class="src-var">$data </span>= <a href="http://www.php.net/mysql_fetch_assoc">mysql_fetch_assoc</a><span class="src-sym">(</span><span class="src-var">$rs</span><span class="src-sym">)</span><span class="src-sym">;        </span><span class="src-comm">//get individual data</span></li>
+<li><a name="a21"></a>                </li>
+<li><a name="a21"></a>                                </li>
+<li><a name="a22"></a>                <a href="http://www.php.net/print_r">print_r</a><span class="src-sym">(</span><span class="src-var">$data</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a23"></a>                <span class="src-comm">//get labels and display them individually    </span></li>
+<li><a name="a24"></a>                                <span class="src-var">$label </span>= <a href="http://www.php.net/explode">explode</a><span class="src-sym">(</span><span class="src-str">','</span><span class="src-sym">, </span><span class="src-var">$data</span><span class="src-sym">[</span><span class="src-str">'response_label'</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a25"></a>                echo <span class="src-str">'&lt;br&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a26"></a>                <a href="http://www.php.net/print_r">print_r</a><span class="src-sym">(</span><span class="src-var">$label</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a27"></a>            <span class="src-sym">}</span></li>
+<li><a name="a28"></a>        <span class="src-sym">}</span></li>
+<li><a name="a29"></a><span class="src-php">?&gt;</span></li>
+<li><a name="a30"></a>&nbsp;</li>
+<li><a name="a31"></a>&lt;!-- Display Poll Topic in HTML format here --&gt;</li>
+<li><a name="a32"></a>&lt;pre&gt;</li>
+<li><a name="a33"></a>    &lt;strong&gt;Topic:&lt;/strong&gt; <span class="src-php">&lt;?php </span>echo <span class="src-var">$data</span><span class="src-sym">[</span><span class="src-str">'topic'</span><span class="src-sym">]</span><span class="src-php">?&gt;</span></li>
+<li><a name="a34"></a>    &lt;br&gt;</li>
+<li><a name="a35"></a>    &lt;strong&gt;Click on your response Here:&lt;/strong&gt;</li>
+<li><a name="a36"></a>        &lt;form name=&quot;form1&quot; method=&quot;post&quot; action=&quot;save_poll_response.php&quot;&gt;</li>
+<li><a name="a37"></a>        &lt;input type=&quot;hidden&quot; name=&quot;topic_id&quot; value=&quot;<span class="src-php">&lt;?php </span>echo <span class="src-var">$data</span><span class="src-sym">[</span><span class="src-str">'topic_id'</span><span class="src-sym">]</span><span class="src-sym">; </span><span class="src-php">?&gt;</span>&quot;&gt;</li>
+<li><a name="a38"></a>            <span class="src-php">&lt;?php </span></li>
+<li><a name="a39"></a>                <span class="src-key">for</span><span class="src-sym">(</span><span class="src-var">$i</span>=<span class="src-num">0</span><span class="src-sym">; </span><span class="src-var">$i</span>&lt;<a href="http://www.php.net/count">count</a><span class="src-sym">(</span><span class="src-var">$label</span><span class="src-sym">)</span><span class="src-sym">; </span>++<span class="src-var">$i</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a40"></a>                    echo <span class="src-str">'&amp;nbsp;&amp;nbsp;&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;response&quot; value=&quot;'</span>.<span class="src-var">$label</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">]</span>.<span class="src-str">'&quot;&gt;'</span>.<span class="src-var">$label</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">]</span>.<span class="src-str">'&lt;/label&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a41"></a>                <span class="src-sym">}</span></li>
+<li><a name="a42"></a>            <span class="src-php">?&gt;</span></li>
+<li><a name="a43"></a>            &lt;br&gt;</li>
+<li><a name="a44"></a>            &lt;input type=&quot;submit&quot; value=&quot;Go&quot;&gt;&lt;input type=&quot;reset&quot; value=&quot;Cancel&quot;&gt;</li>
+<li><a name="a45"></a>            &lt;!-- label&gt;&lt;input type=&quot;radio&quot; name=&quot;response&quot; value=&quot;radio&quot;&gt;Radio&lt;/label --&gt;</li>
+<li><a name="a46"></a>        &lt;/form&gt;</li>
+<li><a name="a47"></a>&lt;/pre&gt;</li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Wed,  5 Apr 2006 20:09:24 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC4</a>
+	</p>
+	</body>
+</html>

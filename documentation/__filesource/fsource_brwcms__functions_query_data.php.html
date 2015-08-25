@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>File Source for functions_query_data.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+											</head>
+		<body>
+						<h1>Source for file functions_query_data.php</h1>
+<p>Documentation is available at <a href="../brwcms/_code_functions_query_data_php.html">functions_query_data.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a><span class="src-doc">/**</span></li>
+<li><a name="a3"></a><span class="src-doc"> * This function will send a query to the table user_stage then, retrieve the</span></li>
+<li><a name="a4"></a><span class="src-doc"> * stages that the user has been assign..</span></li>
+<li><a name="a5"></a><span class="src-doc"> * return the recordset in array()</span></li>
+<li><a name="a6"></a><span class="src-doc"> */</span></li>
+<li><a name="a7"></a><span class="src-key">function </span><a href="../brwcms/_code_functions_query_data_php.html#functionquery_data">query_data</a><span class="src-sym">( </span><span class="src-var">$userID </span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a8"></a><span class="src-comm">// get this user stages of this user... </span></li>
+<li><a name="a9"></a>&nbsp;</li>
+<li><a name="a10"></a><span class="src-var">$sql </span>= <span class="src-str">&quot;select * from user_stage us</span></li>
+<li><a name="a11"></a><span class="src-str">        where us.userID = &quot; </span>.<a href="http://www.php.net/intval">intval</a><span class="src-sym">(</span><span class="src-var">$userID </span><span class="src-sym">) </span>.</li>
+<li><a name="a12"></a>        <span class="src-str">&quot; order by us.stageID ASC &quot;</span><span class="src-sym">;  </span><span class="src-comm">// sort the STAGES accordingly..</span></li>
+<li><a name="a13"></a>        </li>
+<li><a name="a14"></a><span class="src-var">$db </span>= <span class="src-key">new </span><span class="src-id"><a href="../brwcms/database.html">database</a></span><span class="src-sym">;</span></li>
+<li><a name="a15"></a>&nbsp;</li>
+<li><a name="a16"></a>&nbsp;</li>
+<li><a name="a17"></a>&nbsp;</li>
+<li><a name="a18"></a><span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-sym">(</span><span class="src-var">$result </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">( </span><span class="src-var">$sql </span><span class="src-sym">))) </span><span class="src-sym">{</span></li>
+<li><a name="a19"></a>    <span class="src-key">die</span><span class="src-sym">(</span><span class="src-str">'Error:'</span>. <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">error</span><span class="src-sym">(</span><span class="src-sym">))</span><span class="src-sym">;</span></li>
+<li><a name="a20"></a><span class="src-sym">}</span></li>
+<li><a name="a21"></a>&nbsp;</li>
+<li><a name="a22"></a><span class="src-var">$user_stages </span>= <span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a23"></a><span class="src-key">while </span><span class="src-sym">( </span><span class="src-var">$row </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">fetcharray</span><span class="src-sym">(</span><span class="src-sym">) ) </span><span class="src-sym">{</span></li>
+<li><a name="a24"></a>    <span class="src-var">$user_stages</span><span class="src-sym">[</span><span class="src-sym">] </span>= <span class="src-var">$row</span><span class="src-sym">;</span></li>
+<li><a name="a25"></a><span class="src-sym">}</span></li>
+<li><a name="a26"></a><span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">freeresult</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span><span class="src-comm">// simply free the result..</span></li>
+<li><a name="a27"></a>print <span class="src-str">'USERNAME='</span>.<span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'username'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a28"></a><span class="src-comm">// ok pepol,, lets chek his user stages..</span></li>
+<li><a name="a29"></a>&nbsp;</li>
+<li><a name="a30"></a><span class="src-var">$sql </span>= <span class="src-str">&quot; select * from &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a31"></a><span class="src-comm">// if the user has been assign with SOME workflows...</span></li>
+<li><a name="a32"></a><span class="src-var">$state </span>= <span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a33"></a><span class="src-key">foreach</span><span class="src-sym">( </span><span class="src-var">$user_stages </span><span class="src-key">as </span><span class="src-var">$field </span>=&gt; <span class="src-var">$user_stage </span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a34"></a>    <span class="src-key">if </span><span class="src-sym">( </span><span class="src-var">$user_stage</span><span class="src-sym">-&gt;</span><span class="src-id">stageID </span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a35"></a>        <span class="src-key">switch </span><span class="src-sym">( </span><span class="src-var">$user_stage</span><span class="src-sym">-&gt;</span><span class="src-id">stageID </span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a36"></a>            <span class="src-key">case </span><span class="src-num">1</span>: <span class="src-comm">// if the user is on writing stage, retrieve his articles</span></li>
+<li><a name="a37"></a>                <span class="src-var">$sql </span>.= <span class="src-str">&quot; articles a ,&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a38"></a>                <span class="src-var">$sql </span>.= <span class="src-str">&quot; article_author aa &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a39"></a>                <span class="src-var">$state </span>= <span class="src-num">1</span><span class="src-sym">; </span><span class="src-comm">// we assume that there was another stages been assign..</span></li>
+<li><a name="a40"></a>                <span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a41"></a>            <span class="src-key">case </span><span class="src-num">2</span>: <span class="src-comm">// the user is assign on editing stage..</span></li>
+<li><a name="a42"></a>                <span class="src-var">$editing_stage </span>= <span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a43"></a>                <span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a44"></a>            <span class="src-key">case </span><span class="src-num">3</span>: <span class="src-comm">// ..proofreading stage..</span></li>
+<li><a name="a45"></a>                <span class="src-var">$proofreading_stage </span>= <span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a46"></a>                <span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a47"></a>            <span class="src-key">case </span><span class="src-num">4</span>: <span class="src-comm">// ..publishinng stage..</span></li>
+<li><a name="a48"></a>                <span class="src-var">$publishing_stage </span>= <span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a49"></a>                <span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a50"></a>        <span class="src-sym">}</span></li>
+<li><a name="a51"></a>    <span class="src-sym">}</span></li>
+<li><a name="a52"></a><span class="src-sym">}</span></li>
+<li><a name="a53"></a><span class="src-comm">// if this user has been assign with these stages..editing, proofreading ..etc...</span></li>
+<li><a name="a54"></a><span class="src-key">if </span><span class="src-sym">((</span><span class="src-var">$editing_stage </span>== <span class="src-num">1</span><span class="src-sym">) </span>|| <span class="src-sym">(</span><span class="src-var">$proofreading_stage </span>== <span class="src-num">1</span><span class="src-sym">) </span>|| <span class="src-sym">(</span><span class="src-var">$publishing_stage </span>== <span class="src-num">1</span><span class="src-sym">)) </span><span class="src-sym">{</span></li>
+<li><a name="a55"></a>    <span class="src-key">if </span><span class="src-sym">( </span><a href="http://www.php.net/count">count</a> <span class="src-sym">(</span><span class="src-var">$user_stages</span><span class="src-sym">) </span>&gt; <span class="src-num">1 </span><span class="src-sym">) </span><span class="src-sym">{</span><span class="src-comm">// this user is assign with SOME WORKFLOWS..</span></li>
+<li><a name="a56"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$state</span><span class="src-sym">) </span><span class="src-sym">{  </span><span class="src-comm">// </span></li>
+<li><a name="a57"></a>            <span class="src-var">$sql </span>.= <span class="src-str">&quot; ,article_versions av &quot;</span><span class="src-sym">;    </span></li>
+<li><a name="a58"></a>        <span class="src-sym">}</span></li>
+<li><a name="a59"></a>        <span class="src-key">else</span><span class="src-sym">{</span></li>
+<li><a name="a60"></a>            <span class="src-comm">// simply, first call of the article versions..</span></li>
+<li><a name="a61"></a>            <span class="src-var">$sql </span>.= <span class="src-str">&quot; article_versions av &quot;</span><span class="src-sym">;    </span></li>
+<li><a name="a62"></a>        <span class="src-sym">}</span></li>
+<li><a name="a63"></a>    <span class="src-sym">}</span><span class="src-key">else</span><span class="src-sym">{</span><span class="src-comm">// this user has been set with one workflows..</span></li>
+<li><a name="a64"></a>        <span class="src-var">$sql </span>.= <span class="src-str">&quot;  article_versions av &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a65"></a>    <span class="src-sym">}</span></li>
+<li><a name="a66"></a>&nbsp;</li>
+<li><a name="a67"></a><span class="src-sym">}</span></li>
+<li><a name="a68"></a><span class="src-var">$sql </span>.= <span class="src-str">&quot; where &quot;</span><span class="src-sym">; </span><span class="src-comm">// WHERE CLAUSE HERE..very important!!!! </span></li>
+<li><a name="a69"></a><span class="src-var">$state </span>= <span class="src-num">0</span><span class="src-sym">;</span></li>
+<li><a name="a70"></a><span class="src-key">if </span><span class="src-sym">( </span><a href="http://www.php.net/count">count</a><span class="src-sym">( </span><span class="src-var">$user_stages </span><span class="src-sym">) </span>&gt; <span class="src-num">1 </span><span class="src-sym">) </span><span class="src-sym">{ </span><span class="src-comm">// this user has been assign with SOME WORKFLOWS</span></li>
+<li><a name="a71"></a>    <span class="src-key">foreach</span><span class="src-sym">( </span><span class="src-var">$user_stages </span><span class="src-key">as </span><span class="src-var">$field </span>=&gt; <span class="src-var">$user_stage </span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a72"></a>        <span class="src-key">if </span><span class="src-sym">( </span><span class="src-var">$user_stage</span><span class="src-sym">-&gt;</span><span class="src-id">stageID </span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a73"></a>            <span class="src-key">switch</span><span class="src-sym">( </span><span class="src-var">$user_stage</span><span class="src-sym">-&gt;</span><span class="src-id">stageID </span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a74"></a>                <span class="src-key">case </span><span class="src-num">1</span>: <span class="src-comm">// writer</span></li>
+<li><a name="a75"></a>                    <span class="src-var">$sql </span>.= <span class="src-str">&quot; a.stageID = 1 &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a76"></a>                    <span class="src-var">$sql </span>.= <span class="src-str">&quot;</span><span class="src-str"> <span class="src-id">and</span> <span class="src-id">aa</span>.<span class="src-id">userID</span> = <span class="src-var">$userID</span> </span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a77"></a>                    <span class="src-var">$state </span>= <span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a78"></a>                    <span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a79"></a>                <span class="src-key">case </span><span class="src-num">2</span>: <span class="src-comm">// editor</span></li>
+<li><a name="a80"></a>                    <span class="src-comm">// PROBLEM : concatenation of and..ex. editor+chef</span></li>
+<li><a name="a81"></a>                    <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$state</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a82"></a>                        <span class="src-var">$sql </span>.=<span class="src-str">&quot; and av.stageID = 2 &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a83"></a>                    <span class="src-sym">}</span><span class="src-key">else</span><span class="src-sym">{</span></li>
+<li><a name="a84"></a>                        <span class="src-var">$sql </span>.=  <span class="src-str">&quot; av.stageID = 2 &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a85"></a>                    <span class="src-sym">} </span></li>
+<li><a name="a86"></a>                    <span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a87"></a>                <span class="src-key">case </span><span class="src-num">3</span>: <span class="src-comm">// editor n chief</span></li>
+<li><a name="a88"></a>                    <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$state</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a89"></a>                        <span class="src-var">$sql </span>.= <span class="src-str">&quot; and av.stageID = 3 &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a90"></a>                    <span class="src-sym">}</span><span class="src-key">else</span><span class="src-sym">{</span></li>
+<li><a name="a91"></a>                        <span class="src-var">$sql </span>.= <span class="src-str">&quot; av.stageID = 3 &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a92"></a>                    <span class="src-sym">}</span></li>
+<li><a name="a93"></a>                    <span class="src-comm">//$sql .= &quot; and av.modified_by = $userID &quot;;</span></li>
+<li><a name="a94"></a>                    <span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a95"></a>                <span class="src-key">case </span><span class="src-num">4</span>: <span class="src-comm">// publisher</span></li>
+<li><a name="a96"></a>                    <span class="src-var">$sql </span>.= <span class="src-str">&quot; and av.stageID = 4 &quot;</span><span class="src-sym">;            </span></li>
+<li><a name="a97"></a>                    <span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a98"></a>            <span class="src-sym">}</span></li>
+<li><a name="a99"></a>        <span class="src-sym">}</span></li>
+<li><a name="a100"></a>    <span class="src-sym">}</span></li>
+<li><a name="a101"></a>&nbsp;</li>
+<li><a name="a102"></a><span class="src-sym">}</span></li>
+<li><a name="a103"></a><span class="src-key">else </span><span class="src-sym">{</span></li>
+<li><a name="a104"></a>    <span class="src-key">foreach</span><span class="src-sym">( </span><span class="src-var">$user_stages </span><span class="src-key">as </span><span class="src-var">$field </span>=&gt; <span class="src-var">$user_stage </span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a105"></a>        <span class="src-key">if </span><span class="src-sym">( </span><span class="src-var">$user_stage</span><span class="src-sym">-&gt;</span><span class="src-id">stageID </span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a106"></a>            <span class="src-key">switch</span><span class="src-sym">( </span><span class="src-var">$user_stage</span><span class="src-sym">-&gt;</span><span class="src-id">stageID </span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a107"></a>                <span class="src-key">case </span><span class="src-num">1</span>: <span class="src-comm">// writer</span></li>
+<li><a name="a108"></a>                    <span class="src-var">$sql </span>.= <span class="src-str">&quot; a.stageID = 1 &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a109"></a>                    <span class="src-comm">//$sql .= &quot; and aa.userID = $userID &quot;;</span></li>
+<li><a name="a110"></a>                    <span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a111"></a>                <span class="src-key">case </span><span class="src-num">2</span>: <span class="src-comm">// editor</span></li>
+<li><a name="a112"></a>                    <span class="src-var">$sql </span>.= <span class="src-str">&quot; av.stageID = 2 &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a113"></a>                    <span class="src-comm">//$sql .= &quot; and av.modified_by = $userID &quot;;</span></li>
+<li><a name="a114"></a>                    <span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a115"></a>                <span class="src-key">case </span><span class="src-num">3</span>: <span class="src-comm">// editor n chief</span></li>
+<li><a name="a116"></a>                    <span class="src-var">$sql </span>.= <span class="src-str">&quot; av.stageID = 3 &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a117"></a>                    <span class="src-comm">//$sql .= &quot; or av.modified_by = $userID &quot;;</span></li>
+<li><a name="a118"></a>                    <span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a119"></a>                <span class="src-key">case </span><span class="src-num">4</span>: <span class="src-comm">// publisher</span></li>
+<li><a name="a120"></a>                    <span class="src-var">$sql </span>.= <span class="src-str">&quot; av.stageID = 4 &quot;</span><span class="src-sym">;            </span></li>
+<li><a name="a121"></a>                    <span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a122"></a>            <span class="src-sym">}</span></li>
+<li><a name="a123"></a>        <span class="src-sym">}</span></li>
+<li><a name="a124"></a>    <span class="src-sym">}</span></li>
+<li><a name="a125"></a><span class="src-sym">}</span></li>
+<li><a name="a126"></a>&nbsp;</li>
+<li><a name="a127"></a>print <span class="src-str">'[SQL='</span>. <span class="src-var">$sql</span><span class="src-sym">;</span></li>
+<li><a name="a128"></a><span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-sym">(</span><span class="src-var">$result </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">( </span><span class="src-var">$sql </span><span class="src-sym">))) </span><span class="src-sym">{</span></li>
+<li><a name="a129"></a>    <span class="src-key">die</span><span class="src-sym">(</span><span class="src-str">'Error:'</span>. <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">error</span><span class="src-sym">(</span><span class="src-sym">))</span><span class="src-sym">;</span></li>
+<li><a name="a130"></a><span class="src-sym">}</span></li>
+<li><a name="a131"></a><span class="src-var">$query_data </span>= <span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a132"></a><span class="src-key">while </span><span class="src-sym">( </span><span class="src-var">$query_data</span><span class="src-sym">[</span><span class="src-sym">] </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">fetcharray</span><span class="src-sym">(</span><span class="src-sym">) )</span><span class="src-sym">;</span></li>
+<li><a name="a133"></a>print <span class="src-str">'[totalrec='</span>.<span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">getnumrows</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a134"></a><span class="src-comm">//print_r($query_data );</span></li>
+<li><a name="a135"></a><span class="src-key">return </span><span class="src-var">$query_data</span><span class="src-sym">;</span></li>
+<li><a name="a136"></a>&nbsp;</li>
+<li><a name="a137"></a><span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">close</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">; </span><span class="src-comm">// close connection</span></li>
+<li><a name="a138"></a><span class="src-sym">}</span></li>
+<li><a name="a139"></a>&nbsp;</li>
+<li><a name="a140"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Wed,  5 Apr 2006 20:09:31 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC4</a>
+	</p>
+	</body>
+</html>

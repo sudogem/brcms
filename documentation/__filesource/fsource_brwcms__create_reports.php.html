@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>File Source for create_reports.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+											</head>
+		<body>
+						<h1>Source for file create_reports.php</h1>
+<p>Documentation is available at <a href="../brwcms/_code_create_reports_php.html">create_reports.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a><span class="src-inc">include</span><span class="src-sym">( </span><span class="src-str">'configuration.php' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a3"></a>require <span class="src-sym">( </span><span class="src-str">'coreclass.php' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a4"></a><a href="http://www.php.net/session_start">session_start</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a5"></a><span class="src-comm">// if user is not login..redirect him to login page </span></li>
+<li><a name="a6"></a><span class="src-key">if </span><span class="src-sym">( </span><span class="src-sym">!</span>isset<span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'login'</span><span class="src-sym">]</span><span class="src-sym">)) </span><span class="src-sym">{ </span></li>
+<li><a name="a7"></a>    <a href="http://www.php.net/header">header</a><span class="src-sym">(</span><span class="src-str">'Location: login.php'</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a8"></a><span class="src-sym">}</span></li>
+<li><a name="a9"></a><span class="src-key">if </span><span class="src-sym">(</span>isset<span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'login'</span><span class="src-sym">]</span><span class="src-sym">)) </span><span class="src-sym">{</span></li>
+<li><a name="a10"></a>    <span class="src-var">$userID </span>= <span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'userID'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a11"></a>    <span class="src-var">$usertype </span>= <span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'usertype'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a12"></a><span class="src-sym">}</span></li>
+<li><a name="a13"></a><span class="src-key">for</span><span class="src-sym">(</span><span class="src-var">$i</span>=<span class="src-num">1</span><span class="src-sym">; </span><span class="src-var">$i</span>&lt;=<span class="src-num">12 </span><span class="src-sym">; </span><span class="src-var">$i</span>++<span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a14"></a>    <span class="src-var">$optmonth </span>.= <span class="src-str">'&lt;option value =&quot;'</span>.<span class="src-var">$i</span>.<span class="src-str">'&quot;&gt;'</span>.<a href="http://www.php.net/date">date</a><span class="src-sym">(</span><span class="src-str">&quot;M&quot;</span><span class="src-sym">, </span><a href="http://www.php.net/mktime">mktime</a><span class="src-sym">(</span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-var">$i</span><span class="src-sym">, </span><span class="src-num">1</span><span class="src-sym">,</span><span class="src-num">0</span><span class="src-sym">))</span>.<span class="src-str">'&lt;/option&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a15"></a><span class="src-sym">}</span></li>
+<li><a name="a16"></a><span class="src-key">for</span><span class="src-sym">(</span><span class="src-var">$i</span>=<span class="src-num">1</span><span class="src-sym">; </span><span class="src-var">$i </span>&lt;= <span class="src-num">31</span><span class="src-sym">; </span><span class="src-var">$i</span>++<span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a17"></a>    <span class="src-var">$optday </span>.= <span class="src-str">'&lt;option value =&quot;'</span>.<span class="src-var">$i</span>.<span class="src-str">'&quot;&gt;'</span>.<a href="http://www.php.net/date">date</a><span class="src-sym">(</span><span class="src-str">&quot;d&quot;</span><span class="src-sym">, </span><a href="http://www.php.net/mktime">mktime</a><span class="src-sym">(</span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">, </span><span class="src-var">$i</span><span class="src-sym">, </span><span class="src-num">0</span><span class="src-sym">))</span>.<span class="src-str">'&lt;/option&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a18"></a><span class="src-sym">}</span></li>
+<li><a name="a19"></a><span class="src-comm">// TODO: kindly change the year must be DYNAMIC!!</span></li>
+<li><a name="a20"></a><span class="src-var">$optyear </span>.= <span class="src-str">'&lt;option value =&quot;2006&quot;&gt;'</span>.<a href="http://www.php.net/date">date</a><span class="src-sym">(</span><span class="src-str">'Y'</span><span class="src-sym">)</span>.<span class="src-str">'&lt;/option&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a21"></a><span class="src-comm">//print_r($_POST);</span></li>
+<li><a name="a22"></a><span class="src-comm">/*</span></li>
+<li><a name="a23"></a><span class="src-comm"> * Get the default stylesheets</span></li>
+<li><a name="a24"></a><span class="src-comm"> */</span></li>
+<li><a name="a25"></a><span class="src-var">$stylesheet </span>= <span class="src-str">&quot; ../templates/admin2.css &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a26"></a><span class="src-comm">// Generate the page now</span></li>
+<li><a name="a27"></a><span class="src-var">$tpl </span>= <span class="src-key">new </span><span class="src-id"><a href="../brwcms/template_parser.html">template_parser</a></span><span class="src-sym">( </span><span class="src-str">'../templates/reports/create_reports_html.tpl.php' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a28"></a><span class="src-var">$tags </span>= <span class="src-key">array</span><span class="src-sym">(</span></li>
+<li><a name="a29"></a>        <span class="src-str">'{FROM_MONTH}'        </span>=&gt; <span class="src-var">$optmonth</span><span class="src-sym">,</span></li>
+<li><a name="a30"></a>        <span class="src-str">'{FROM_DAY}'        </span>=&gt; <span class="src-var">$optday</span><span class="src-sym">,</span></li>
+<li><a name="a31"></a>        <span class="src-str">'{FROM_YEAR}'        </span>=&gt; <span class="src-var">$optyear</span><span class="src-sym">,</span></li>
+<li><a name="a32"></a>        <span class="src-str">'{STYLESHEET}'            </span>=&gt; <span class="src-var">$stylesheet </span><span class="src-sym">,</span></li>
+<li><a name="a33"></a>        <span class="src-str">'{SITENAME}'             </span>=&gt; <span class="src-str">'CMS Adminss'</span><span class="src-sym">,</span></li>
+<li><a name="a34"></a>        <span class="src-str">'{TOPNAV}'                 </span>=&gt; <span class="src-str">'top_menu.php'</span><span class="src-sym">,</span></li>
+<li><a name="a35"></a>        <span class="src-str">'{FOOTER}'                 </span>=&gt; <span class="src-str">'footer.php' </span></li>
+<li><a name="a36"></a>    <span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a37"></a><span class="src-var">$tpl</span><span class="src-sym">-&gt;</span><span class="src-id">parse_template</span><span class="src-sym">( </span><span class="src-var">$tags </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a38"></a>print <span class="src-var">$tpl</span><span class="src-sym">-&gt;</span><span class="src-id">display</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a39"></a>&nbsp;</li>
+<li><a name="a40"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Wed,  5 Apr 2006 20:09:22 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC4</a>
+	</p>
+	</body>
+</html>

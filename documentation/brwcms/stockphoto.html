@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class stockphoto</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class stockphoto</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+		<p class="notes">
+			Located in <a class="field" href="_code_classes_class_stockphoto_php.html">/classes/class_stockphoto.php</a> (line <span class="field"><a href="..//__filesource/fsource_brwcms__classesclass_stockphoto.php.html#a3">3</a></span>)
+		</p>
+		
+				
+		<pre><a href="../brwcms/dbsettings.html">dbsettings</a>
+   |
+   --<a href="../brwcms/database.html">database</a>
+      |
+      --stockphoto</pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$imageID" title="details" class="var-name">$imageID</a>
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+								
+				<div class="method-definition">
+											<span class="method-result">stockphoto</span>
+										<a href="#stockphoto" title="details" class="method-name">stockphoto</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#addImageToArticle" title="details" class="method-name">addImageToArticle</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$imagesets</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$articleID</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#addImageToClient" title="details" class="method-name">addImageToClient</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$clientID</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#addNewImage" title="details" class="method-name">addNewImage</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$filename</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$photoby</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$caption</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$alt</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getImageDetails" title="details" class="method-name">getImageDetails</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$imgID</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#insertImageToArticle" title="details" class="method-name">insertImageToArticle</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$articleID</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#notshowArticle_image" title="details" class="method-name">notshowArticle_image</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$imagesets</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$articleID</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#removeImage" title="details" class="method-name">removeImage</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$image_filename</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#showArticle_image" title="details" class="method-name">showArticle_image</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$imagesets</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$articleID</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#updateArticleImagesets" title="details" class="method-name">updateArticleImagesets</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$imagesets</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$articleID</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#updateBannerClient" title="details" class="method-name">updateBannerClient</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$bid</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#updateImage" title="details" class="method-name">updateImage</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$imageID</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$filename</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$photoby</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$caption</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$alt</span>)
+									</div>
+							</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$imageID" id="$imageID"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$imageID</span>
+						(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_stockphoto.php.html#a4">4</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../brwcms/dbsettings.html">dbsettings</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../brwcms/dbsettings.html#var$databasename">dbsettings::$databasename</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../brwcms/dbsettings.html#var$dbpassword">dbsettings::$dbpassword</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../brwcms/dbsettings.html#var$dbservername">dbsettings::$dbservername</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../brwcms/dbsettings.html#var$dbusername">dbsettings::$dbusername</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../brwcms/dbsettings.html#var$persistency">dbsettings::$persistency</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodstockphoto" id="stockphoto"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor stockphoto</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_stockphoto.php.html#a5">5</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">stockphoto</span>
+		<span class="method-name">
+			stockphoto
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodaddImageToArticle" id="addImageToArticle"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">addImageToArticle</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_stockphoto.php.html#a60">60</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addImageToArticle
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$imagesets</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$articleID</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodaddImageToClient" id="addImageToClient"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">addImageToClient</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_stockphoto.php.html#a103">103</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addImageToClient
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$clientID</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodaddNewImage" id="addNewImage"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">addNewImage</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_stockphoto.php.html#a9">9</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addNewImage
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$filename</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$photoby</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$caption</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$alt</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodgetImageDetails" id="getImageDetails"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getImageDetails</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_stockphoto.php.html#a17">17</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getImageDetails
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$imgID</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodinsertImageToArticle" id="insertImageToArticle"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">insertImageToArticle</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_stockphoto.php.html#a52">52</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			insertImageToArticle
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$articleID</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodnotshowArticle_image" id="notshowArticle_image"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">notshowArticle_image</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_stockphoto.php.html#a70">70</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			notshowArticle_image
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$imagesets</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$articleID</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodremoveImage" id="removeImage"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">removeImage</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_stockphoto.php.html#a26">26</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			removeImage
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$image_filename</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodshowArticle_image" id="showArticle_image"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">showArticle_image</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_stockphoto.php.html#a81">81</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			showArticle_image
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$imagesets</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$articleID</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodupdateArticleImagesets" id="updateArticleImagesets"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">updateArticleImagesets</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_stockphoto.php.html#a92">92</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			updateArticleImagesets
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$imagesets</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$articleID</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodupdateBannerClient" id="updateBannerClient"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">updateBannerClient</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_stockphoto.php.html#a112">112</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			updateBannerClient
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$bid</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodupdateImage" id="updateImage"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">updateImage</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_stockphoto.php.html#a40">40</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			updateImage
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$imageID</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$filename</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$photoby</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$caption</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$alt</span>)
+			</div>
+	
+		
+		
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../brwcms/database.html">database</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../brwcms/database.html#methoddatabase">database::database()</a></span><br>
+													<span class="method-name"><a href="../brwcms/database.html#methodclose">database::close()</a></span><br>
+													<span class="method-name"><a href="../brwcms/database.html#methoddestroy_result">database::destroy_result()</a></span><br>
+													<span class="method-name"><a href="../brwcms/database.html#methoddestructor">database::destructor()</a></span><br>
+													<span class="method-name"><a href="../brwcms/database.html#methoderror">database::error()</a></span><br>
+													<span class="method-name"><a href="../brwcms/database.html#methodfetcharray">database::fetcharray()</a></span><br>
+													<span class="method-name"><a href="../brwcms/database.html#methodfreeresult">database::freeresult()</a></span><br>
+													<span class="method-name"><a href="../brwcms/database.html#methodgetInsertID">database::getInsertID()</a></span><br>
+													<span class="method-name"><a href="../brwcms/database.html#methodgetnumrows">database::getnumrows()</a></span><br>
+													<span class="method-name"><a href="../brwcms/database.html#methodquery">database::query()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Wed,  5 Apr 2006 20:09:17 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC4</a>
+	</p>
+	</div></body>
+</html>

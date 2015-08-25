@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>File Source for rotating_images.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+											</head>
+		<body>
+						<h1>Source for file rotating_images.php</h1>
+<p>Documentation is available at <a href="../brwcms/_code_rotating_images_php.html">rotating_images.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a><span class="src-key">class </span><a href="../brwcms/rotating_images.html">rotating_images</a> <span class="src-sym">{</span></li>
+<li><a name="a3"></a>&nbsp;</li>
+<li><a name="a4"></a>    <span class="src-key">var </span><a href="../brwcms/rotating_images.html#var$javaScript">$javaScript</a><span class="src-sym">;</span></li>
+<li><a name="a5"></a>    </li>
+<li><a name="a6"></a>    <span class="src-key">function </span><a href="../brwcms/rotating_images.html#methodrotate_images">rotate_images</a><span class="src-sym">( </span><span class="src-var">$images </span>= <span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">, </span><span class="src-var">$area </span>= <span class="src-str">'' </span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a7"></a>    </li>
+<li><a name="a8"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/rotating_images.html#var$javaScript">javaScript</a> =    <span class="src-str">'&lt;script type=&quot;text/javascript&quot;&gt;</span></li>
+<li><a name="a9"></a><span class="src-str">            &lt;!--</span></li>
+<li><a name="a10"></a><span class="src-str">                //you may add your image file or text below</span></li>
+<li><a name="a11"></a>        </li>
+<li><a name="a12"></a><span class="src-str">            var ' </span>. <span class="src-var">$area </span>. <span class="src-str">'_ =new Array(); '</span><span class="src-sym">;</span></li>
+<li><a name="a13"></a>                </li>
+<li><a name="a14"></a>                <span class="src-var">$n </span>= <a href="http://www.php.net/count">count</a><span class="src-sym">(</span><span class="src-var">$images</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a15"></a>                <span class="src-key">for</span><span class="src-sym">(</span><span class="src-var">$i</span>=<span class="src-num">0</span><span class="src-sym">; </span><span class="src-var">$i </span>&lt; <span class="src-var">$n</span><span class="src-sym">; </span>++<span class="src-var">$i</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a16"></a>                    <span class="src-key">if </span><span class="src-sym">( </span><a href="../brwcms/_code_corefunctions_php.html#functioncheckhttptext">checkhttptext</a><span class="src-sym">( </span><span class="src-var">$images</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">]</span><span class="src-sym">-&gt;</span><span class="src-id">banner_clickURL </span><span class="src-sym">))</span><span class="src-sym">{</span></li>
+<li><a name="a17"></a>                        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/rotating_images.html#var$javaScript">javaScript</a> .= <span class="src-var">$area </span>. <span class="src-str">'_[' </span>.<span class="src-var">$i</span>. <span class="src-str">']=' </span>.<span class="src-str">'&quot;&lt;a href=' </span>. <span class="src-sym">(</span><span class="src-var">$images</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">]</span><span class="src-sym">-&gt;</span><span class="src-id">banner_clickURL</span><span class="src-sym">) </span>. <span class="src-str">'&gt;&lt;img src=' </span>.<span class="src-str">&quot;'&quot; </span>. <a href="../brwcms/_code_corefunctions_php.html#functionmakeRelativePath">makeRelativePath</a><span class="src-sym">(</span><span class="src-var">$images</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">]</span><span class="src-sym">-&gt;</span><span class="src-id">banner_imageurl</span><span class="src-sym">, </span><span class="src-num">7</span><span class="src-sym">) </span>.<span class="src-str">&quot;'&quot;</span>. <span class="src-str">' border=0&gt;&lt;/a&gt;&quot;; '</span><span class="src-sym">;</span></li>
+<li><a name="a18"></a>                    <span class="src-sym">}</span></li>
+<li><a name="a19"></a>                    <span class="src-key">else</span><span class="src-sym">{</span></li>
+<li><a name="a20"></a>                        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/rotating_images.html#var$javaScript">javaScript</a> .= <span class="src-var">$area </span>. <span class="src-str">'_[' </span>.<span class="src-var">$i</span>. <span class="src-str">']=' </span>.<span class="src-str">'&quot;&lt;a href=http://' </span>. <span class="src-sym">(</span><span class="src-var">$images</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">]</span><span class="src-sym">-&gt;</span><span class="src-id">banner_clickURL</span><span class="src-sym">) </span>. <span class="src-str">'&gt;&lt;img src=' </span>.<span class="src-str">&quot;'&quot; </span>. <a href="../brwcms/_code_corefunctions_php.html#functionmakeRelativePath">makeRelativePath</a><span class="src-sym">(</span><span class="src-var">$images</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">]</span><span class="src-sym">-&gt;</span><span class="src-id">banner_imageurl</span><span class="src-sym">, </span><span class="src-num">7</span><span class="src-sym">) </span>.<span class="src-str">&quot;'&quot;</span>. <span class="src-str">' border=0&gt;&lt;/a&gt;&quot;; '</span><span class="src-sym">;</span></li>
+<li><a name="a21"></a>                    <span class="src-sym">}</span></li>
+<li><a name="a22"></a>                <span class="src-sym">}</span></li>
+<li><a name="a23"></a>            <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/rotating_images.html#var$javaScript">javaScript</a> .= <span class="src-str">'var current=0;</span></li>
+<li><a name="a24"></a>        </li>
+<li><a name="a25"></a><span class="src-str">            var ns6=document.getElementById&amp;&amp;!document.all;</span></li>
+<li><a name="a26"></a>        </li>
+<li><a name="a27"></a><span class="src-str">            function changeItem(){</span></li>
+<li><a name="a28"></a><span class="src-str">                if(document.layers){</span></li>
+<li><a name="a29"></a><span class="src-str">                    document.'</span>.<span class="src-var">$area</span>.<span class="src-str">'.document.write(' </span>. <span class="src-var">$area </span>. <span class="src-str">'_[current])</span></li>
+<li><a name="a30"></a><span class="src-str">                    document.'</span>.<span class="src-var">$area</span>.<span class="src-str">'.document.close()</span></li>
+<li><a name="a31"></a><span class="src-str">                }</span></li>
+<li><a name="a32"></a>            </li>
+<li><a name="a33"></a><span class="src-str">                if(ns6)document.getElementById(&quot;' </span>. <span class="src-var">$area </span>. <span class="src-str">'&quot;).innerHTML='</span>. <span class="src-var">$area </span>.<span class="src-str">'_[current]</span></li>
+<li><a name="a34"></a><span class="src-str">                {</span></li>
+<li><a name="a35"></a><span class="src-str">                    if(document.all){</span></li>
+<li><a name="a36"></a><span class="src-str">                        '</span>. <span class="src-var">$area </span>.<span class="src-str">'.innerHTML='</span>. <span class="src-var">$area </span>.<span class="src-str">'_[current]</span></li>
+<li><a name="a37"></a><span class="src-str">                    }</span></li>
+<li><a name="a38"></a><span class="src-str">                }</span></li>
+<li><a name="a39"></a><span class="src-str">                if (current=='</span>.<span class="src-var">$n</span>.<span class="src-str">') { </span></li>
+<li><a name="a40"></a><span class="src-str">                    current=0 </span></li>
+<li><a name="a41"></a><span class="src-str">                } else { </span></li>
+<li><a name="a42"></a><span class="src-str">                    current++ </span></li>
+<li><a name="a43"></a><span class="src-str">                }</span></li>
+<li><a name="a44"></a><span class="src-str">                setTimeout(&quot;changeItem()&quot;,1000)</span></li>
+<li><a name="a45"></a><span class="src-str">            }</span></li>
+<li><a name="a46"></a><span class="src-str">                window.onload=changeItem</span></li>
+<li><a name="a47"></a><span class="src-str">            //--&gt;</span></li>
+<li><a name="a48"></a><span class="src-str">        &lt;/script&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a49"></a>&nbsp;</li>
+<li><a name="a50"></a>    <span class="src-sym">}</span></li>
+<li><a name="a51"></a>&nbsp;</li>
+<li><a name="a52"></a>    </li>
+<li><a name="a53"></a>    <span class="src-key">function </span><a href="../brwcms/rotating_images.html#methodget_javaScript">get_javaScript</a><span class="src-sym">(</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a54"></a>        <span class="src-key">return </span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/rotating_images.html#var$javaScript">javaScript</a><span class="src-sym">;</span></li>
+<li><a name="a55"></a>    <span class="src-sym">}</span></li>
+<li><a name="a56"></a><span class="src-sym">}</span></li>
+<li><a name="a57"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Wed,  5 Apr 2006 20:09:46 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC4</a>
+	</p>
+	</body>
+</html>

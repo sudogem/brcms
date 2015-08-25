@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>File Source for feedback_form.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+											</head>
+		<body>
+						<h1>Source for file feedback_form.php</h1>
+<p>Documentation is available at <a href="../brwcms/_code_feedback_form_php.html">feedback_form.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a>&lt;script type=&quot;text/javascript&quot;&gt;</li>
+<li><a name="a2"></a>    </li>
+<li><a name="a3"></a>    function confirmSubmit() {</li>
+<li><a name="a4"></a>        //return false;</li>
+<li><a name="a5"></a>        </li>
+<li><a name="a6"></a>        if(confirm(&quot;Are you sure you want to submit your comments / feedbacks?&quot;)) {</li>
+<li><a name="a7"></a>            if((document.feedback_form.username.value == &quot;&quot;) || (document.feedback_form.feedback.value == &quot;&quot;)) {</li>
+<li><a name="a8"></a>                alert(&quot;Ooops! The Name field and the Feedback Field should contain data.!&quot;);</li>
+<li><a name="a9"></a>                return = false;</li>
+<li><a name="a10"></a>            } else {</li>
+<li><a name="a11"></a>                return true;</li>
+<li><a name="a12"></a>            }</li>
+<li><a name="a13"></a>        }</li>
+<li><a name="a14"></a>    }</li>
+<li><a name="a15"></a>    </li>
+<li><a name="a16"></a>    function confirmReset() {</li>
+<li><a name="a17"></a>    }</li>
+<li><a name="a18"></a>&lt;/script&gt;</li>
+<li><a name="a19"></a>&nbsp;</li>
+<li><a name="a20"></a>&nbsp;</li>
+<li><a name="a21"></a>&lt;form method=&quot;post&quot; action=&quot;feedback.php&quot; name=&quot;feedback_form&quot; onSubmit=&quot;confirmSubmit();&quot;&gt;</li>
+<li><a name="a22"></a>    &lt;table id=&quot;feedback&quot;&gt;</li>
+<li><a name="a23"></a>        &lt;tr&gt;</li>
+<li><a name="a24"></a>            &lt;td&gt;Name: &lt;/td&gt;</li>
+<li><a name="a25"></a>            &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;/td&gt;</li>
+<li><a name="a26"></a>        &lt;/tr&gt;</li>
+<li><a name="a27"></a>        </li>
+<li><a name="a28"></a>        &lt;tr&gt;</li>
+<li><a name="a29"></a>            &lt;td&gt;Email Address: &lt;/td&gt;</li>
+<li><a name="a30"></a>            &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;emailAddress&quot;&gt;&lt;/td&gt;</li>
+<li><a name="a31"></a>        &lt;/tr&gt;</li>
+<li><a name="a32"></a>        </li>
+<li><a name="a33"></a>        &lt;tr&gt;</li>
+<li><a name="a34"></a>            &lt;td&gt;Feedbacks / Comments: &lt;/td&gt;</li>
+<li><a name="a35"></a>            &lt;td&gt;&lt;textarea name=&quot;feedback&quot; cols=&quot;40&quot; &gt;&lt;/textarea&gt;&lt;/td&gt;</li>
+<li><a name="a36"></a>        &lt;/tr&gt;</li>
+<li><a name="a37"></a>        &lt;tr&gt;</li>
+<li><a name="a38"></a>            &lt;td&gt;&lt;input type=&quot;submit&quot; value=&quot;Submit Feedback / Comments&quot; name=&quot;submit&quot;&gt;&lt;/td&gt;</li>
+<li><a name="a39"></a>            &lt;td&gt;&lt;input type=&quot;reset&quot; value=&quot;Cancel And Clear Fields&quot; name=&quot;reset&quot;&gt;&lt;/td&gt;</li>
+<li><a name="a40"></a>        &lt;/tr&gt;</li>
+<li><a name="a41"></a>            </li>
+<li><a name="a42"></a>    &lt;/table&gt;</li>
+<li><a name="a43"></a>&lt;/form&gt;</li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Wed,  5 Apr 2006 20:09:29 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC4</a>
+	</p>
+	</body>
+</html>

@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs for page coreclass.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="file-name">/coreclass.php</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+									<a href="#sec-includes">Includes</a>
+												</div>
+	<div class="info-box-body">	
+		<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">filesource:</span> <a href="..//__filesource/fsource_brwcms__coreclass.php.html">Source Code for this file</a></li>
+			</ul>
+		
+			</div>
+</div>
+		
+
+	<a name="sec-includes"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Includes</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Includes</span>
+														</div>
+		<div class="info-box-body">	
+			<a name="_configuration_php"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">include</span>
+			(<span class="include-name"><a href="../brwcms/_code_configuration_php.html">'configuration.php'</a></span>)
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__coreclass.php.html#a2">2</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+<a name="_$absolute_path_classes/class_database_php"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">include_once</span>
+			(<span class="include-name"><a href="../brwcms/_code_classes_class_database_php.html">$absolute_path.'classes/class_database.php'</a></span>)
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__coreclass.php.html#a3">3</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+<a name="_$absolute_path_classes/class_authenticate_user_php"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">include_once</span>
+			(<span class="include-name"><a href="../brwcms/_code_classes_class_authenticate_user_php.html">$absolute_path.'classes/class_authenticate_user.php'</a></span>)
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__coreclass.php.html#a4">4</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+<a name="_$absolute_path_classes/class_template_parser_php"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">include_once</span>
+			(<span class="include-name"><a href="../brwcms/_code_classes_class_template_parser_php.html">$absolute_path.'classes/class_template_parser.php'</a></span>)
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__coreclass.php.html#a5">5</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+<a name="_$absolute_path_classes/class_feedbacks_php"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">include_once</span>
+			(<span class="include-name"><a href="../brwcms/_code_classes_class_feedbacks_php.html">$absolute_path.'classes/class_feedbacks.php'</a></span>)
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__coreclass.php.html#a8">8</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+<a name="_$absolute_path_classes/class_quote_of_the_day_php"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">include_once</span>
+			(<span class="include-name"><a href="../brwcms/_code_classes_class_quote_of_the_day_php.html">$absolute_path.'classes/class_quote_of_the_day.php'</a></span>)
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__coreclass.php.html#a13">13</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+<a name="_$absolute_path_classes/class_validator_php"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">include_once</span>
+			(<span class="include-name"><a href="../brwcms/_code_classes_class_validator_php.html">$absolute_path.'classes/class_validator.php'</a></span>)
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__coreclass.php.html#a14">14</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+<a name="_$absolute_path_classes/class_upload_image_php"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">include_once</span>
+			(<span class="include-name"><a href="../brwcms/_code_classes_class_upload_image_php.html">$absolute_path.'classes/class_upload_image.php'</a></span>)
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__coreclass.php.html#a9">9</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+<a name="_$absolute_path_classes/class_stockphoto_php"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">include_once</span>
+			(<span class="include-name"><a href="../brwcms/_code_classes_class_stockphoto_php.html">$absolute_path.'classes/class_stockphoto.php'</a></span>)
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__coreclass.php.html#a10">10</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+<a name="_$absolute_path_classes/class_activity_php"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">include_once</span>
+			(<span class="include-name"><a href="../brwcms/_code_classes_class_activity_php.html">$absolute_path.'classes/class_activity.php'</a></span>)
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__coreclass.php.html#a11">11</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+<a name="_$absolute_path_classes/class_message_php"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">include_once</span>
+			(<span class="include-name"><a href="../brwcms/_code_classes_class_message_php.html">$absolute_path.'classes/class_message.php'</a></span>)
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__coreclass.php.html#a7">7</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+<a name="_$absolute_path_admin/graph/graph_creator_php"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">include_once</span>
+			(<span class="include-name">$absolute_path.'admin/graph/graph_creator.php'</span>)
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__coreclass.php.html#a18">18</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+<a name="_$absolute_path_admin/create_graphs_php"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">include_once</span>
+			(<span class="include-name">$absolute_path.'admin/create_graphs.php'</span>)
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__coreclass.php.html#a19">19</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+<a name="_$absolute_path_classes/class_gerger_timer_php"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">include_once</span>
+			(<span class="include-name"><a href="../brwcms/_code_classes_class_gerger_timer_php.html">$absolute_path.'classes/class_gerger_timer.php'</a></span>)
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__coreclass.php.html#a15">15</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+<a name="_$absolute_path_classes/class_document_generator_php"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">include_once</span>
+			(<span class="include-name"><a href="../brwcms/_code_classes_class_document_generator_php.html">$absolute_path.'classes/class_document_generator.php'</a></span>)
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__coreclass.php.html#a16">16</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+<a name="_$absolute_path_classes/class_rotate_ads_php"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">include_once</span>
+			(<span class="include-name"><a href="../brwcms/_code_classes_class_rotate_ads_php.html">$absolute_path.'classes/class_rotate_ads.php'</a></span>)
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__coreclass.php.html#a17">17</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+<a name="_$absolute_path_admin/db_fns_php"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">include_once</span>
+			(<span class="include-name">$absolute_path.'admin/db_fns.php'</span>)
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__coreclass.php.html#a23">23</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+<a name="_$absolute_path_classes/class_online_tracker_php"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">include_once</span>
+			(<span class="include-name"><a href="../brwcms/_code_classes_class_online_tracker_php.html">$absolute_path.'classes/class_online_tracker.php'</a></span>)
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__coreclass.php.html#a12">12</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+<a name="_$absolute_path_admin/globals_php"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">include_once</span>
+			(<span class="include-name">$absolute_path.'admin/globals.php'</span>)
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__coreclass.php.html#a20">20</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+<a name="_$absolute_path_admin/functions_query_data_php"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">include_once</span>
+			(<span class="include-name">$absolute_path.'admin/functions_query_data.php'</span>)
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__coreclass.php.html#a21">21</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+<a name="_$absolute_path_admin/corefunctions_php"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">include_once</span>
+			(<span class="include-name">$absolute_path.'admin/corefunctions.php'</span>)
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__coreclass.php.html#a22">22</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+<a name="_$absolute_path_classes/class_paging_php"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">include_once</span>
+			(<span class="include-name"><a href="../brwcms/_code_classes_class_paging_php.html">$absolute_path.'classes/class_paging.php'</a></span>)
+			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__coreclass.php.html#a6">6</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	<p class="notes" id="credit">
+		Documentation generated on Wed,  5 Apr 2006 20:09:19 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC4</a>
+	</p>
+	</div></body>
+</html>

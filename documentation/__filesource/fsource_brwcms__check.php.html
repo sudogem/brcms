@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>File Source for check.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+											</head>
+		<body>
+						<h1>Source for file check.php</h1>
+<p>Documentation is available at <a href="../brwcms/_code_check_php.html">check.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</li>
+<li><a name="a2"></a>&lt;html&gt;</li>
+<li><a name="a3"></a>&lt;head&gt;</li>
+<li><a name="a4"></a>&lt;title&gt;Untitled Document&lt;/title&gt;</li>
+<li><a name="a5"></a>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=iso-8859-1&quot;&gt;</li>
+<li><a name="a6"></a>&lt;script type=&quot;text/javascript&quot; language=&quot;javascript&quot; src=&quot;admin/admin_scripts.js&quot; &gt;&lt;/script&gt;</li>
+<li><a name="a7"></a>&lt;/head&gt;</li>
+<li><a name="a8"></a>&nbsp;</li>
+<li><a name="a9"></a>&lt;body&gt;</li>
+<li><a name="a10"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a11"></a><a href="http://www.php.net/print_r">print_r</a><span class="src-sym">(</span><span class="src-var">$_POST</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a12"></a><span class="src-php">?&gt;</span></li>
+<li><a name="a13"></a>&lt;form name=&quot;adminForm&quot; method=&quot;post&quot; action=&quot;check.php&quot;&gt;</li>
+<li><a name="a14"></a>&lt;input type=&quot;checkbox&quot; name=&quot;toggle&quot; value=&quot;&quot; onClick=&quot;checkAll(4);&quot; &gt;</li>
+<li><a name="a15"></a>&lt;br&gt;</li>
+<li><a name="a16"></a>&lt;input name=&quot;cid[]&quot; id=&quot;cb0&quot; type=&quot;checkbox&quot; value=&quot;&quot;  onClick=&quot;isChecked(this.checked);&quot;&gt;&lt;br&gt;</li>
+<li><a name="a17"></a>&lt;input name=&quot;cid[]&quot; id=&quot;cb1&quot; type=&quot;checkbox&quot; value=&quot;&quot;  onClick=&quot;isChecked(this.checked);&quot;&gt;&lt;br&gt;</li>
+<li><a name="a18"></a>&lt;input name=&quot;cid[]&quot; id=&quot;cb2&quot; type=&quot;checkbox&quot; value=&quot;&quot;  onClick=&quot;isChecked(this.checked);&quot;&gt;&lt;br&gt;</li>
+<li><a name="a19"></a>&lt;input name=&quot;cid[]&quot; id=&quot;cb3&quot; type=&quot;checkbox&quot; value=&quot;&quot;  onClick=&quot;isChecked(this.checked);&quot;&gt;&lt;br&gt;</li>
+<li><a name="a20"></a>&lt;input type=&quot;submit&quot;&gt;</li>
+<li><a name="a21"></a>&lt;/form&gt;</li>
+<li><a name="a22"></a>&lt;/body&gt;</li>
+<li><a name="a23"></a>&lt;/html&gt;</li>
+<li><a name="a24"></a>//print_r($_POST);</li>
+<li><a name="a25"></a>$db = new database;</li>
+<li><a name="a26"></a>&nbsp;</li>
+<li><a name="a27"></a>&nbsp;</li>
+<li><a name="a28"></a>&nbsp;</li>
+<li><a name="a29"></a>$sql = &quot; select * from article_versions av &quot;;</li>
+<li><a name="a30"></a>$sql .= &quot; where av.stageID=5 and av.status='published'&quot;;</li>
+<li><a name="a31"></a>&nbsp;</li>
+<li><a name="a32"></a>if (!($result = $db-&gt;query( $sql ))){</li>
+<li><a name="a33"></a>    die ( 'Error:' . $db-&gt;error());</li>
+<li><a name="a34"></a>}</li>
+<li><a name="a35"></a>$article_versions = array();</li>
+<li><a name="a36"></a>while( $row = $db-&gt;fetcharray() ) {</li>
+<li><a name="a37"></a>    $article_versions[] = $row; </li>
+<li><a name="a38"></a>}</li>
+<li><a name="a39"></a>$row_data = '';</li>
+<li><a name="a40"></a>for( $i = 0; $i &lt; count($article_versions) ; $i++ ) {</li>
+<li><a name="a41"></a>    if ( $article_versions[$i]-&gt;articleID ) {</li>
+<li><a name="a42"></a>         (($i % 2) == 0 )? $bgcolor = &quot;&quot; : $bgcolor=&quot;#F5F5F5&quot;;</li>
+<li><a name="a43"></a>        $row_data .= '&lt;tr class=&quot;tdhover&quot; id=&quot;tdata&quot; bgcolor = &quot;'. $bgcolor . '&quot;&gt;';</li>
+<li><a name="a44"></a>        </li>
+<li><a name="a45"></a>        $row_data .= '&lt;td&gt;';</li>
+<li><a name="a46"></a>        $row_data .= $i+1;</li>
+<li><a name="a47"></a>        $row_data .= '&lt;/td&gt;';</li>
+<li><a name="a48"></a>                    </li>
+<li><a name="a49"></a>        $row_data .= '&lt;td&gt;';</li>
+<li><a name="a50"></a>        $row_data .= '&lt;input type=&quot;checkbox&quot; name=&quot;checkitem[]&quot; id=&quot;checkitem[]&quot; value=&quot;' . $article_versions[$i]-&gt;articleID . '&quot;&gt;';</li>
+<li><a name="a51"></a>        $row_data .= '&lt;/td&gt;';            </li>
+<li><a name="a52"></a>        </li>
+<li><a name="a53"></a>        $row_data .= '&lt;td&gt;';</li>
+<li><a name="a54"></a>        $row_data .= '&lt;a href=&quot;' . VIEW_ARTICLE_URL . $article_versions[$i]-&gt;articleID . '&quot;&gt;';</li>
+<li><a name="a55"></a>        $row_data .= '&amp;nbsp;' . $article_versions[$i]-&gt;title;</li>
+<li><a name="a56"></a>        $row_data .= '&lt;/a&gt;';</li>
+<li><a name="a57"></a>        $row_data .= '&lt;/td&gt;';</li>
+<li><a name="a58"></a>        </li>
+<li><a name="a59"></a>        $row_data .= '&lt;td&gt;';</li>
+<li><a name="a60"></a>        $author_name = getArticle_authors ( $article_versions[$i]-&gt;articleID );</li>
+<li><a name="a61"></a>        $row_data .= '&amp;nbsp;' .  $author_name;</li>
+<li><a name="a62"></a>        $row_data .= '&lt;/td&gt;';</li>
+<li><a name="a63"></a>        </li>
+<li><a name="a64"></a>        $row_data .= '&lt;td&gt;';</li>
+<li><a name="a65"></a>        $category_name = getCategory_name( $article_versions[$i]-&gt;articleID );</li>
+<li><a name="a66"></a>        $row_data .= '&amp;nbsp;' . $category_name;</li>
+<li><a name="a67"></a>        $row_data .= '&lt;/td&gt;';</li>
+<li><a name="a68"></a>&nbsp;</li>
+<li><a name="a69"></a>        $row_data .= '&lt;td&gt;';</li>
+<li><a name="a70"></a>        $category_name = getFrontpage_type( $article_versions[$i]-&gt;articleID );</li>
+<li><a name="a71"></a>        $row_data .= '&amp;nbsp;' . $category_name;</li>
+<li><a name="a72"></a>        $row_data .= '&lt;/td&gt;';</li>
+<li><a name="a73"></a>        </li>
+<li><a name="a74"></a>        $row_data .= '&lt;td&gt;';</li>
+<li><a name="a75"></a>        $row_data .= '&amp;nbsp;' . getStage_name ( $article_versions[$i]-&gt;stageID );</li>
+<li><a name="a76"></a>        $row_data .= '&lt;/td&gt;';</li>
+<li><a name="a77"></a>        </li>
+<li><a name="a78"></a>        $row_data .= '&lt;td&gt;';</li>
+<li><a name="a79"></a>        $row_data .= '&amp;nbsp;' . friendlyDate2($article_versions[$i]-&gt;created);</li>
+<li><a name="a80"></a>        $row_data .= '&lt;/td&gt;';</li>
+<li><a name="a81"></a>        </li>
+<li><a name="a82"></a>        switch ( $_SESSION['stageID'] ) {</li>
+<li><a name="a83"></a>            case 5:// published date of the article..can be viewd by the admin only???</li>
+<li><a name="a84"></a>                $row_data .= '&lt;td&gt;';</li>
+<li><a name="a85"></a>                $date = ($article_versions[$i]-&gt;dateline)?friendlyDate2($article_versions[$i]-&gt;dateline):'0';</li>
+<li><a name="a86"></a>                $row_data .= '&amp;nbsp;' . $date;</li>
+<li><a name="a87"></a>                $row_data .= '&lt;/td&gt;';</li>
+<li><a name="a88"></a>                break;</li>
+<li><a name="a89"></a>            default:</li>
+<li><a name="a90"></a>                $row_data .= '&lt;td&gt;';</li>
+<li><a name="a91"></a>                $date = ($article_versions[$i]-&gt;modified)?friendlyDate2($article_versions[$i]-&gt;modified):'0';</li>
+<li><a name="a92"></a>                $row_data .= '&amp;nbsp;' . $date;</li>
+<li><a name="a93"></a>                $row_data .= '&lt;/td&gt;';</li>
+<li><a name="a94"></a>                break;    </li>
+<li><a name="a95"></a>        }</li>
+<li><a name="a96"></a>        $row_data .= '&lt;/tr&gt;';</li>
+<li><a name="a97"></a>    }            </li>
+<li><a name="a98"></a>}</li>
+<li><a name="a99"></a>&nbsp;</li>
+<li><a name="a100"></a>&nbsp;</li>
+<li><a name="a101"></a>if ( isset($_POST['submit'] )) {</li>
+<li><a name="a102"></a>    $year = $_POST['year'];</li>
+<li><a name="a103"></a>    $month = $_POST['month'];</li>
+<li><a name="a104"></a>    $month2 = strdate(&quot;$month&quot;,'');</li>
+<li><a name="a105"></a>    </li>
+<li><a name="a106"></a>    if ($_POST['reportype']==2 ){</li>
+<li><a name="a107"></a>    $optreportype .= '&lt;option value=&quot;1&quot;  &gt;Usage Report&lt;/option&gt;';</li>
+<li><a name="a108"></a>    $optreportype .= '&lt;option value=&quot;2&quot; selected&gt;Lists of member Report&lt;/option&gt;';</li>
+<li><a name="a109"></a>    $optreportype .= '&lt;option value=&quot;3&quot; &gt;News Contents Report&lt;/option&gt;';</li>
+<li><a name="a110"></a>// obtain list of users</li>
+<li><a name="a111"></a>$sql = &quot; select * from content_users &quot;;</li>
+<li><a name="a112"></a>if (!($result = $db-&gt;query( $sql ))){</li>
+<li><a name="a113"></a>    die ( 'Error:' . $db-&gt;error());</li>
+<li><a name="a114"></a>}</li>
+<li><a name="a115"></a>$content_users = array();</li>
+<li><a name="a116"></a>while ( $row = $db-&gt;fetcharray() ) $content_users[] = $row;</li>
+<li><a name="a117"></a>$row_data2 = '';</li>
+<li><a name="a118"></a>for( $i = 0; $i &lt; count($content_users); $i++ ){</li>
+<li><a name="a119"></a>    if ( $content_users[$i]-&gt;userID ) {</li>
+<li><a name="a120"></a>        (($i % 2) == 0 )? $bgcolor = &quot;&quot; : $bgcolor=&quot;#F5F5F5&quot;;</li>
+<li><a name="a121"></a>        $row_data2 .= '&lt;tr class=&quot;tdhover&quot; id=&quot;tdata&quot; bgcolor = &quot;'. $bgcolor . '&quot; align = &quot;left&quot;&gt;';</li>
+<li><a name="a122"></a>    </li>
+<li><a name="a123"></a>        $row_data2 .= '&lt;td&gt;';</li>
+<li><a name="a124"></a>        $row_data2 .= $i+1;</li>
+<li><a name="a125"></a>        $row_data2 .= '&lt;/td&gt;';</li>
+<li><a name="a126"></a>        </li>
+<li><a name="a127"></a>        $row_data2 .= '&lt;td align=&quot;left&quot;&gt;';</li>
+<li><a name="a128"></a>        $row_data2 .= '&lt;a href=&quot;' . VIEW_PROFILE_URL_MANAGER . $content_users[$i]-&gt;userID . '&quot;&gt;';</li>
+<li><a name="a129"></a>        $row_data2 .= '&lt;input type=&quot;hidden&quot; value = &quot;' . $content_users[$i]-&gt;userID . '&quot;&gt;';</li>
+<li><a name="a130"></a>        $row_data2 .= '&amp;nbsp;'. $content_users[$i]-&gt;fullname;</li>
+<li><a name="a131"></a>        $row_data2 .= '&lt;/td&gt;';</li>
+<li><a name="a132"></a>        </li>
+<li><a name="a133"></a>        $row_data2 .= '&lt;td align=&quot;left&quot;&gt;';</li>
+<li><a name="a134"></a>        $row_data2 .= '&amp;nbsp;'. $content_users[$i]-&gt;username;        </li>
+<li><a name="a135"></a>        $row_data2 .= '&lt;/td&gt;';    </li>
+<li><a name="a136"></a>        </li>
+<li><a name="a137"></a>        $row_data2 .= '&lt;td align=&quot;left&quot;&gt;';</li>
+<li><a name="a138"></a>        if ($content_users[$i]-&gt;is_enabled) {</li>
+<li><a name="a139"></a>            $row_data2 .= '&lt;img src=&quot;images/publish_x.png&quot; width=&quot;12&quot; height=&quot;12&quot; border=&quot;0&quot; alt=&quot;&quot; /&gt;';</li>
+<li><a name="a140"></a>        }</li>
+<li><a name="a141"></a>        else{</li>
+<li><a name="a142"></a>            $row_data2 .= '&lt;img src=&quot;images/tick.png&quot; width=&quot;12&quot; height=&quot;12&quot; border=&quot;0&quot; alt=&quot;&quot; /&gt;';    </li>
+<li><a name="a143"></a>        }</li>
+<li><a name="a144"></a>        $row_data2 .= '&lt;/td&gt;';        </li>
+<li><a name="a145"></a>            </li>
+<li><a name="a146"></a>        $row_data2 .= '&lt;td align=&quot;left&quot;&gt;';</li>
+<li><a name="a147"></a>        $group_name = getGroup_name ( $content_users[$i]-&gt;usertypeID );</li>
+<li><a name="a148"></a>        $row_data2 .= '&amp;nbsp;'.$group_name;</li>
+<li><a name="a149"></a>        $row_data2 .= '&lt;/td&gt;';</li>
+<li><a name="a150"></a>        </li>
+<li><a name="a151"></a>        $row_data2 .= '&lt;td&gt;';</li>
+<li><a name="a152"></a>        $row_data2 .= '&amp;nbsp;'.$content_users[$i]-&gt;email;</li>
+<li><a name="a153"></a>        $row_data2 .= '&lt;/td&gt;';</li>
+<li><a name="a154"></a>&nbsp;</li>
+<li><a name="a155"></a>        $row_data2 .= '&lt;td&gt;';</li>
+<li><a name="a156"></a>        if ($content_users[$i]-&gt;phoneno){</li>
+<li><a name="a157"></a>            $contactno = $content_users[$i]-&gt;phoneno;</li>
+<li><a name="a158"></a>        }</li>
+<li><a name="a159"></a>        else{</li>
+<li><a name="a160"></a>            if ($content_users[$i]-&gt;celno){</li>
+<li><a name="a161"></a>                $contactno = $content_users[$i]-&gt;celno;</li>
+<li><a name="a162"></a>            }</li>
+<li><a name="a163"></a>            else $contactno = '--';</li>
+<li><a name="a164"></a>        }</li>
+<li><a name="a165"></a>        $row_data2 .= '&amp;nbsp;'. $contactno;</li>
+<li><a name="a166"></a>        $row_data .= '&lt;/td&gt;';</li>
+<li><a name="a167"></a>        </li>
+<li><a name="a168"></a>        $row_data2 .= '&lt;/tr&gt;';</li>
+<li><a name="a169"></a>    }</li>
+<li><a name="a170"></a>}</li>
+<li><a name="a171"></a>    </li>
+<li><a name="a172"></a>    }</li>
+<li><a name="a173"></a>    if ($_POST['reportype']==3 ){</li>
+<li><a name="a174"></a>    $optreportype .= '&lt;option value=&quot;1&quot;  &gt;Usage Report&lt;/option&gt;';</li>
+<li><a name="a175"></a>    $optreportype .= '&lt;option value=&quot;2&quot; &gt;Lists of member Report&lt;/option&gt;';</li>
+<li><a name="a176"></a>    $optreportype .= '&lt;option value=&quot;3&quot; selected &gt;News Contents Report&lt;/option&gt;';</li>
+<li><a name="a177"></a>    }</li>
+<li><a name="a178"></a>    </li>
+<li><a name="a179"></a>    if( $_POST['reportype'] == 1 ) {</li>
+<li><a name="a180"></a>        include('../graph/graph_creator.php');</li>
+<li><a name="a181"></a>        $sql1 = &quot;select count(people_online.member) as Visitors from people_online where </li>
+<li><a name="a182"></a>        people_online.member = 'n' </li>
+<li><a name="a183"></a>        and month = '$month'</li>
+<li><a name="a184"></a>        and year = '$year'</li>
+<li><a name="a185"></a>        &quot;;</li>
+<li><a name="a186"></a>        </li>
+<li><a name="a187"></a>        $sql2 = &quot;select count(people_online.member) as Members from people_online where </li>
+<li><a name="a188"></a>        people_online.member = 'y'</li>
+<li><a name="a189"></a>        and month = '$month'</li>
+<li><a name="a190"></a>        and year = '$year'</li>
+<li><a name="a191"></a>        &quot;;</li>
+<li><a name="a192"></a>        $v=$db-&gt;query( $sql1 );</li>
+<li><a name="a193"></a>        $m=$db-&gt;query( $sql2 );</li>
+<li><a name="a194"></a>        $visitors=$db-&gt;fetcharray($v);</li>
+<li><a name="a195"></a>        $members=$db-&gt;fetcharray($m);</li>
+<li><a name="a196"></a>        if ($visitors-&gt;Visitors == 0 ) {</li>
+<li><a name="a197"></a>            $data[0] = &quot;-1&quot;;</li>
+<li><a name="a198"></a>        }else{            </li>
+<li><a name="a199"></a>            $data[0] = $visitors-&gt;Visitors;</li>
+<li><a name="a200"></a>        }</li>
+<li><a name="a201"></a>        if ($members-&gt;Members == 0 ) {</li>
+<li><a name="a202"></a>            $data[1] = &quot;0&quot;;</li>
+<li><a name="a203"></a>        }else{</li>
+<li><a name="a204"></a>            $data[1] = $members-&gt;Members;            </li>
+<li><a name="a205"></a>        }    </li>
+<li><a name="a206"></a>        $leg[0] = 'Visitors';</li>
+<li><a name="a207"></a>        $leg[1] =  'Members';</li>
+<li><a name="a208"></a>        $graph = new graph_creator( 300, 460, &quot;Usage Report as of $month2 $year&quot; , $leg, $data );</li>
+<li><a name="a209"></a>        $graph-&gt;create_pie_graph();    </li>
+<li><a name="a210"></a>     }</li>
+<li><a name="a211"></a>}</li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Wed,  5 Apr 2006 20:09:12 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC4</a>
+	</p>
+	</body>
+</html>

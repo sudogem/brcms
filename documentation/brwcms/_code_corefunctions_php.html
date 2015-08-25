@@ -1,0 +1,1075 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs for page corefunctions.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="file-name">/corefunctions.php</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-functions">Functions</a>
+			</div>
+	<div class="info-box-body">	
+		<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">filesource:</span> <a href="..//__filesource/fsource_brwcms__corefunctions.php.html">Source Code for this file</a></li>
+			</ul>
+		
+			</div>
+</div>
+		
+
+	
+	
+	
+	<a name="sec-functions"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Functions</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<span class="disabled">Functions</span>
+		</div>
+		<div class="info-box-body">	
+			<a name="functionallow_Stage_to_set" id="functionallow_Stage_to_set"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">allow_Stage_to_set</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a467">467</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">return the allowable stages that can be set by the content users.</p>
+<p class="description"><p>return the allowable stages that can be set by the content users..{mh}</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			allow_Stage_to_set
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$curstageID</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functioncheckhttptext" id="functioncheckhttptext"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">checkhttptext</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a424">424</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">check if &quot;http://&quot; strings was found.</p>
+<p class="description"><p>check if &quot;http://&quot; strings was found..</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			checkhttptext
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$url</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functioncheckIfCategoryContainsArticle" id="functioncheckIfCategoryContainsArticle"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">checkIfCategoryContainsArticle</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a90">90</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			checkIfCategoryContainsArticle
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$categoryID</span> = <span class="var-default">0</span>])
+			</div>
+
+		
+	
+</div>
+<a name="functioncheckIfWriterIsAvailableToAssignedTheTask" id="functioncheckIfWriterIsAvailableToAssignedTheTask"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">checkIfWriterIsAvailableToAssignedTheTask</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a704">704</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check if the writer is available to give a task.</p>
+<p class="description"><p>Check if the writer is available to give a task.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			checkIfWriterIsAvailableToAssignedTheTask
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$userID</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$currenttime</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$numtaskrequired</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functioncheckRevisionLists" id="functioncheckRevisionLists"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">checkRevisionLists</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a601">601</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check the revision lists of the article on this stage</p>
+<p class="description"><p>Check the revision lists of the article on this stage</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			checkRevisionLists
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$articleID</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$stage</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functioncheckUserAccessRights" id="functioncheckUserAccessRights"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">checkUserAccessRights</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a584">584</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check the user access rights</p>
+<p class="description"><p>Check the user access rights</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			checkUserAccessRights
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$userID</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$stage</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functionconvertdate" id="functionconvertdate"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">convertdate</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a296">296</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			convertdate
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$date</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functioncountArticle_versions_stage" id="functioncountArticle_versions_stage"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">countArticle_versions_stage</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a563">563</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			countArticle_versions_stage
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$stageid</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functionfriendlyDate" id="functionfriendlyDate"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">friendlyDate</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a270">270</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			friendlyDate
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$timestamp</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functionfriendlyDate2" id="functionfriendlyDate2"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">friendlyDate2</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a273">273</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			friendlyDate2
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$timestamp</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functionfriendlyDate3" id="functionfriendlyDate3"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">friendlyDate3</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a276">276</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			friendlyDate3
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$timestamp</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functionfriendlyDate4" id="functionfriendlyDate4"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">friendlyDate4</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a279">279</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			friendlyDate4
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$timestamp</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functionfriendlyDate5" id="functionfriendlyDate5"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">friendlyDate5</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a282">282</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			friendlyDate5
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$timestamp</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functiongetActiveQuota" id="functiongetActiveQuota"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">getActiveQuota</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a724">724</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get current active quota</p>
+<p class="description"><p>Get current active quota</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getActiveQuota
+		</span>
+				()
+			</div>
+
+		
+	
+</div>
+<a name="functiongetArticleTitle" id="functiongetArticleTitle"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">getArticleTitle</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a136">136</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getArticleTitle
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$articleID</span> = <span class="var-default">0</span>])
+			</div>
+
+		
+	
+</div>
+<a name="functiongetArticle_authors" id="functiongetArticle_authors"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">getArticle_authors</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a175">175</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getArticle_authors
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$articleID</span> = <span class="var-default">0</span>])
+			</div>
+
+		
+	
+</div>
+<a name="functiongetArticle_authors_info" id="functiongetArticle_authors_info"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">getArticle_authors_info</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a196">196</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getArticle_authors_info
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$articleID</span> = <span class="var-default">0</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$info</span> = <span class="var-default">&#039;&#039;</span>])
+			</div>
+
+		
+	
+</div>
+<a name="functiongetArticle_category" id="functiongetArticle_category"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">getArticle_category</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a27">27</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getArticle_category
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$categoryID</span> = <span class="var-default">0</span>])
+			</div>
+
+		
+	
+</div>
+<a name="functiongetArticle_category_info" id="functiongetArticle_category_info"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">getArticle_category_info</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a59">59</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getArticle_category_info
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$articleID</span> = <span class="var-default">0</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$info</span> = <span class="var-default">&#039;&#039;</span>])
+			</div>
+
+		
+	
+</div>
+<a name="functiongetArticle_imageSets" id="functiongetArticle_imageSets"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">getArticle_imageSets</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a153">153</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getArticle_imageSets
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$articleID</span> = <span class="var-default">0</span>])
+			</div>
+
+		
+	
+</div>
+<a name="functiongetArticle_info" id="functiongetArticle_info"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">getArticle_info</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a105">105</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getArticle_info
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$articleID</span> = <span class="var-default">0</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$info</span> = <span class="var-default">&#039;&#039;</span>])
+			</div>
+
+		
+	
+</div>
+<a name="functiongetArticle_keywords" id="functiongetArticle_keywords"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">getArticle_keywords</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a216">216</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getArticle_keywords
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$articleID</span> = <span class="var-default">0</span>])
+			</div>
+
+		
+	
+</div>
+<a name="functiongetArticle_version_info" id="functiongetArticle_version_info"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">getArticle_version_info</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a120">120</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getArticle_version_info
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$articleID</span> = <span class="var-default">0</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$info</span> = <span class="var-default">&#039;&#039;</span>])
+			</div>
+
+		
+	
+</div>
+<a name="functiongetBannerclient_info" id="functiongetBannerclient_info"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">getBannerclient_info</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a642">642</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the client active banners info</p>
+<p class="description"><p>Get the client active banners info</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getBannerclient_info
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$clientID</span> = <span class="var-default">0</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$info</span> = <span class="var-default">&quot;&quot;</span>])
+			</div>
+
+		
+	
+</div>
+<a name="functiongetCategory_info" id="functiongetCategory_info"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">getCategory_info</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a75">75</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getCategory_info
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$categoryID</span> = <span class="var-default">0</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$info</span> = <span class="var-default">&#039;&#039;</span>])
+			</div>
+
+		
+	
+</div>
+<a name="functiongetCategory_name" id="functiongetCategory_name"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">getCategory_name</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a11">11</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getCategory_name
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$articleID</span> = <span class="var-default">0</span>])
+			</div>
+
+		
+	
+</div>
+<a name="functiongetClientActiveBanners" id="functiongetClientActiveBanners"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">getClientActiveBanners</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a623">623</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the client active banners</p>
+<p class="description"><p>Get the client active banners</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getClientActiveBanners
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$clientID</span> = <span class="var-default">0</span>])
+			</div>
+
+		
+	
+</div>
+<a name="functiongetFrontpage_type" id="functiongetFrontpage_type"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">getFrontpage_type</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a390">390</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getFrontpage_type
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$articleID</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functiongetGroup_name" id="functiongetGroup_name"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">getGroup_name</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a344">344</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getGroup_name
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$groupid</span> = <span class="var-default">0</span>])
+			</div>
+
+		
+	
+</div>
+<a name="functiongetImages_info" id="functiongetImages_info"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">getImages_info</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a521">521</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the basic info of the image</p>
+<p class="description"><p>Get the basic info of the image</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getImages_info
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$filename</span> = <span class="var-default">&#039;&#039;</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$info</span> = <span class="var-default">&#039;&#039;</span>])
+			</div>
+
+		
+	
+</div>
+<a name="functiongetLiveArticleOnCategory" id="functiongetLiveArticleOnCategory"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">getLiveArticleOnCategory</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a534">534</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get live articles on this category</p>
+<p class="description"><p>Get live articles on this category</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getLiveArticleOnCategory
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$categoryid</span> = <span class="var-default">0</span>], <span class="var-type">mixed</span>&nbsp;<span class="var-name">$day</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$month</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$year</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functiongetStage_name" id="functiongetStage_name"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">getStage_name</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a410">410</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getStage_name
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$stageID</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functiongetUserWorkload" id="functiongetUserWorkload"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">getUserWorkload</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a668">668</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the current workload of the user</p>
+<p class="description"><p>Get the current workload of the user</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getUserWorkload
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$userID</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$currenttime</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functiongetUser_assigned_category" id="functiongetUser_assigned_category"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">getUser_assigned_category</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a45">45</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getUser_assigned_category
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$userID</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functiongetUser_fullname" id="functiongetUser_fullname"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">getUser_fullname</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a233">233</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getUser_fullname
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$userID</span> = <span class="var-default">0</span>])
+			</div>
+
+		
+	
+</div>
+<a name="functiongetUser_info" id="functiongetUser_info"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">getUser_info</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a252">252</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getUser_info
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$userID</span> = <span class="var-default">0</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$info</span> = <span class="var-default">&#039;&#039;</span>])
+			</div>
+
+		
+	
+</div>
+<a name="functiongetWriterTaskStatus" id="functiongetWriterTaskStatus"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">getWriterTaskStatus</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a685">685</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the status of the writer task.</p>
+<p class="description"><p>Return the status of the writer task.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getWriterTaskStatus
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$userID</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$status</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$currenttime</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functionmakeAShortIntro" id="functionmakeAShortIntro"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">makeAShortIntro</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a451">451</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			makeAShortIntro
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$body</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functionmakeRelativePath" id="functionmakeRelativePath"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">makeRelativePath</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a438">438</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Convert the path into a desired relative path</p>
+<p class="description"><p>Convert the path into a desired relative path</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			makeRelativePath
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$path</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functionniceDate" id="functionniceDate"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">niceDate</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a286">286</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			niceDate
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$timestamp</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functionniceTime" id="functionniceTime"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">niceTime</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a292">292</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			niceTime
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$timestamp</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functionsendmail" id="functionsendmail"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">sendmail</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a662">662</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Send email</p>
+<p class="description"><p>Send email</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sendmail
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$to</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$subject</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$msg</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functionsimpleDate" id="functionsimpleDate"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">simpleDate</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a289">289</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			simpleDate
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$unixtimestamp</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functionsplithttptext" id="functionsplithttptext"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">splithttptext</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a431">431</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">remove &quot;http://&quot; strings</p>
+<p class="description"><p>remove &quot;http://&quot; strings</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			splithttptext
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$url</span>)
+			</div>
+
+		
+	
+</div>
+<a name="functionstrDate" id="functionstrDate"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">strDate</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a310">310</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			strDate
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$month</span> = <span class="var-default">&quot;&quot;</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$day</span> = <span class="var-default">&quot;&quot;</span>])
+			</div>
+
+		
+	
+</div>
+<a name="functionuser_log" id="functionuser_log"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">user_log</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__corefunctions.php.html#a363">363</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			user_log
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$userID</span>)
+			</div>
+
+		
+	
+</div>
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Wed,  5 Apr 2006 20:09:19 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC4</a>
+	</p>
+	</div></body>
+</html>

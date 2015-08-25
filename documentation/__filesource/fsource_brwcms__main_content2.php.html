@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>File Source for main_content2.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+											</head>
+		<body>
+						<h1>Source for file main_content2.php</h1>
+<p>Documentation is available at <a href="../brwcms/_code_main_content2_php.html">main_content2.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a><span class="src-inc">include</span><span class="src-sym">( </span><span class="src-str">'configuration.php' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a3"></a>require <span class="src-sym">( </span><span class="src-str">'coreclass.php' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a4"></a><a href="http://www.php.net/session_start">session_start</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a5"></a><span class="src-key">if </span><span class="src-sym">( </span><span class="src-sym">!</span>isset<span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'login'</span><span class="src-sym">]</span><span class="src-sym">)) </span><span class="src-sym">{</span></li>
+<li><a name="a6"></a>    <a href="http://www.php.net/header">header</a><span class="src-sym">(</span><span class="src-str">'Location: login.php'</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a7"></a><span class="src-sym">}</span></li>
+<li><a name="a8"></a><span class="src-key">if </span><span class="src-sym">(</span>isset<span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'login'</span><span class="src-sym">]</span><span class="src-sym">)) </span><span class="src-sym">{</span></li>
+<li><a name="a9"></a>    <span class="src-var">$userID </span>= <span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'userID'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a10"></a>    <span class="src-var">$username </span>= <span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'username'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a11"></a>    <span class="src-var">$usertype </span>= <span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'usertype'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a12"></a><span class="src-sym">}</span></li>
+<li><a name="a13"></a><span class="src-key">switch</span><span class="src-sym">( </span><span class="src-var">$usertype </span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a14"></a>    <span class="src-key">case </span><span class="src-str">'News Editor'</span>:</li>
+<li><a name="a15"></a>        <span class="src-var">$assigned_category </span>= <a href="../brwcms/_code_corefunctions_php.html#functiongetCategory_info">getCategory_info</a><span class="src-sym">( </span><a href="../brwcms/_code_corefunctions_php.html#functiongetUser_assigned_category">getUser_assigned_category</a><span class="src-sym">( </span><span class="src-var">$userID </span><span class="src-sym">)</span><span class="src-sym">, </span><span class="src-str">'categoryID' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a16"></a>        <span class="src-var">$editor_on_category </span>= <span class="src-id">true</span><span class="src-sym">; </span><span class="src-comm">// this user is an editor</span></li>
+<li><a name="a17"></a>                <span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a18"></a><span class="src-sym">}</span></li>
+<li><a name="a19"></a><span class="src-comm">//retrieve the users workflow he had been assign ...</span></li>
+<li><a name="a20"></a><span class="src-var">$db </span>= <span class="src-key">new </span><span class="src-id"><a href="../brwcms/database.html">database</a></span><span class="src-sym">;</span></li>
+<li><a name="a21"></a>&nbsp;</li>
+<li><a name="a22"></a>&nbsp;</li>
+<li><a name="a23"></a>&nbsp;</li>
+<li><a name="a24"></a>&nbsp;</li>
+<li><a name="a25"></a><span class="src-var">$sql </span>= <span class="src-str">&quot;</span><span class="src-id">select</span> * <span class="src-id">from user_stage us</span>,</li>
+<li><a name="a26"></a>        <span class="src-id">stages s</span></li>
+<li><a name="a27"></a>        <span class="src-id">where us</span>.<span class="src-id">userID</span> = <span class="src-var">$userID</span></li>
+<li><a name="a28"></a>        <span class="src-id">and    s</span>.<span class="src-id">stageID</span> = <span class="src-id">us</span>.<span class="src-id">stageID </span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a29"></a><span class="src-comm">// print $sql;        </span></li>
+<li><a name="a30"></a><span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-sym">(</span><span class="src-var">$result </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">(</span><span class="src-var">$sql</span><span class="src-sym">)))</span><span class="src-sym">{</span></li>
+<li><a name="a31"></a>    <span class="src-key">die</span><span class="src-sym">(</span><span class="src-str">'Error:'</span>. <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">error</span><span class="src-sym">(</span><span class="src-sym">))</span><span class="src-sym">;</span></li>
+<li><a name="a32"></a><span class="src-sym">}</span></li>
+<li><a name="a33"></a><span class="src-var">$user_stage </span>= <span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a34"></a><span class="src-key">while </span><span class="src-sym">( </span><span class="src-var">$row </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">fetcharray</span><span class="src-sym">(</span><span class="src-sym">) ) </span><span class="src-sym">{</span></li>
+<li><a name="a35"></a>    <span class="src-var">$user_stage</span><span class="src-sym">[</span><span class="src-sym">] </span>= <span class="src-var">$row</span><span class="src-sym">;</span></li>
+<li><a name="a36"></a><span class="src-sym">}</span></li>
+<li><a name="a37"></a><span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">freeresult</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a38"></a>&nbsp;</li>
+<li><a name="a39"></a><span class="src-var">$msg </span>= <span class="src-key">new </span><span class="src-id"><a href="../brwcms/messages.html">messages</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a40"></a><span class="src-var">$messages </span>= <span class="src-var">$msg</span><span class="src-sym">-&gt;</span><span class="src-id">view_unread_messages </span><span class="src-sym">( </span><span class="src-var">$userID </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a41"></a><span class="src-var">$total_unread_messages </span>= <a href="http://www.php.net/count">count</a><span class="src-sym">( </span><span class="src-var">$messages </span><span class="src-sym">)</span>-<span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a42"></a>&nbsp;</li>
+<li><a name="a43"></a><span class="src-var">$fb </span>= <span class="src-key">new </span><span class="src-id"><a href="../brwcms/feedbacks.html">feedbacks</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a44"></a><span class="src-var">$feedbacks </span>= <span class="src-var">$fb</span><span class="src-sym">-&gt;</span><span class="src-id">view_unread_feedbacks</span><span class="src-sym">( </span><span class="src-num">1 </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a45"></a><span class="src-var">$total_unread_feedbacks </span>= <a href="http://www.php.net/count">count</a><span class="src-sym">( </span><span class="src-var">$feedbacks </span><span class="src-sym">)</span>-<span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a46"></a>&nbsp;</li>
+<li><a name="a47"></a><span class="src-var">$feedbacks </span>= <span class="src-var">$fb</span><span class="src-sym">-&gt;</span><span class="src-id">view_unread_feedbacks</span><span class="src-sym">( </span><span class="src-num">2 </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a48"></a><span class="src-var">$total_unread_sources </span>= <a href="http://www.php.net/count">count</a><span class="src-sym">( </span><span class="src-var">$feedbacks </span><span class="src-sym">)</span>-<span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a49"></a>&nbsp;</li>
+<li><a name="a50"></a><span class="src-comm">// get all articles belong in da specific category and edit by this editor assigned on dat category</span></li>
+<li><a name="a51"></a><span class="src-key">if </span><span class="src-sym">( </span><span class="src-var">$editor_on_category </span><span class="src-sym">) </span><span class="src-sym">{ </span></li>
+<li><a name="a52"></a>    <span class="src-var">$sql </span>= <span class="src-str">&quot;</span><span class="src-id">select</span> * <span class="src-id">from article_versions av</span>, <span class="src-id">article_category ac where </span></li>
+<li><a name="a53"></a>            ((<span class="src-id">av</span>.<span class="src-id">stageID</span> = 2 <span class="src-id">and av</span>.<span class="src-id">status</span> != '<span class="src-id">revise</span>') <span class="src-id">or</span> (<span class="src-id">av</span>.<span class="src-id">stageID</span> = 3 <span class="src-id">and av</span>.<span class="src-id">status</span> = '<span class="src-id">revise</span>' )) </li>
+<li><a name="a54"></a>            <span class="src-id">and</span> (( <span class="src-id">av</span>.<span class="src-id">isarchive</span> = '0' <span class="src-id">and</span> ( <span class="src-id">ac</span>.<span class="src-id">articleID</span> = <span class="src-id">av</span>.<span class="src-id">articleID</span> ) <span class="src-id">and</span> ( <span class="src-id">ac</span>.<span class="src-id">categoryID</span> = '<span class="src-var">$assigned_category</span>' ))) <span class="src-id">order by av</span>.<span class="src-id">created DESC </span></li>
+<li><a name="a55"></a>    <span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a56"></a><span class="src-sym">}</span></li>
+<li><a name="a57"></a><span class="src-key">else</span><span class="src-sym">{ </span><span class="src-comm">// wil display all articles regardless of category so that this user can edit them..</span></li>
+<li><a name="a58"></a>        <span class="src-var">$sql </span>= <span class="src-str">&quot;select * from article_versions av where </span></li>
+<li><a name="a59"></a><span class="src-str">            (av.stageID = 2 and av.status != 'revise') or (av.stageID = 3 and av.status = 'revise' ) </span></li>
+<li><a name="a60"></a><span class="src-str">            and av.isarchive = '0' order by av.created DESC </span></li>
+<li><a name="a61"></a><span class="src-str">    &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a62"></a><span class="src-sym">}</span></li>
+<li><a name="a63"></a><span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-sym">(</span><span class="src-var">$result </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">(</span><span class="src-var">$sql</span><span class="src-sym">)))</span><span class="src-sym">{</span></li>
+<li><a name="a64"></a>    <span class="src-key">die</span><span class="src-sym">(</span><span class="src-str">'Error:'</span>. <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">error</span><span class="src-sym">(</span><span class="src-sym">))</span><span class="src-sym">;</span></li>
+<li><a name="a65"></a><span class="src-sym">}</span></li>
+<li><a name="a66"></a><span class="src-var">$writing </span>= <span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a67"></a><span class="src-key">while </span><span class="src-sym">( </span><span class="src-var">$row </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">fetcharray</span><span class="src-sym">(</span><span class="src-sym">) ) </span><span class="src-sym">{</span></li>
+<li><a name="a68"></a>    <span class="src-var">$writing</span><span class="src-sym">[</span><span class="src-sym">] </span>= <span class="src-var">$row</span><span class="src-sym">;</span></li>
+<li><a name="a69"></a><span class="src-sym">}</span></li>
+<li><a name="a70"></a><span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">freeresult</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a71"></a><span class="src-var">$total_writings </span>= <a href="http://www.php.net/count">count</a><span class="src-sym">( </span><span class="src-var">$writing </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a72"></a>&nbsp;</li>
+<li><a name="a73"></a><span class="src-var">$sql </span>= <span class="src-str">&quot; select * from article_versions av &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a74"></a><span class="src-var">$sql </span>.= <span class="src-str">&quot; where av.stageID=3&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a75"></a><span class="src-comm">//$sql .= &quot; and av.status != 'revise' &quot;;</span></li>
+<li><a name="a76"></a><span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-sym">(</span><span class="src-var">$result </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">(</span><span class="src-var">$sql</span><span class="src-sym">)))</span><span class="src-sym">{</span></li>
+<li><a name="a77"></a>    <span class="src-key">die</span><span class="src-sym">(</span><span class="src-str">'Error:'</span>. <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">error</span><span class="src-sym">(</span><span class="src-sym">))</span><span class="src-sym">;</span></li>
+<li><a name="a78"></a><span class="src-sym">}</span></li>
+<li><a name="a79"></a><span class="src-var">$editing </span>= <span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a80"></a><span class="src-key">while </span><span class="src-sym">( </span><span class="src-var">$row </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">fetcharray</span><span class="src-sym">(</span><span class="src-sym">) ) </span><span class="src-sym">{</span></li>
+<li><a name="a81"></a>    <span class="src-var">$editing</span><span class="src-sym">[</span><span class="src-sym">] </span>= <span class="src-var">$row</span><span class="src-sym">;</span></li>
+<li><a name="a82"></a><span class="src-sym">}</span></li>
+<li><a name="a83"></a><span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">freeresult</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a84"></a><span class="src-var">$total_editings </span>= <a href="http://www.php.net/count">count</a><span class="src-sym">( </span><span class="src-var">$editing </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a85"></a>&nbsp;</li>
+<li><a name="a86"></a><span class="src-var">$sql </span>= <span class="src-str">&quot;select * from article_versions av where </span></li>
+<li><a name="a87"></a><span class="src-str">        (av.stageID=3 and av.status != 'revise') or ( av.stageID=3 and av.status = 'edited' ) </span></li>
+<li><a name="a88"></a><span class="src-str">        and av.isarchive = '0' order by av.created DESC &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a89"></a><span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-sym">(</span><span class="src-var">$result </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">(</span><span class="src-var">$sql</span><span class="src-sym">)))</span><span class="src-sym">{</span></li>
+<li><a name="a90"></a>    <span class="src-key">die</span><span class="src-sym">(</span><span class="src-str">'Error:'</span>. <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">error</span><span class="src-sym">(</span><span class="src-sym">))</span><span class="src-sym">;</span></li>
+<li><a name="a91"></a><span class="src-sym">}</span></li>
+<li><a name="a92"></a><span class="src-var">$evaluating </span>= <span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a93"></a><span class="src-key">while </span><span class="src-sym">( </span><span class="src-var">$row </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">fetcharray</span><span class="src-sym">(</span><span class="src-sym">) ) </span><span class="src-sym">{</span></li>
+<li><a name="a94"></a>    <span class="src-var">$evaluating</span><span class="src-sym">[</span><span class="src-sym">] </span>= <span class="src-var">$row</span><span class="src-sym">;</span></li>
+<li><a name="a95"></a><span class="src-sym">}</span></li>
+<li><a name="a96"></a><span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">freeresult</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a97"></a><span class="src-var">$total_evaluating </span>= <a href="http://www.php.net/count">count</a><span class="src-sym">( </span><span class="src-var">$evaluating </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a98"></a>&nbsp;</li>
+<li><a name="a99"></a>&nbsp;</li>
+<li><a name="a100"></a><span class="src-var">$sql </span>= <span class="src-str">&quot;select * from article_versions av where av.stageID=4&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a101"></a><span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-sym">(</span><span class="src-var">$result </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">(</span><span class="src-var">$sql</span><span class="src-sym">)))</span><span class="src-sym">{</span></li>
+<li><a name="a102"></a>    <span class="src-key">die</span><span class="src-sym">(</span><span class="src-str">'Error:'</span>. <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">error</span><span class="src-sym">(</span><span class="src-sym">))</span><span class="src-sym">;</span></li>
+<li><a name="a103"></a><span class="src-sym">}</span></li>
+<li><a name="a104"></a><span class="src-var">$publishing </span>= <span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a105"></a><span class="src-key">while </span><span class="src-sym">( </span><span class="src-var">$row </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">fetcharray</span><span class="src-sym">(</span><span class="src-sym">) ) </span><span class="src-sym">{</span></li>
+<li><a name="a106"></a>    <span class="src-var">$publishing</span><span class="src-sym">[</span><span class="src-sym">] </span>= <span class="src-var">$row</span><span class="src-sym">;</span></li>
+<li><a name="a107"></a><span class="src-sym">}</span></li>
+<li><a name="a108"></a><span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">freeresult</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a109"></a><span class="src-var">$total_publishing </span>= <a href="http://www.php.net/count">count</a><span class="src-sym">( </span><span class="src-var">$publishing </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a110"></a>&nbsp;</li>
+<li><a name="a111"></a><span class="src-var">$currentdate </span>= <span class="src-id">simpledate</span><span class="src-sym">(</span><a href="http://www.php.net/time">time</a><span class="src-sym">(</span><span class="src-sym">))</span><span class="src-sym">;</span></li>
+<li><a name="a112"></a><span class="src-var">$sql </span>= <span class="src-str">&quot;</span><span class="src-id">select</span> * <span class="src-id">from tasks where assignedto</span> = '<span class="src-var">$userID</span>' <span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a113"></a><span class="src-var">$sql </span>.= <span class="src-str">&quot; and status != 'completed' &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a114"></a><span class="src-var">$sql </span>.= <span class="src-str">&quot; </span><span class="src-id">and created</span> = '<span class="src-var">$currentdate</span>'<span class="src-str">&quot; </span><span class="src-sym">;</span></li>
+<li><a name="a115"></a><span class="src-var">$sql </span>.= <span class="src-str">&quot; order by created desc &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a116"></a><span class="src-key">if </span><span class="src-sym">(</span><span class="src-sym">!</span><span class="src-sym">(</span><span class="src-var">$result </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">(</span><span class="src-var">$sql</span><span class="src-sym">)))</span><span class="src-sym">{</span></li>
+<li><a name="a117"></a>    <span class="src-key">die</span><span class="src-sym">(</span><span class="src-str">'Error:'</span>. <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">error</span><span class="src-sym">(</span><span class="src-sym">))</span><span class="src-sym">;</span></li>
+<li><a name="a118"></a><span class="src-sym">}</span></li>
+<li><a name="a119"></a><span class="src-var">$mytasks </span>= <span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a120"></a><span class="src-key">while </span><span class="src-sym">( </span><span class="src-var">$row </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">fetcharray</span><span class="src-sym">(</span><span class="src-sym">) ) </span><span class="src-sym">{</span></li>
+<li><a name="a121"></a>    <span class="src-var">$mytasks</span><span class="src-sym">[</span><span class="src-sym">] </span>= <span class="src-var">$row</span><span class="src-sym">;</span></li>
+<li><a name="a122"></a><span class="src-sym">}</span></li>
+<li><a name="a123"></a><span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">freeresult</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a124"></a><span class="src-var">$total_tasks </span>= <a href="http://www.php.net/count">count</a><span class="src-sym">( </span><span class="src-var">$mytasks </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a125"></a>&nbsp;</li>
+<li><a name="a126"></a><span class="src-var">$menu </span>= <span class="src-str">''</span><span class="src-sym">;</span></li>
+<li><a name="a127"></a><span class="src-key">if </span><span class="src-sym">( </span><span class="src-var">$usertype </span>== <span class="src-str">'Administrator'</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a128"></a>    </li>
+<li><a name="a129"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a130"></a>    <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/view_article_versions.php?stageID=6&quot; &gt;&lt;img src=&quot;../admin/images/addedit.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;All News Content&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a131"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a132"></a>&nbsp;</li>
+<li><a name="a133"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a134"></a>    <span class="src-var">$menu </span>.=     <span class="src-str">'&lt;a href=&quot;../admin/archive_manager.php&quot; &gt;&lt;img src=&quot;../admin/images/searchtext.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;NewsContent Archive Manager&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a135"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a136"></a>    </li>
+<li><a name="a137"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a138"></a>    <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/category_manager.php&quot; &gt;&lt;img src=&quot;../admin/images/categories.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;Category Manager&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a139"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a140"></a>    </li>
+<li><a name="a141"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a142"></a>    <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/quote_manager.php&quot; &gt;&lt;img src=&quot;../admin/images/module.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;Quote Manager&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a143"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a144"></a>&nbsp;</li>
+<li><a name="a145"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a146"></a>    <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/other_site_content.php&quot; &gt;&lt;img src=&quot;../admin/images/sections.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;Other Site Content&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a147"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a148"></a>    </li>
+<li><a name="a149"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a150"></a>    <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/feedback_manager.php&quot; &gt;&lt;img src=&quot;../admin/images/addedit.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;&lt;p&gt;Feedback/&lt;br&gt;Comments&lt;/p&gt;-'</span>. <span class="src-var">$total_unread_feedbacks</span>. <span class="src-str">' item(s)-&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a151"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a152"></a>&nbsp;</li>
+<li><a name="a153"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a154"></a>    <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/other_sources.php&quot; &gt;&lt;img src=&quot;../admin/images/addedit.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;&lt;p&gt;External Sources&lt;/p&gt;-'</span>. <span class="src-var">$total_unread_sources</span>. <span class="src-str">' item(s)-&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a155"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a156"></a>    </li>
+<li><a name="a157"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a158"></a>    <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/user_manager2.php&quot; &gt;&lt;img src=&quot;../admin/images/user.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;User Manager&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a159"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a160"></a>    </li>
+<li><a name="a161"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a162"></a>    <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/user_access_permissions.php&quot; &gt;&lt;img src=&quot;../admin/images/191.gif&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;User Access Permissions&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a163"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a164"></a>&nbsp;</li>
+<li><a name="a165"></a>    <span class="src-comm">//$menu .= '&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;';</span></li>
+<li><a name="a166"></a>    </li>
+<li><a name="a166"></a>        </li>
+<li><a name="a167"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a168"></a>    <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/audit_trail.php&quot; &gt;&lt;img src=&quot;../admin/images/query.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;Audit trail&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a169"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a170"></a>&nbsp;</li>
+<li><a name="a171"></a>    </li>
+<li><a name="a172"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a173"></a>    <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/report_admin.php&quot; &gt;&lt;img src=&quot;../admin/images/addedit.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;Admin Report&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a174"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a175"></a>    </li>
+<li><a name="a176"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a177"></a>    <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/report_usage.php&quot; &gt;&lt;img src=&quot;../admin/images/278.gif&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;Usage Report&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a178"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a179"></a>&nbsp;</li>
+<li><a name="a180"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a181"></a>    <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/image_manager.php&quot; &gt;&lt;img src=&quot;../admin/images/mediamanager.png&quot; alt=&quot;&quot; width=&quot;48&quot; height=&quot;48&quot; border=&quot;0&quot;&gt;&lt;p&gt;Image Manager &lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a182"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a183"></a>&nbsp;</li>
+<li><a name="a184"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a185"></a>    <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/clients_manager.php&quot; &gt;&lt;img src=&quot;../admin/images/user.png&quot; alt=&quot;&quot; width=&quot;48&quot; height=&quot;48&quot; border=&quot;0&quot;&gt;&lt;p&gt;Client Manager&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a186"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a187"></a>&nbsp;</li>
+<li><a name="a188"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a189"></a>    <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/banner_ads_manager.php&quot; &gt;&lt;img src=&quot;../admin/images/templatemanager.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;Banner Client Manager&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a190"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a191"></a>&nbsp;</li>
+<li><a name="a192"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a193"></a>    <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/backup_restore_database.php&quot; &gt;&lt;img src=&quot;../admin/images/backup.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;Backup/Restore Database&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a194"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a195"></a>&nbsp;</li>
+<li><a name="a196"></a>    <span class="src-comm">#for poll_survey</span></li>
+<li><a name="a197"></a>        <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a198"></a>    <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/list_poll_survey.php&quot; &gt;&lt;img src=&quot;../admin/images/278.gif&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;Poll Survey Manager&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a199"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a200"></a>    </li>
+<li><a name="a201"></a>    <span class="src-var">$use_common_menu </span>= <span class="src-num">1</span><span class="src-sym">;    </span></li>
+<li><a name="a202"></a>    <span class="src-var">$admin_menu </span>= <span class="src-num">1</span><span class="src-sym">; </span><span class="src-comm">// admin menu</span></li>
+<li><a name="a203"></a><span class="src-sym">}</span></li>
+<li><a name="a204"></a>&nbsp;</li>
+<li><a name="a205"></a><span class="src-comm">// ok pepol,,let us know what are his workflow he/she had been ASSIGN by the admin..</span></li>
+<li><a name="a206"></a><span class="src-key">for</span><span class="src-sym">( </span><span class="src-var">$i </span>= <span class="src-num">0</span><span class="src-sym">; </span><span class="src-var">$i </span>&lt; <a href="http://www.php.net/count">count</a><span class="src-sym">(</span><span class="src-var">$user_stage</span><span class="src-sym">)</span><span class="src-sym">; </span><span class="src-var">$i</span>++ <span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a207"></a>    <span class="src-key">switch </span><span class="src-sym">(</span><span class="src-var">$user_stage</span><span class="src-sym">[</span><span class="src-var">$i</span><span class="src-sym">]</span><span class="src-sym">-&gt;</span><span class="src-id">stageID</span><span class="src-sym">) </span><span class="src-sym">{ </span><span class="src-comm">// ok lets check his workflow</span></li>
+<li><a name="a208"></a>                <span class="src-key">case </span><span class="src-num">1</span>:<span class="src-comm">// writing</span></li>
+<li><a name="a209"></a>                <span class="src-key">case </span><span class="src-num">2</span>:</li>
+<li><a name="a210"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a211"></a>            <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/my_tasks.php&quot; &gt;&lt;img src=&quot;../admin/images/module.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;My Tasks&lt;br&gt;&lt;/p&gt;- '</span>.<span class="src-var">$total_tasks</span>.<span class="src-str">' item(s)-&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a212"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a213"></a>            </li>
+<li><a name="a214"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a215"></a>            <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/add_article.php&quot; &gt;&lt;img src=&quot;../admin/images/addedit.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;Add Article&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a216"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a217"></a>&nbsp;</li>
+<li><a name="a218"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a219"></a>            <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/add_segments.php&quot; &gt;&lt;img src=&quot;../admin/images/addedit.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;Add Segment&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a220"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a221"></a>            </li>
+<li><a name="a222"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a223"></a>            <span class="src-var">$menu </span>.=     <span class="src-str">'&lt;a href=&quot;../admin/my_articles2.php&quot; &gt;&lt;img src=&quot;../admin/images/addedit.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;My Articles&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a224"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a225"></a>&nbsp;</li>
+<li><a name="a226"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a227"></a>            <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/report_writer_articles.php&quot; &gt;&lt;img src=&quot;../admin/images/addedit.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;Writer Report&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a228"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a229"></a>            </li>
+<li><a name="a230"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a231"></a>            <span class="src-var">$menu </span>.=     <span class="src-str">'&lt;a href=&quot;../admin/archive_manager.php&quot; &gt;&lt;img src=&quot;../admin/images/searchtext.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p align=&quot;center&quot;&gt;Article Archive Manager&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a232"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a233"></a>            </li>
+<li><a name="a234"></a>            <span class="src-var">$use_common_menu </span>= <span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a235"></a>            <span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a236"></a>        <span class="src-key">case </span><span class="src-num">3</span>:<span class="src-comm">// editing</span></li>
+<li><a name="a237"></a>                        <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a238"></a>            <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/view_article_versions.php?stageID=3&quot; &gt;&lt;img src=&quot;../admin/images/addedit.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;Edit Article&lt;/p&gt;- '</span>. <span class="src-var">$total_writings </span>. <span class="src-str">' item(s)-&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a239"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a240"></a>            </li>
+<li><a name="a241"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a242"></a>            <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/task_manager.php&quot; &gt;&lt;img src=&quot;../admin/images/module.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;Task Manager&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a243"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a244"></a>            </li>
+<li><a name="a245"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a246"></a>            <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/report_editor_articles.php&quot; &gt;&lt;img src=&quot;../admin/images/addedit.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;Editor Report&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a247"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a248"></a>            <span class="src-var">$use_common_menu </span>= <span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a249"></a>            <span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a250"></a>        <span class="src-key">case </span><span class="src-num">4</span>:<span class="src-comm">// evaluating</span></li>
+<li><a name="a251"></a>                        <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a252"></a>            <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/view_article_versions.php?stageID=4&quot;&gt;&lt;img src=&quot;../admin/images/addedit.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;Evaluate Article&lt;br&gt;&lt;/p&gt;- '</span>.<span class="src-var">$total_editings</span>.<span class="src-str">' item(s)-&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a253"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a254"></a>&nbsp;</li>
+<li><a name="a255"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a256"></a>            <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/feedback_manager.php&quot; &gt;&lt;img src=&quot;../admin/images/addedit.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;&lt;p&gt;Feedback/&lt;br&gt;Comments &lt;/p&gt;-'</span>. <span class="src-var">$total_unread_feedbacks</span>. <span class="src-str">' item(s)-&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a257"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a258"></a>&nbsp;</li>
+<li><a name="a259"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a260"></a>            <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/other_sources.php&quot; &gt;&lt;img src=&quot;../admin/images/addedit.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;&lt;p&gt;External Sources&lt;/p&gt;-'</span>. <span class="src-var">$total_unread_sources</span>. <span class="src-str">' item(s)-&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a261"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a262"></a>&nbsp;</li>
+<li><a name="a263"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a264"></a>            <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/quota.php&quot; &gt;&lt;img src=&quot;../admin/images/sections.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;Quota Manager &lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a265"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a266"></a>&nbsp;</li>
+<li><a name="a267"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a268"></a>            <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/category_manager.php&quot; &gt;&lt;img src=&quot;../admin/images/categories.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;Category Manager &lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a269"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a270"></a>&nbsp;</li>
+<li><a name="a271"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a272"></a>            <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/article_reports.php&quot; &gt;&lt;img src=&quot;../admin/images/addedit.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;News Director Report &lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a273"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a274"></a>            </li>
+<li><a name="a275"></a>            <span class="src-var">$use_common_menu </span>= <span class="src-num">1</span><span class="src-sym">;    </span></li>
+<li><a name="a276"></a>            <span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a277"></a>        <span class="src-key">case </span><span class="src-num">5</span>:<span class="src-comm">// publishing</span></li>
+<li><a name="a278"></a>                        <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a279"></a>            <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/view_article_versions.php?stageID=5&quot; &gt;&lt;img src=&quot;../admin/images/impressions.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;Publish Article&lt;br&gt;&lt;/p&gt;- '</span>.<span class="src-var">$total_publishing</span>. <span class="src-str">' item(s)- &lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a280"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a281"></a>            </li>
+<li><a name="a282"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a283"></a>            <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/image_manager.php&quot; &gt;&lt;img src=&quot;../admin/images/mediamanager.png&quot; alt=&quot;&quot; width=&quot;48&quot; height=&quot;48&quot; border=&quot;0&quot;&gt;&lt;p&gt;Image Manager &lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a284"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a285"></a>            </li>
+<li><a name="a286"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a287"></a>            <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/report_publisher_articles.php&quot; &gt;&lt;img src=&quot;../admin/images/addedit.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;Publisher Report&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a288"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a289"></a>&nbsp;</li>
+<li><a name="a290"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a291"></a>            <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/banner_ads_manager.php&quot; &gt;&lt;img src=&quot;../admin/images/templatemanager.png&quot; alt=&quot;&quot; width=&quot;48&quot; height=&quot;48&quot; border=&quot;0&quot;&gt;&lt;p&gt;Banner Client Manager &lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a292"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a293"></a>&nbsp;</li>
+<li><a name="a294"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a295"></a>            <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/template_manager2.php&quot; &gt;&lt;img src=&quot;../admin/images/menu.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;p&gt;Template Manager &lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a296"></a>            <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a297"></a>        </li>
+<li><a name="a298"></a>            <span class="src-var">$use_common_menu </span>= <span class="src-num">1</span><span class="src-sym">;</span></li>
+<li><a name="a299"></a>            <span class="src-key">break</span><span class="src-sym">;</span></li>
+<li><a name="a300"></a>    <span class="src-sym">}</span></li>
+<li><a name="a301"></a><span class="src-sym">}</span></li>
+<li><a name="a302"></a><span class="src-key">if </span><span class="src-sym">( </span><span class="src-var">$use_common_menu </span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a303"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a304"></a>    <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/user_profile.php&quot; &gt;&lt;img src=&quot;../admin/images/user.png&quot; alt=&quot;&quot; width=&quot;48&quot; height=&quot;48&quot; border=&quot;0&quot;&gt;&lt;p&gt;My Personal Profile&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a305"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a306"></a>&nbsp;</li>
+<li><a name="a307"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a308"></a>    <span class="src-sym">(</span><span class="src-var">$total_unread_messages </span>&gt; <span class="src-num">0</span><span class="src-sym">) </span>?     <span class="src-var">$menu </span>.= <span class="src-str">'&lt;a href=&quot;../admin/view_messages.php&quot; &gt;&lt;img src=&quot;../admin/images/messaging.png&quot; alt=&quot;&quot; width=&quot;48&quot; height=&quot;48&quot; border=&quot;0&quot;&gt;&lt;p&gt;Messaging&lt;/p&gt;- ' </span>. <span class="src-var">$total_unread_messages </span>. <span class="src-str">' unread message(s) - &lt;/a&gt;'</span></li>
+<li><a name="a309"></a>    : <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/view_messages.php&quot; &gt;&lt;img src=&quot;../admin/images/messaging.png&quot; alt=&quot;&quot; width=&quot;48&quot; height=&quot;48&quot; border=&quot;0&quot;&gt;&lt;p&gt;Messaging&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a310"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a311"></a>&nbsp;</li>
+<li><a name="a312"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a313"></a>    <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/message_archive_manager.php&quot; &gt;&lt;img src=&quot;../admin/images/addedit.png&quot; alt=&quot;&quot; width=&quot;48&quot; height=&quot;48&quot; border=&quot;0&quot;&gt;&lt;p&gt;Messaging Archive Manager&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a314"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a315"></a>&nbsp;</li>
+<li><a name="a316"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a317"></a>    <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../manual/index.php&quot; &gt;&lt;img src=&quot;../admin/images/support.png&quot; alt=&quot;&quot; width=&quot;48&quot; height=&quot;48&quot; border=&quot;0&quot;&gt;&lt;p&gt;Help&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a318"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a319"></a>    </li>
+<li><a name="a320"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a321"></a>    <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/credits.php&quot; &gt;&lt;img src=&quot;../admin/images/credits.png&quot; alt=&quot;&quot; width=&quot;48&quot; height=&quot;48&quot; border=&quot;0&quot;&gt;&lt;p&gt;Credits &lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a322"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a323"></a>&nbsp;</li>
+<li><a name="a324"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;div id=&quot;block&quot;&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a325"></a>    <span class="src-var">$menu </span>.=    <span class="src-str">'&lt;a href=&quot;../admin/logout2.php&quot; &gt;&lt;img src=&quot;../admin/images/frontpage.png&quot; alt=&quot;&quot;  border=&quot;0&quot;&gt;&lt;p&gt;Log-out ('</span>. <span class="src-var">$username </span>. <span class="src-str">')&lt;/p&gt;&lt;/a&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a326"></a>    <span class="src-var">$menu </span>.= <span class="src-str">'&lt;/div&gt;'</span><span class="src-sym">;</span></li>
+<li><a name="a327"></a><span class="src-sym">}</span></li>
+<li><a name="a328"></a>&nbsp;</li>
+<li><a name="a329"></a><span class="src-comm">// now start compiling the page..</span></li>
+<li><a name="a330"></a><span class="src-var">$tpl </span>= <span class="src-key">new </span><span class="src-id"><a href="../brwcms/template_parser.html">template_parser</a></span><span class="src-sym">( </span><span class="src-str">'../templates/main_menu_container.tpl.php' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a331"></a><span class="src-var">$tags </span>= <span class="src-key">array</span><span class="src-sym">(</span></li>
+<li><a name="a332"></a>        <span class="src-str">'{MENU}' </span>=&gt; <span class="src-var">$menu</span></li>
+<li><a name="a333"></a>        <span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a334"></a><span class="src-var">$tpl</span><span class="src-sym">-&gt;</span><span class="src-id">parse_template</span><span class="src-sym">( </span><span class="src-var">$tags </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a335"></a>print <span class="src-var">$tpl</span><span class="src-sym">-&gt;</span><span class="src-id">display</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a336"></a>&nbsp;</li>
+<li><a name="a337"></a><span class="src-comm">//print $menu;</span></li>
+<li><a name="a338"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Wed,  5 Apr 2006 20:09:34 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC4</a>
+	</p>
+	</body>
+</html>

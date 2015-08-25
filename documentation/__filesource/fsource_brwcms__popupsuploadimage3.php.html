@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>File Source for uploadimage3.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+											</head>
+		<body>
+						<h1>Source for file uploadimage3.php</h1>
+<p>Documentation is available at <a href="../brwcms/_code_popups_uploadimage3_php.html">uploadimage3.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php </span></li>
+<li><a name="a2"></a>    require<span class="src-sym">( </span><span class="src-str">'../../admin/coreclass.php' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a3"></a>    </li>
+<li><a name="a4"></a>    <a href="http://www.php.net/session_start">session_start</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a5"></a>    <span class="src-comm">// print_r($_SESSION);</span></li>
+<li><a name="a6"></a>        <span class="src-var">$clientID </span>= <span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'clientID'</span><span class="src-sym">]</span><span class="src-sym">;</span><span class="src-comm">// get the clientid</span></li>
+<li><a name="a7"></a>        <span class="src-var">$bannerID </span>= <span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'bannerID'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a8"></a>    <span class="src-var">$file_type </span>= <span class="src-var">$_FILES</span><span class="src-sym">[</span><span class="src-str">'userfile'</span><span class="src-sym">]</span><span class="src-sym">[</span><span class="src-str">'type'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a9"></a>    <span class="src-var">$tmp_file_name </span>= <span class="src-var">$_FILES</span><span class="src-sym">[</span><span class="src-str">'userfile'</span><span class="src-sym">]</span><span class="src-sym">[</span><span class="src-str">'tmp_name'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a10"></a>    <span class="src-var">$file_name </span>= <span class="src-var">$_FILES</span><span class="src-sym">[</span><span class="src-str">'userfile'</span><span class="src-sym">]</span><span class="src-sym">[</span><span class="src-str">'name'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a11"></a>    <span class="src-var">$upload_dir </span>= <span class="src-str">'../../images/ads/'</span><span class="src-sym">;</span></li>
+<li><a name="a12"></a>    <span class="src-var">$msize </span>= <a href="http://www.php.net/ini_get">ini_get</a><span class="src-sym">( </span><span class="src-str">'post_max_size' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a13"></a>    <span class="src-var">$max_file_size </span>= <span class="src-var">$msize</span><span class="src-sym">;</span></li>
+<li><a name="a14"></a>    </li>
+<li><a name="a15"></a>    <span class="src-comm">// found problem here...</span></li>
+<li><a name="a16"></a>        <span class="src-var">$photo </span>= <span class="src-key">new </span><span class="src-id"><a href="../brwcms/stockphoto.html">stockphoto</a></span><span class="src-sym">;</span></li>
+<li><a name="a17"></a>    <span class="src-key">if </span><span class="src-sym">( </span>isset<span class="src-sym">( </span><span class="src-var">$_FILES </span><span class="src-sym">) </span>&amp;&amp; isset<span class="src-sym">( </span><span class="src-var">$_POST</span><span class="src-sym">[</span><span class="src-str">'fileupload'</span><span class="src-sym">]</span><span class="src-sym">) ) </span><span class="src-sym">{</span></li>
+<li><a name="a18"></a>        <span class="src-var">$upload </span>= <span class="src-key">new </span><span class="src-id"><a href="../brwcms/upload_image.html">upload_image</a></span><span class="src-sym">( </span><span class="src-var">$file_type</span><span class="src-sym">, </span><span class="src-var">$tmp_file_name</span><span class="src-sym">, </span><span class="src-var">$file_name</span><span class="src-sym">, </span><span class="src-var">$upload_dir</span><span class="src-sym">, </span><span class="src-var">$max_file_size </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a19"></a>        <span class="src-var">$upload</span><span class="src-sym">-&gt;</span><span class="src-id">upload</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a20"></a>        <span class="src-var">$upload</span><span class="src-sym">-&gt;</span><span class="src-id">get_upload_directory</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a21"></a>        <span class="src-var">$upload</span><span class="src-sym">-&gt;</span><span class="src-id">get_message</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a22"></a>        <span class="src-var">$filename </span>= <span class="src-var">$upload</span><span class="src-sym">-&gt;</span><span class="src-id">get_uploaded_file</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a23"></a>        <span class="src-var">$photo</span><span class="src-sym">-&gt;</span><span class="src-id">addNewImage</span><span class="src-sym">( </span><span class="src-var">$upload</span><span class="src-sym">-&gt;</span><span class="src-id">upload_dir </span>. <span class="src-var">$upload</span><span class="src-sym">-&gt;</span><span class="src-id">file_name </span><span class="src-sym">, </span><span class="src-str">''</span><span class="src-sym">, </span><span class="src-str">''</span><span class="src-sym">, </span><span class="src-str">''</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a24"></a>        <span class="src-var">$photo</span><span class="src-sym">-&gt;</span><span class="src-id">addImageToClient</span><span class="src-sym">( </span><span class="src-var">$clientID </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a25"></a>        <span class="src-comm">//$photo-&gt;updateBannerClient( $bannerID );</span></li>
+<li><a name="a26"></a>                <span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'insertclientID'</span><span class="src-sym">] </span>= <span class="src-var">$photo</span><span class="src-sym">-&gt;</span><span class="src-id">insertclientID</span><span class="src-sym">;</span><span class="src-comm">// Get the newly inserted id</span></li>
+<li><a name="a27"></a>        <span class="src-sym">}</span></li>
+<li><a name="a28"></a>    </li>
+<li><a name="a29"></a><span class="src-php">?&gt;</span></li>
+<li><a name="a30"></a>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</li>
+<li><a name="a31"></a>&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;</li>
+<li><a name="a32"></a>&lt;head&gt;</li>
+<li><a name="a33"></a>&lt;title&gt;Upload a file&lt;/title&gt;</li>
+<li><a name="a34"></a>&lt;/head&gt;</li>
+<li><a name="a35"></a>&lt;body&gt;</li>
+<li><a name="a36"></a>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;../../templates/admin2.css&quot; /&gt;</li>
+<li><a name="a37"></a>&lt;table &gt;</li>
+<li><a name="a38"></a>  &lt;form method=&quot;post&quot; action=&quot;uploadimage3.php&quot; enctype=&quot;multipart/form-data&quot; name=&quot;filename&quot;&gt;</li>
+<li><a name="a39"></a>    &lt;tr&gt;</li>
+<li><a name="a40"></a>      &lt;th width=&quot;347&quot;   class=&quot;fileuploadtitle&quot;&gt; Upload Image: <span class="src-php">&lt;?php </span>echo <span class="src-var">$directory</span><span class="src-sym">; </span><span class="src-php">?&gt;</span>&lt;/th&gt;</li>
+<li><a name="a41"></a>    &lt;/tr&gt;</li>
+<li><a name="a42"></a>    &lt;tr&gt;</li>
+<li><a name="a43"></a>      &lt;td align=&quot;center&quot;&gt;</li>
+<li><a name="a44"></a>        &lt;input  name=&quot;userfile&quot; type=&quot;file&quot; /&gt;</li>
+<li><a name="a45"></a>      &lt;/td&gt;</li>
+<li><a name="a46"></a>    &lt;/tr&gt;</li>
+<li><a name="a47"></a>    </li>
+<li><a name="a48"></a>    &lt;tr&gt;</li>
+<li><a name="a49"></a>      &lt;td&gt;</li>
+<li><a name="a50"></a>        &lt;input class=&quot;button&quot; type=&quot;submit&quot; value=&quot;Upload&quot; name=&quot;fileupload&quot; /&gt;</li>
+<li><a name="a51"></a>        Max size = <span class="src-php">&lt;?php </span>echo <a href="http://www.php.net/ini_get">ini_get</a><span class="src-sym">( </span><span class="src-str">'post_max_size' </span><span class="src-sym">)</span><span class="src-sym">;</span><span class="src-php">?&gt;</span></li>
+<li><a name="a52"></a>      &lt;/td&gt;</li>
+<li><a name="a53"></a>    &lt;tr&gt;</li>
+<li><a name="a54"></a>      &lt;td&gt;</li>
+<li><a name="a55"></a>        &lt;input type=&quot;hidden&quot; name=&quot;directory&quot; value=&quot;<span class="src-php">&lt;?php </span>echo <span class="src-var">$directory</span><span class="src-sym">;</span><span class="src-php">?&gt;</span>&quot; /&gt;</li>
+<li><a name="a56"></a>      &lt;/td&gt;</li>
+<li><a name="a57"></a>    &lt;/tr&gt;</li>
+<li><a name="a58"></a>  &lt;/form&gt;</li>
+<li><a name="a59"></a>&lt;/table&gt;</li>
+<li><a name="a60"></a>&lt;/body&gt;</li>
+<li><a name="a61"></a>&lt;/html&gt;</li>
+<li><a name="a62"></a>        &lt;input type=&quot;hidden&quot; name=&quot;directory&quot; value=&quot;<span class="src-php">&lt;?php </span>echo <span class="src-var">$directory</span><span class="src-sym">;</span><span class="src-php">?&gt;</span>&quot; /&gt;</li>
+<li><a name="a63"></a>      &lt;/td&gt;</li>
+<li><a name="a64"></a>    &lt;/tr&gt;</li>
+<li><a name="a65"></a>  &lt;/form&gt;</li>
+<li><a name="a66"></a>&lt;/table&gt;</li>
+<li><a name="a67"></a>&lt;/body&gt;</li>
+<li><a name="a68"></a>&lt;/html&gt;</li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Wed,  5 Apr 2006 20:10:05 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC4</a>
+	</p>
+	</body>
+</html>

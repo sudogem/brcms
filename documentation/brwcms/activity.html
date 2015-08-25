@@ -1,0 +1,1426 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class activity</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class activity</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+		<p class="notes">
+			Located in <a class="field" href="_code_classes_class_activity_php.html">/classes/class_activity.php</a> (line <span class="field"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a2">2</a></span>)
+		</p>
+		
+				
+		<pre><a href="../brwcms/dbsettings.html">dbsettings</a>
+   |
+   --<a href="../brwcms/database.html">database</a>
+      |
+      --activity</pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$archiving_article" title="details" class="var-name">$archiving_article</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$blocking_user" title="details" class="var-name">$blocking_user</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$changing_group" title="details" class="var-name">$changing_group</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$changing_password" title="details" class="var-name">$changing_password</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$changing_template" title="details" class="var-name">$changing_template</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$changing_username" title="details" class="var-name">$changing_username</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$creating_bannerads" title="details" class="var-name">$creating_bannerads</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$creating_category" title="details" class="var-name">$creating_category</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$creating_client_profile" title="details" class="var-name">$creating_client_profile</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$creating_msg" title="details" class="var-name">$creating_msg</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$creating_poll_topic" title="details" class="var-name">$creating_poll_topic</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$creating_quote" title="details" class="var-name">$creating_quote</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$creating_user" title="details" class="var-name">$creating_user</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$deleting_article" title="details" class="var-name">$deleting_article</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$deleting_image" title="details" class="var-name">$deleting_image</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$deleting_msg" title="details" class="var-name">$deleting_msg</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$editing_article" title="details" class="var-name">$editing_article</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$editing_bannerads" title="details" class="var-name">$editing_bannerads</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$editing_category" title="details" class="var-name">$editing_category</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$editing_client_profile" title="details" class="var-name">$editing_client_profile</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$editing_imagedetails" title="details" class="var-name">$editing_imagedetails</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$editing_poll_topic" title="details" class="var-name">$editing_poll_topic</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$editing_quote" title="details" class="var-name">$editing_quote</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$editing_userpermissions" title="details" class="var-name">$editing_userpermissions</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$editing_user_profile" title="details" class="var-name">$editing_user_profile</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$generating_report" title="details" class="var-name">$generating_report</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$loggedin" title="details" class="var-name">$loggedin</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$logout" title="details" class="var-name">$logout</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$printing_article" title="details" class="var-name">$printing_article</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$publishing_article" title="details" class="var-name">$publishing_article</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$saving_article" title="details" class="var-name">$saving_article</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$saving_bannerads" title="details" class="var-name">$saving_bannerads</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$saving_category" title="details" class="var-name">$saving_category</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$saving_client_profile" title="details" class="var-name">$saving_client_profile</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$saving_quote" title="details" class="var-name">$saving_quote</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$saving_user_profile" title="details" class="var-name">$saving_user_profile</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$searching" title="details" class="var-name">$searching</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$sending_msg" title="details" class="var-name">$sending_msg</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$unarchiving_article" title="details" class="var-name">$unarchiving_article</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$unblocking_user" title="details" class="var-name">$unblocking_user</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$uploading_image" title="details" class="var-name">$uploading_image</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$viewing_article" title="details" class="var-name">$viewing_article</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$viewing_bannerads" title="details" class="var-name">$viewing_bannerads</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$viewing_category" title="details" class="var-name">$viewing_category</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$viewing_client_profile" title="details" class="var-name">$viewing_client_profile</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$viewing_image" title="details" class="var-name">$viewing_image</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$viewing_msg" title="details" class="var-name">$viewing_msg</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$viewing_userguides" title="details" class="var-name">$viewing_userguides</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$viewing_user_profile" title="details" class="var-name">$viewing_user_profile</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$writing_article" title="details" class="var-name">$writing_article</a>
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+								
+				<div class="method-definition">
+											<span class="method-result">activity</span>
+										<a href="#activity" title="details" class="method-name">activity</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#lists_all_activity" title="details" class="method-name">lists_all_activity</a>
+										()
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#track_activity" title="details" class="method-name">track_activity</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$userid</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$activity</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$itemname</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#view_activity" title="details" class="method-name">view_activity</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$userid</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$activity</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$startdate</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$enddate</span>)
+									</div>
+							</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$archiving_article" id="$archiving_article"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$archiving_article</span>
+			 = <span class="var-default"> &quot;Archiving an article&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a7">7</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$blocking_user" id="$blocking_user"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$blocking_user</span>
+			 = <span class="var-default"> &quot;Blocking a user&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a30">30</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$changing_group" id="$changing_group"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$changing_group</span>
+			 = <span class="var-default"> &quot;Changing user group&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a26">26</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$changing_password" id="$changing_password"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$changing_password</span>
+			 = <span class="var-default"> &quot;Changing a userpassword&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a24">24</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$changing_template" id="$changing_template"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$changing_template</span>
+			 = <span class="var-default"> &quot;Changing a site-themes&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a49">49</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$changing_username" id="$changing_username"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$changing_username</span>
+			 = <span class="var-default"> &quot;Changing a username&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a25">25</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$creating_bannerads" id="$creating_bannerads"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$creating_bannerads</span>
+			 = <span class="var-default"> &quot;Creating a banner ads &quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a45">45</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$creating_category" id="$creating_category"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$creating_category</span>
+			 = <span class="var-default"> &quot;Creating a category &quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a37">37</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$creating_client_profile" id="$creating_client_profile"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$creating_client_profile</span>
+			 = <span class="var-default"> &quot;Creating a client profile&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a20">20</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$creating_msg" id="$creating_msg"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$creating_msg</span>
+			 = <span class="var-default"> &quot;Creating a message &quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a36">36</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$creating_poll_topic" id="$creating_poll_topic"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$creating_poll_topic</span>
+			 = <span class="var-default"> &quot;Creating a poll topic&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a52">52</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$creating_quote" id="$creating_quote"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$creating_quote</span>
+			 = <span class="var-default"> &quot;Creating a quote &quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a40">40</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$creating_user" id="$creating_user"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$creating_user</span>
+			 = <span class="var-default"> &quot;Creating a user&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a16">16</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$deleting_article" id="$deleting_article"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$deleting_article</span>
+			 = <span class="var-default"> &quot;Deleting an article&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a6">6</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$deleting_image" id="$deleting_image"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$deleting_image</span>
+			 = <span class="var-default"> &quot;Deleting an image&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a13">13</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$deleting_msg" id="$deleting_msg"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$deleting_msg</span>
+			 = <span class="var-default"> &quot;Deleting a message &quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a34">34</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$editing_article" id="$editing_article"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$editing_article</span>
+			 = <span class="var-default"> &quot;Editing an article&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a4">4</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$editing_bannerads" id="$editing_bannerads"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$editing_bannerads</span>
+			 = <span class="var-default"> &quot;Editing a banner ads&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a47">47</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$editing_category" id="$editing_category"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$editing_category</span>
+			 = <span class="var-default"> &quot;Editing a category &quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a39">39</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$editing_client_profile" id="$editing_client_profile"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$editing_client_profile</span>
+			 = <span class="var-default"> &quot;Editing client profile&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a22">22</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$editing_imagedetails" id="$editing_imagedetails"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$editing_imagedetails</span>
+			 = <span class="var-default"> &quot;Editing image details&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a12">12</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$editing_poll_topic" id="$editing_poll_topic"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$editing_poll_topic</span>
+			 = <span class="var-default"> &quot;Editing a poll topic&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a53">53</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$editing_quote" id="$editing_quote"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$editing_quote</span>
+			 = <span class="var-default"> &quot;Editing a quote &quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a42">42</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$editing_userpermissions" id="$editing_userpermissions"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$editing_userpermissions</span>
+			 = <span class="var-default"> &quot;Editing a user access permissions&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a29">29</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$editing_user_profile" id="$editing_user_profile"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$editing_user_profile</span>
+			 = <span class="var-default"> &quot;Editing a user profile&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a19">19</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$generating_report" id="$generating_report"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$generating_report</span>
+			 = <span class="var-default"> &quot;Generating a report&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a51">51</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$loggedin" id="$loggedin"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$loggedin</span>
+			 = <span class="var-default"> &quot;Logged in&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a27">27</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$logout" id="$logout"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$logout</span>
+			 = <span class="var-default"> &quot;Log-out&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a28">28</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$printing_article" id="$printing_article"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$printing_article</span>
+			 = <span class="var-default"> &quot;Printing an article&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a15">15</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$publishing_article" id="$publishing_article"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$publishing_article</span>
+			 = <span class="var-default"> &quot;Publishing an article&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a9">9</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$saving_article" id="$saving_article"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$saving_article</span>
+			 = <span class="var-default"> &quot;Saving an article&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a5">5</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$saving_bannerads" id="$saving_bannerads"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$saving_bannerads</span>
+			 = <span class="var-default"> &quot;Saving a banner ads&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a48">48</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$saving_category" id="$saving_category"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$saving_category</span>
+			 = <span class="var-default"> &quot;Saving a category &quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a38">38</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$saving_client_profile" id="$saving_client_profile"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$saving_client_profile</span>
+			 = <span class="var-default"> &quot;Saving client profile&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a23">23</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$saving_quote" id="$saving_quote"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$saving_quote</span>
+			 = <span class="var-default"> &quot;Saving a quote &quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a41">41</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$saving_user_profile" id="$saving_user_profile"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$saving_user_profile</span>
+			 = <span class="var-default"> &quot;Saving a user profile&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a17">17</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$searching" id="$searching"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$searching</span>
+			 = <span class="var-default"> &quot;Performing a search query&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a50">50</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$sending_msg" id="$sending_msg"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$sending_msg</span>
+			 = <span class="var-default"> &quot;Sending a message &quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a35">35</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$unarchiving_article" id="$unarchiving_article"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$unarchiving_article</span>
+			 = <span class="var-default"> &quot;Unarchiving an article&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a8">8</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$unblocking_user" id="$unblocking_user"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$unblocking_user</span>
+			 = <span class="var-default"> &quot;Unblocking a user&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a31">31</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$uploading_image" id="$uploading_image"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$uploading_image</span>
+			 = <span class="var-default"> &quot;Uploading an image&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a10">10</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$viewing_article" id="$viewing_article"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$viewing_article</span>
+			 = <span class="var-default"> &quot;Viewing an article&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a14">14</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$viewing_bannerads" id="$viewing_bannerads"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$viewing_bannerads</span>
+			 = <span class="var-default"> &quot;Viewing banner ads details&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a46">46</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$viewing_category" id="$viewing_category"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$viewing_category</span>
+			 = <span class="var-default"> &quot;Viewing a category details &quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a44">44</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$viewing_client_profile" id="$viewing_client_profile"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$viewing_client_profile</span>
+			 = <span class="var-default"> &quot;Viewing client profile&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a21">21</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$viewing_image" id="$viewing_image"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$viewing_image</span>
+			 = <span class="var-default"> &quot;Viewing an image&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a11">11</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$viewing_msg" id="$viewing_msg"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$viewing_msg</span>
+			 = <span class="var-default"> &quot;Viewing a message &quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a33">33</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$viewing_userguides" id="$viewing_userguides"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$viewing_userguides</span>
+			 = <span class="var-default"> &quot;Viewing a user guides&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a32">32</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$viewing_user_profile" id="$viewing_user_profile"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$viewing_user_profile</span>
+			 = <span class="var-default"> &quot;Viewing user profile&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a18">18</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+<a name="var$writing_article" id="$writing_article"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$writing_article</span>
+			 = <span class="var-default"> &quot;Writing an article&quot;</span>			(line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a3">3</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../brwcms/dbsettings.html">dbsettings</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../brwcms/dbsettings.html#var$databasename">dbsettings::$databasename</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../brwcms/dbsettings.html#var$dbpassword">dbsettings::$dbpassword</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../brwcms/dbsettings.html#var$dbservername">dbsettings::$dbservername</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../brwcms/dbsettings.html#var$dbusername">dbsettings::$dbusername</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../brwcms/dbsettings.html#var$persistency">dbsettings::$persistency</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodactivity" id="activity"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor activity</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a58">58</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">activity</span>
+		<span class="method-name">
+			activity
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodlists_all_activity" id="lists_all_activity"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">lists_all_activity</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a77">77</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			lists_all_activity
+		</span>
+				()
+			</div>
+	
+		
+		
+	</div>
+<a name="methodtrack_activity" id="track_activity"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">track_activity</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a65">65</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			track_activity
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$userid</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$activity</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$itemname</span>)
+			</div>
+	
+		
+		
+	</div>
+<a name="methodview_activity" id="view_activity"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">view_activity</span> (line <span class="line-number"><a href="..//__filesource/fsource_brwcms__classesclass_activity.php.html#a91">91</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			view_activity
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$userid</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$activity</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$startdate</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$enddate</span>)
+			</div>
+	
+		
+		
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../brwcms/database.html">database</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../brwcms/database.html#methoddatabase">database::database()</a></span><br>
+													<span class="method-name"><a href="../brwcms/database.html#methodclose">database::close()</a></span><br>
+													<span class="method-name"><a href="../brwcms/database.html#methoddestroy_result">database::destroy_result()</a></span><br>
+													<span class="method-name"><a href="../brwcms/database.html#methoddestructor">database::destructor()</a></span><br>
+													<span class="method-name"><a href="../brwcms/database.html#methoderror">database::error()</a></span><br>
+													<span class="method-name"><a href="../brwcms/database.html#methodfetcharray">database::fetcharray()</a></span><br>
+													<span class="method-name"><a href="../brwcms/database.html#methodfreeresult">database::freeresult()</a></span><br>
+													<span class="method-name"><a href="../brwcms/database.html#methodgetInsertID">database::getInsertID()</a></span><br>
+													<span class="method-name"><a href="../brwcms/database.html#methodgetnumrows">database::getnumrows()</a></span><br>
+													<span class="method-name"><a href="../brwcms/database.html#methodquery">database::query()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Wed,  5 Apr 2006 20:09:12 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC4</a>
+	</p>
+	</div></body>
+</html>

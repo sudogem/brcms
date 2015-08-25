@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>File Source for save_writer_article.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+											</head>
+		<body>
+						<h1>Source for file save_writer_article.php</h1>
+<p>Documentation is available at <a href="../brwcms/_code_save_writer_article_php.html">save_writer_article.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php </span></li>
+<li><a name="a2"></a><span class="src-inc">include</span><span class="src-sym">( </span><span class="src-str">'configuration.php' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a3"></a>    <span class="src-comm">//This script is for saving updates to</span></li>
+<li><a name="a4"></a>    <span class="src-comm">//the database.</span></li>
+<li><a name="a5"></a>        <a href="http://www.php.net/session_start">session_start</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;    </span></li>
+<li><a name="a6"></a>    <span class="src-inc">include</span><span class="src-sym">(</span><span class="src-str">'../admin/db_fns.php'</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a7"></a>    </li>
+<li><a name="a8"></a>    <span class="src-comm">//$articleID = $_POST['articleID'];</span></li>
+<li><a name="a9"></a>    <span class="src-comm">//$userID = $_POST['userID'];</span></li>
+<li><a name="a10"></a>        <span class="src-var">$categoryID </span>= <span class="src-var">$_POST</span><span class="src-sym">[</span><span class="src-str">'category'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a11"></a>    <span class="src-var">$stageID </span>= <span class="src-var">$_POST</span><span class="src-sym">[</span><span class="src-str">'stageID'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a12"></a>    <span class="src-var">$created </span>= <span class="src-var">$_POST</span><span class="src-sym">[</span><span class="src-str">'created'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a13"></a>    <span class="src-var">$dateline </span>= <span class="src-var">$_POST</span><span class="src-sym">[</span><span class="src-str">'dateline'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a14"></a>    <span class="src-var">$article_title </span>= <span class="src-var">$_POST</span><span class="src-sym">[</span><span class="src-str">'title'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a15"></a>    <span class="src-var">$article_body </span>= <span class="src-var">$_POST</span><span class="src-sym">[</span><span class="src-str">'editor_content'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a16"></a>    </li>
+<li><a name="a17"></a><span class="src-comm">//print_r ($_POST);</span></li>
+<li><a name="a18"></a>        <span class="src-var">$userID </span>= <span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'userID'</span><span class="src-sym">]</span><span class="src-sym">;</span></li>
+<li><a name="a19"></a>    </li>
+<li><a name="a20"></a>    <span class="src-comm">//$created = date(&quot;F d, Y h:i:s A&quot;);</span></li>
+<li><a name="a21"></a>        <span class="src-var">$created </span>= <a href="http://www.php.net/time">time</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a22"></a>&nbsp;</li>
+<li><a name="a23"></a>    <span class="src-var">$query </span>= <span class="src-str">&quot; insert into articles ( stageID, created, dateline, title, article_body) &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a24"></a>    <span class="src-var">$query </span>.= <span class="src-str">&quot; </span><span class="src-id">values</span>( '<span class="src-var">$stageID</span>', <span class="src-var">$created</span>, '<span class="src-var">$dateline</span>', '<span class="src-var">$article_title</span>', '<span class="src-var">$article_body</span>' )<span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a25"></a>print <span class="src-var">$query </span><span class="src-sym">;                      </span></li>
+<li><a name="a26"></a>    <span class="src-var">$db </span>= <span class="src-key">new </span><span class="src-id"><a href="../brwcms/database.html">database</a></span><span class="src-sym">;</span></li>
+<li><a name="a27"></a>&nbsp;</li>
+<li><a name="a28"></a>&nbsp;</li>
+<li><a name="a29"></a>&nbsp;</li>
+<li><a name="a30"></a>&nbsp;</li>
+<li><a name="a31"></a>    <span class="src-var">$result </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">( </span><span class="src-var">$query </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a32"></a>    <span class="src-key">if </span><span class="src-sym">( </span><span class="src-var">$result </span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a33"></a>        <span class="src-comm">// ok ..</span></li>
+<li><a name="a34"></a>        <span class="src-sym">} </span><span class="src-key">else </span><span class="src-sym">{ </span></li>
+<li><a name="a35"></a>        print <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">error</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a36"></a>    <span class="src-sym">}</span></li>
+<li><a name="a37"></a><span class="src-comm">//    cge nash, a2 kuhaon ang id sa bag-o nga na-insert nga record ha.. </span></li>
+<li><a name="a38"></a><span class="src-comm">//    TODO: must use the accessor methods here, but not </span></li>
+<li><a name="a39"></a><span class="src-comm">//    directly accessing the variable..ex. $db-&gt;getInsertID()</span></li>
+<li><a name="a40"></a>        <span class="src-var">$insertID </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">insertID</span><span class="src-sym">; </span></li>
+<li><a name="a41"></a>    <span class="src-key">if </span><span class="src-sym">( </span><span class="src-var">$insertID </span><span class="src-sym">) </span><span class="src-sym">{ </span><span class="src-comm">// now lets insert the article with corresponding author</span></li>
+<li><a name="a42"></a>                <span class="src-var">$query </span>= <span class="src-str">&quot; insert into article_author ( articleID , userID ) &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a43"></a>        <span class="src-var">$query </span>.= <span class="src-str">&quot; </span><span class="src-id">values</span>( '<span class="src-var">$insertID</span>' , '<span class="src-var">$userID</span>') <span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a44"></a>        <span class="src-var">$result </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">( </span><span class="src-var">$query </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a45"></a>        </li>
+<li><a name="a46"></a>        <span class="src-var">$query </span>= <span class="src-str">&quot; insert into article_category ( articleID , categoryID ) &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a47"></a>        <span class="src-var">$query </span>.= <span class="src-str">&quot; </span><span class="src-id">values</span>( '<span class="src-var">$insertID</span>' , '<span class="src-var">$categoryID</span>' ) <span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a48"></a>        <span class="src-var">$result </span>= <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">( </span><span class="src-var">$query </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a49"></a>        </li>
+<li><a name="a50"></a>    <span class="src-sym">}</span></li>
+<li><a name="a51"></a>    <span class="src-key">if </span><span class="src-sym">( </span><span class="src-var">$result </span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a52"></a>        </li>
+<li><a name="a53"></a>        <span class="src-comm">//$_SESSION['task'] = 'save';</span></li>
+<li><a name="a54"></a>        <span class="src-comm">//header( 'Location: ../admin/my_articles2.php' );</span></li>
+<li><a name="a55"></a>        <span class="src-sym">}</span></li>
+<li><a name="a56"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Wed,  5 Apr 2006 20:09:57 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC4</a>
+	</p>
+	</body>
+</html>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>File Source for class_activity.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+											</head>
+		<body>
+						<h1>Source for file class_activity.php</h1>
+<p>Documentation is available at <a href="../brwcms/_code_classes_class_activity_php.html">class_activity.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a><span class="src-key">class </span><a href="../brwcms/activity.html">activity</a> <span class="src-key">extends </span><a href="../brwcms/database.html#methoddatabase">database</a> <span class="src-sym">{</span></li>
+<li><a name="a3"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$writing_article">$writing_article</a> = <span class="src-str">&quot;Writing an article&quot;</span><span class="src-sym">;                    </span><span class="src-comm">//used when the use is writing an article</span></li>
+<li><a name="a4"></a>                <span class="src-key">var </span><a href="../brwcms/activity.html#var$editing_article">$editing_article</a>  = <span class="src-str">&quot;Editing an article&quot;</span><span class="src-sym">;                    </span><span class="src-comm">//used when the user is editing an article</span></li>
+<li><a name="a5"></a>                <span class="src-key">var </span><a href="../brwcms/activity.html#var$saving_article">$saving_article</a>  = <span class="src-str">&quot;Saving an article&quot;</span><span class="src-sym">;                    </span><span class="src-comm">//used when the ueer is saving an article</span></li>
+<li><a name="a6"></a>                <span class="src-key">var </span><a href="../brwcms/activity.html#var$deleting_article">$deleting_article</a>  = <span class="src-str">&quot;Deleting an article&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a7"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$archiving_article">$archiving_article</a>  = <span class="src-str">&quot;Archiving an article&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a8"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$unarchiving_article">$unarchiving_article</a>  = <span class="src-str">&quot;Unarchiving an article&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a9"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$publishing_article">$publishing_article</a>  = <span class="src-str">&quot;Publishing an article&quot;</span><span class="src-sym">;                </span><span class="src-comm">//used when the user is publishing an article</span></li>
+<li><a name="a10"></a>                <span class="src-key">var </span><a href="../brwcms/activity.html#var$uploading_image">$uploading_image</a> = <span class="src-str">&quot;Uploading an image&quot;</span><span class="src-sym">;                    </span><span class="src-comm">//used when the user uploads an image</span></li>
+<li><a name="a11"></a>                <span class="src-key">var </span><a href="../brwcms/activity.html#var$viewing_image">$viewing_image</a> = <span class="src-str">&quot;Viewing an image&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a12"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$editing_imagedetails">$editing_imagedetails</a> = <span class="src-str">&quot;Editing image details&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a13"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$deleting_image">$deleting_image</a> = <span class="src-str">&quot;Deleting an image&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a14"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$viewing_article">$viewing_article</a> = <span class="src-str">&quot;Viewing an article&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a15"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$printing_article">$printing_article</a> = <span class="src-str">&quot;Printing an article&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a16"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$creating_user">$creating_user</a> = <span class="src-str">&quot;Creating a user&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a17"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$saving_user_profile">$saving_user_profile</a> = <span class="src-str">&quot;Saving a user profile&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a18"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$viewing_user_profile">$viewing_user_profile</a> = <span class="src-str">&quot;Viewing user profile&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a19"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$editing_user_profile">$editing_user_profile</a> = <span class="src-str">&quot;Editing a user profile&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a20"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$creating_client_profile">$creating_client_profile</a> = <span class="src-str">&quot;Creating a client profile&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a21"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$viewing_client_profile">$viewing_client_profile</a> = <span class="src-str">&quot;Viewing client profile&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a22"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$editing_client_profile">$editing_client_profile</a> = <span class="src-str">&quot;Editing client profile&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a23"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$saving_client_profile">$saving_client_profile</a> = <span class="src-str">&quot;Saving client profile&quot;</span><span class="src-sym">;                        </span></li>
+<li><a name="a24"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$changing_password">$changing_password</a> = <span class="src-str">&quot;Changing a userpassword&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a25"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$changing_username">$changing_username</a> = <span class="src-str">&quot;Changing a username&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a26"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$changing_group">$changing_group</a> = <span class="src-str">&quot;Changing user group&quot;</span><span class="src-sym">;        </span></li>
+<li><a name="a27"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$loggedin">$loggedin</a> = <span class="src-str">&quot;Logged in&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a28"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$logout">$logout</a> = <span class="src-str">&quot;Log-out&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a29"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$editing_userpermissions">$editing_userpermissions</a> = <span class="src-str">&quot;Editing a user access permissions&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a30"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$blocking_user">$blocking_user</a> = <span class="src-str">&quot;Blocking a user&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a31"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$unblocking_user">$unblocking_user</a> = <span class="src-str">&quot;Unblocking a user&quot;</span><span class="src-sym">;        </span></li>
+<li><a name="a32"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$viewing_userguides">$viewing_userguides</a> = <span class="src-str">&quot;Viewing a user guides&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a33"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$viewing_msg">$viewing_msg</a> = <span class="src-str">&quot;Viewing a message &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a34"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$deleting_msg">$deleting_msg</a> = <span class="src-str">&quot;Deleting a message &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a35"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$sending_msg">$sending_msg</a> = <span class="src-str">&quot;Sending a message &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a36"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$creating_msg">$creating_msg</a> = <span class="src-str">&quot;Creating a message &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a37"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$creating_category">$creating_category</a> = <span class="src-str">&quot;Creating a category &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a38"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$saving_category">$saving_category</a> = <span class="src-str">&quot;Saving a category &quot;</span><span class="src-sym">;        </span></li>
+<li><a name="a39"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$editing_category">$editing_category</a> = <span class="src-str">&quot;Editing a category &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a40"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$creating_quote">$creating_quote</a> = <span class="src-str">&quot;Creating a quote &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a41"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$saving_quote">$saving_quote</a> = <span class="src-str">&quot;Saving a quote &quot;</span><span class="src-sym">;        </span></li>
+<li><a name="a42"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$editing_quote">$editing_quote</a> = <span class="src-str">&quot;Editing a quote &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a43"></a>        </li>
+<li><a name="a44"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$viewing_category">$viewing_category</a> = <span class="src-str">&quot;Viewing a category details &quot;</span><span class="src-sym">;        </span></li>
+<li><a name="a45"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$creating_bannerads">$creating_bannerads</a> = <span class="src-str">&quot;Creating a banner ads &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a46"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$viewing_bannerads">$viewing_bannerads</a> = <span class="src-str">&quot;Viewing banner ads details&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a47"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$editing_bannerads">$editing_bannerads</a>  = <span class="src-str">&quot;Editing a banner ads&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a48"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$saving_bannerads">$saving_bannerads</a>  = <span class="src-str">&quot;Saving a banner ads&quot;</span><span class="src-sym">;        </span></li>
+<li><a name="a49"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$changing_template">$changing_template</a> = <span class="src-str">&quot;Changing a site-themes&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a50"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$searching">$searching</a> = <span class="src-str">&quot;Performing a search query&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a51"></a>        <span class="src-key">var </span><a href="../brwcms/activity.html#var$generating_report">$generating_report</a> = <span class="src-str">&quot;Generating a report&quot;</span><span class="src-sym">;        </span><span class="src-comm">//used when the user generated a report</span></li>
+<li><a name="a52"></a>                <span class="src-key">var </span><a href="../brwcms/activity.html#var$creating_poll_topic">$creating_poll_topic</a> = <span class="src-str">&quot;Creating a poll topic&quot;</span><span class="src-sym">;    </span><span class="src-comm">//used when the user created a poll topic</span></li>
+<li><a name="a53"></a>                <span class="src-key">var </span><a href="../brwcms/activity.html#var$editing_poll_topic">$editing_poll_topic</a> = <span class="src-str">&quot;Editing a poll topic&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a54"></a>        </li>
+<li><a name="a55"></a>    <span class="src-comm">/* activity constructor</span></li>
+<li><a name="a56"></a><span class="src-comm">     * @param none</span></li>
+<li><a name="a57"></a><span class="src-comm">     */</span></li>
+<li><a name="a58"></a>    <span class="src-key">function </span><a href="../brwcms/activity.html#methodactivity">activity</a><span class="src-sym">(</span><span class="src-sym">) </span><span class="src-sym">{</span></li>
+<li><a name="a59"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/database.html#methoddatabase">database</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;    </span></li>
+<li><a name="a60"></a>    <span class="src-sym">}</span></li>
+<li><a name="a61"></a>    </li>
+<li><a name="a62"></a>    <span class="src-comm">/* Set the user activity</span></li>
+<li><a name="a63"></a><span class="src-comm">     * @param userid, activity</span></li>
+<li><a name="a64"></a><span class="src-comm">     */</span></li>
+<li><a name="a65"></a>    <span class="src-key">function </span><a href="../brwcms/activity.html#methodtrack_activity">track_activity</a><span class="src-sym">( </span><span class="src-var">$userid</span><span class="src-sym">, </span><span class="src-var">$activity</span><span class="src-sym">, </span><span class="src-var">$itemname </span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a66"></a>        <span class="src-comm">//$date = date(&quot;Y-m-d&quot;);    </span></li>
+<li><a name="a67"></a>        <span class="src-var">$date </span>= <a href="http://www.php.net/time">time</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a68"></a>        <span class="src-var">$itemname </span>= <a href="http://www.php.net/addslashes">addslashes</a><span class="src-sym">( </span><span class="src-var">$itemname</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a69"></a>        <span class="src-var">$sql </span>= <span class="src-str">&quot; insert into activity_report( userID, activity, itemname, activity_date ) &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a70"></a>        <span class="src-var">$sql </span>.= <span class="src-str">&quot;</span><span class="src-str"> <span class="src-id">values</span>( '<span class="src-var">$userid</span>', '<span class="src-var">$activity</span>', '<span class="src-var">$itemname</span>', '<span class="src-var">$date</span>' )</span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a71"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/database.html#methodquery">query</a><span class="src-sym">( </span><span class="src-var">$sql </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a72"></a>    <span class="src-sym">}</span></li>
+<li><a name="a73"></a>    </li>
+<li><a name="a74"></a>    <span class="src-comm">/* View all the user activity</span></li>
+<li><a name="a75"></a><span class="src-comm">     * @param none</span></li>
+<li><a name="a76"></a><span class="src-comm">     */</span></li>
+<li><a name="a77"></a>    <span class="src-key">function </span><a href="../brwcms/activity.html#methodlists_all_activity">lists_all_activity</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a78"></a>        <span class="src-var">$sql </span>= <span class="src-str">&quot;select distinct( activity ) from activity_report ar &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a79"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/database.html#methodquery">query</a><span class="src-sym">( </span><span class="src-var">$sql </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a80"></a>        <span class="src-var">$all_activity </span>= <span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a81"></a>        <span class="src-key">while</span><span class="src-sym">( </span><span class="src-var">$row </span>= <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/database.html#methodfetcharray">fetcharray</a><span class="src-sym">(</span><span class="src-sym">) )</span><span class="src-sym">{</span></li>
+<li><a name="a82"></a>            <span class="src-var">$all_activity</span><span class="src-sym">[</span><span class="src-sym">] </span>= <span class="src-var">$row</span><span class="src-sym">;</span></li>
+<li><a name="a83"></a>        <span class="src-sym">}</span></li>
+<li><a name="a84"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/database.html#methodfreeresult">freeresult</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a85"></a>        <span class="src-key">return </span><span class="src-var">$all_activity</span><span class="src-sym">;        </span></li>
+<li><a name="a86"></a>    <span class="src-sym">}</span></li>
+<li><a name="a87"></a>&nbsp;</li>
+<li><a name="a88"></a>    <span class="src-comm">/* View activity given the activityid, startdate and end-date</span></li>
+<li><a name="a89"></a><span class="src-comm">     * @param int activityid, startdate, end-date</span></li>
+<li><a name="a90"></a><span class="src-comm">     */</span></li>
+<li><a name="a91"></a>    <span class="src-key">function </span><a href="../brwcms/activity.html#methodview_activity">view_activity</a><span class="src-sym">( </span><span class="src-var">$userid</span><span class="src-sym">, </span><span class="src-var">$activity</span><span class="src-sym">, </span><span class="src-var">$startdate</span><span class="src-sym">, </span><span class="src-var">$enddate </span><span class="src-sym">)</span><span class="src-sym">{</span></li>
+<li><a name="a92"></a>        <span class="src-var">$sqladd </span>=<span class="src-str">&quot;&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a93"></a>        <span class="src-var">$sql </span>= <span class="src-str">&quot; select * from activity_report ar where 1=1 &quot;</span><span class="src-sym">;</span></li>
+<li><a name="a94"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$userid </span>!= <span class="src-num">0</span><span class="src-sym">) </span><span class="src-var">$sqladd </span>.= <span class="src-str">&quot;</span><span class="src-str"> <span class="src-id">and</span> <span class="src-id">ar</span>.<span class="src-id">userID</span>=<span class="src-var">$userid</span> </span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a95"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$activity </span>!= <span class="src-str">&quot;&quot; </span>&amp;&amp; <span class="src-var">$activity </span>!= <span class="src-str">'0' </span><span class="src-sym">) </span><span class="src-var">$sqladd </span>.= <span class="src-str">&quot;</span><span class="src-str"> <span class="src-id">and</span> <span class="src-id">ar</span>.<span class="src-id">activity</span>='<span class="src-var">$activity</span>' </span><span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a96"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$startdate </span>!= <span class="src-num">0</span><span class="src-sym">) </span><span class="src-var">$sqladd </span>.= <span class="src-str">&quot; and ar.activity_date &gt; &quot; </span>. <a href="http://www.php.net/intval">intval</a><span class="src-sym">(</span><span class="src-var">$startdate</span><span class="src-sym">) </span><span class="src-sym">;    </span></li>
+<li><a name="a97"></a>        <span class="src-key">if </span><span class="src-sym">(</span><span class="src-var">$enddate </span>!= <span class="src-num">0</span><span class="src-sym">) </span><span class="src-var">$sqladd </span>.= <span class="src-str">&quot; and ar.activity_date &lt; &quot; </span>. <a href="http://www.php.net/intval">intval</a><span class="src-sym">(</span><span class="src-var">$enddate</span><span class="src-sym">) </span><span class="src-sym">;    </span></li>
+<li><a name="a98"></a>        <span class="src-var">$sql </span>.= <span class="src-var">$sqladd</span><span class="src-sym">;</span></li>
+<li><a name="a99"></a>        <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/database.html#methodquery">query</a><span class="src-sym">( </span><span class="src-var">$sql </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a100"></a>        <span class="src-var">$activity </span>= <span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a101"></a>        <span class="src-key">while</span><span class="src-sym">( </span><span class="src-var">$row </span>= <span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../brwcms/database.html#methodfetcharray">fetcharray</a><span class="src-sym">(</span><span class="src-sym">) )</span><span class="src-sym">{</span></li>
+<li><a name="a102"></a>            <span class="src-var">$activity</span><span class="src-sym">[</span><span class="src-sym">] </span>= <span class="src-var">$row</span><span class="src-sym">;</span></li>
+<li><a name="a103"></a>        <span class="src-sym">}</span></li>
+<li><a name="a104"></a>        <span class="src-key">return </span><span class="src-var">$activity</span><span class="src-sym">;        </span></li>
+<li><a name="a105"></a>    <span class="src-sym">}</span></li>
+<li><a name="a106"></a><span class="src-sym">}</span></li>
+<li><a name="a107"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Wed,  5 Apr 2006 20:09:12 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC4</a>
+	</p>
+	</body>
+</html>

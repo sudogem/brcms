@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>File Source for save_segment.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+											</head>
+		<body>
+						<h1>Source for file save_segment.php</h1>
+<p>Documentation is available at <a href="../brwcms/_code_save_segment_php.html">save_segment.php</a></p>
+<div class="src-code">
+<pre><ol><li><a name="a1"></a><span class="src-php">&lt;?php</span></li>
+<li><a name="a2"></a><span class="src-inc">include</span><span class="src-sym">( </span><span class="src-str">'configuration.php' </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a3"></a>    <span class="src-inc">include</span><span class="src-sym">(</span><span class="src-str">'coreclass.php'</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a4"></a>    <span class="src-inc">include</span><span class="src-sym">(</span><span class="src-str">'../autoresponder/responder.php'</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a5"></a>&nbsp;</li>
+<li><a name="a6"></a>    <span class="src-var">$segmentTitle        </span>= <span class="src-var">$_POST</span><span class="src-sym">[</span><span class="src-str">'segmentTitle'</span><span class="src-sym">]</span><span class="src-sym">;        </span><span class="src-comm">#the title of the segment</span></li>
+<li><a name="a7"></a>        <span class="src-var">$segmentTopic        </span>= <span class="src-var">$_POST</span><span class="src-sym">[</span><span class="src-str">'segmentTopic'</span><span class="src-sym">]</span><span class="src-sym">;                </span><span class="src-comm">#the topic being tockled on the segment</span></li>
+<li><a name="a8"></a>        <span class="src-var">$segmentAnchor         </span>= <span class="src-var">$_POST</span><span class="src-sym">[</span><span class="src-str">'segmentAnchor'</span><span class="src-sym">]</span><span class="src-sym">;        </span><span class="src-comm">#the anchorman of the segment</span></li>
+<li><a name="a9"></a>        <span class="src-var">$segmentSchedule     </span>= <span class="src-var">$_POST</span><span class="src-sym">[</span><span class="src-str">'segmentSchedule'</span><span class="src-sym">]</span><span class="src-sym">;    </span><span class="src-comm">#the schedule of the segment on air</span></li>
+<li><a name="a10"></a>        <span class="src-var">$segmentContent     </span>= <span class="src-var">$_POST</span><span class="src-sym">[</span><span class="src-str">'elm1'</span><span class="src-sym">]</span><span class="src-sym">;                </span><span class="src-comm">#the content of the segment    </span></li>
+<li><a name="a11"></a>        <span class="src-var">$segmentDate         </span>= <span class="src-var">$_POST</span><span class="src-sym">[</span><span class="src-str">'segmentDate'</span><span class="src-sym">]</span><span class="src-sym">;        </span><span class="src-comm">#the date when the segment was written</span></li>
+<li><a name="a12"></a>        <span class="src-var">$articletask         </span>= <span class="src-var">$_POST</span><span class="src-sym">[</span><span class="src-str">'articletask'</span><span class="src-sym">]</span><span class="src-sym">;    </span></li>
+<li><a name="a13"></a>    </li>
+<li><a name="a14"></a>    <span class="src-var">$db </span>= <span class="src-key">new </span><span class="src-id"><a href="../brwcms/database.html">database</a></span><span class="src-sym">;</span></li>
+<li><a name="a15"></a>&nbsp;</li>
+<li><a name="a16"></a>&nbsp;</li>
+<li><a name="a17"></a>&nbsp;</li>
+<li><a name="a18"></a>    <span class="src-comm">// update the task status              </span></li>
+<li><a name="a19"></a>        <span class="src-var">$sql </span>= <span class="src-str">&quot;</span><a href="../brwcms/_code_db_fns_php.html#functionupdate">update</a> <span class="src-id">tasks set status</span> = '<span class="src-id">Completed</span>' <span class="src-id">where taskID</span> = '<span class="src-var">$articletask</span>' <span class="src-str">&quot;</span><span class="src-sym">;</span></li>
+<li><a name="a20"></a>    <span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">( </span><span class="src-var">$sql </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a21"></a>    <span class="src-id">save_segment</span><span class="src-sym">( </span><span class="src-var">$segmentTitle</span><span class="src-sym">, </span><span class="src-var">$segmentTopic</span><span class="src-sym">, </span><span class="src-var">$segmentAnchor</span><span class="src-sym">, </span><span class="src-var">$segmentSchedule</span><span class="src-sym">, </span><span class="src-var">$segmentContent</span><span class="src-sym">, </span><span class="src-var">$segmentDate </span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a22"></a>    <a href="http://www.php.net/header">header</a><span class="src-sym">(</span><span class="src-str">'Location: add_segments.php'</span><span class="src-sym">)</span><span class="src-sym">;</span></li>
+<li><a name="a23"></a><span class="src-php">?&gt;</span></li>
+</ol></pre>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Wed,  5 Apr 2006 20:09:54 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC4</a>
+	</p>
+	</body>
+</html>
